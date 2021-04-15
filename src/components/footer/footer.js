@@ -26,7 +26,7 @@ export default function Footer() {
       `}
       render={data => (
         <footer className="footer container">
-          <h1>{data.contentfulFooter.node.copyright}</h1>
+          <h1>{}</h1>
         </footer>
       )}
     />

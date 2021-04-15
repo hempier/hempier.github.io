@@ -1,35 +1,37 @@
 import * as React from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link, StaticQuery, graphql } from "gatsby";
 import "./header.scss"
 
-const Header = ({ siteTitle, menuLinks }) => (
-  <header className="header">
-    <Link
-      to="/"
-      className="header__logo"
-    >
-      {siteTitle}
-    </Link>
-    <nav className="header__navigation">
-      {menuLinks.map(link => (
-        <Link
-          to={link.link}
-          className="header__navigation-link"
-        >
-          {link.name}
-        </Link>
-      ))}
-    </nav>
-  </header>
-)
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+export default () => (
+  <StaticQuery
+    query={graphql`
+      {
+        allContentfulComposePage (filter: { node_locale: { eq: "uk-UA" } }) {
+          nodes {
+            slug
+            title
+            node_locale
+          }
+        }
+      }
+    `}
+    render={({ allContentfulComposePage}) => (
+      <header className="header">
+        <nav className="header__navigation">
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
-
-export default Header
+        {allContentfulComposePage.nodes.map(link => (
+          <div>
+            <Link
+              to={`/${link.node_locale}/${link.slug}`}
+              className="header__navigation-link"
+            >
+              {link.title} 
+            </Link>
+          </div>
+          ))}
+        </nav>
+      </header>
+    )}
+  />
+);
