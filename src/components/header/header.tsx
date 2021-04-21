@@ -14,21 +14,28 @@ export default () => (
             node_locale
           }
         }
+        contentfulComponentHeaderLogo {
+          internalName
+          image {
+            file {
+              url
+            }
+          }
+        }
       }
     `}
     render={({ allContentfulComposePage}) => (
-      <header className="header">
+      <header className="header container">
         <nav className="header__navigation">
-
-        {allContentfulComposePage.nodes.map(link => (
-          <div>
-            <Link
-              to={`/${link.node_locale}/${link.slug}`}
-              className="header__navigation-link"
-            >
-              {link.title} 
-            </Link>
-          </div>
+          {allContentfulComposePage.nodes.map(link => (
+            <div>
+              <Link
+                to={`/${link.node_locale}/${link.slug}`}
+                className="header__navigation-link"
+              >
+                {link.title}
+              </Link>
+            </div>
           ))}
         </nav>
       </header>
