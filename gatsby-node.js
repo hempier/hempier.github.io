@@ -30,6 +30,45 @@ exports.createPages = async ({ graphql, actions }) => {
                 ctaText
               }
             }
+            ... on ContentfulComponentInformayionSection {
+              node_locale
+              internalName
+              name
+              title
+              description {
+                childMarkdownRemark {
+                  rawMarkdownBody
+                }
+              }
+              ctaText
+              image {
+                file {
+                  url
+                }
+              }
+            }
+            ... on ContentfulComponentProductsSlider {
+              node_locale
+              internalName
+              name
+              title
+              content {
+                node_locale
+                internalName
+                title
+                description {
+                  childMarkdownRemark {
+                    rawMarkdownBody
+                  }
+                }
+                ctaText
+                image {
+                  file {
+                    url
+                  }
+                }
+              }
+            }
           }
         }
       }

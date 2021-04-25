@@ -1,7 +1,9 @@
 .header {
     &__logo {}
 
-    &__navigation {}
+    &__navigation {
+        color: red;
+    }
 
     &__navigation-link {
     }

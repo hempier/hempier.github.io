@@ -1,12 +1,87 @@
 *,
 *:before,
 *:after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: $text-black;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: $text-black;
+}
+
+$headings-margin-bottom: 15px;
+$headings-font-weight: 700;
+$headings-line-height: 1.2;
+$headings-color: $text-black;
+
+%heading {
+  margin-top: 0;
+  margin-bottom: $headings-margin-bottom;
+  font-family: "Poppins", sans-serif;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1 {
+  @extend %heading;
+  font-size: 48px;
+  // @include font-size($h1-font-size);
+}
+
+h2 {
+  @extend %heading;
+  font-size: 40px;
+  // @include font-size($h2-font-size);
+}
+
+h3 {
+  @extend %heading;
+  font-size: 24px;
+  // @include font-size($h3-font-size);
+}
+
+h4 {
+  @extend %heading;
+  font-size: 20px;
+  // @include font-size($h4-font-size);
+}
+
+h5 {
+  @extend %heading;
+  font-size: 18px;
+  // @include font-size($h5-font-size);
+}
+
+h6 {
+  @extend %heading;
+  // @include font-size($h6-font-size);
+}
+
+
+%subtitle {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $text-dark-grey;
+}
+
+.subtitle-1 {
+  font-size: 20px;
+  line-height: 30px;
+  @extend %subtitle;
+}
+
+.subtitle-2 {
+  font-size: 16px;
+  line-height: 24px;
+  @extend %subtitle;
+}
+
+$paragraph-margin-bottom: 15px;
+
+p {
+  margin-top: 0;
+  margin-bottom: $paragraph-margin-bottom;
 }

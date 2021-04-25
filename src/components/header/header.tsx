@@ -27,18 +27,24 @@ export default () => (
     render={({ allContentfulComposePage}) => (
       <header className="header container">
         <nav className="header__navigation">
-          {allContentfulComposePage.nodes.map(link => (
-            <div>
+          {allContentfulComposePage.nodes.map((link, id) => (
+            <>
               <Link
                 to={`/${link.node_locale}/${link.slug}`}
+                key={id}
                 className="header__navigation-link"
               >
                 {link.title}
               </Link>
-            </div>
+            </>
           ))}
         </nav>
       </header>
     )}
   />
 );
+
+// function filterHomeLogoLink(pageSlug: {slug}) {
+//   pageSlug.slug === 'home'
+
+// }
