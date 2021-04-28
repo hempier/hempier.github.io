@@ -6,8 +6,10 @@ import "./top-banner.scss"
 
 
 
-const TopBanner = ({ heading, description, image }) => {
-  console.log(JSON.stringify('console.LOH'+{ heading, description, image }, null, 4))
+const TopBanner = (props) => {
+  const { heading, description, image } = props
+
+  console.log('console.LOH:', JSON.stringify(props, null, 4))
   const TopBannerBackground = styled.div`
     background-repeat: no-repeat;
     background-position: center;
