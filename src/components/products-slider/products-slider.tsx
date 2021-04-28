@@ -22,6 +22,8 @@ const ProductsSlider = ({ component }) => {
 
   return (
     <section className="products-slider container">
+      <span className="products-slider__name subtitle-2">{component.name}</span>
+      <h2 className="products-slider__title">{component.title}</h2>
       <SimpleSlider customSettings={productsSliderSettings}>
         {content.map((props, id) => (
           <ProductsSliderItem key={id.toString()} {...props} />

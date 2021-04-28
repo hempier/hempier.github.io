@@ -1,4 +1,9 @@
 .header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    min-height: 112px;
     &__logo {}
 
     &__navigation {
@@ -6,5 +11,9 @@
     }
 
     &__navigation-link {
+        margin-right: 40px;
+        &:last-shild {
+            margin-right: 0;
+        }
     }
 }

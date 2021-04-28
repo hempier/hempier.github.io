@@ -1,0 +1,12 @@
+@import "../../styles/variables.scss";
+
+.top-banner {
+    display: flex;
+    min-height: 380px;
+    margin-bottom: 112px;
+    color: $service-white;
+
+    &__title {
+        color: $service-white;
+    }
+}

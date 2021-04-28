@@ -1,4 +1,4 @@
-import * as React from "react"
+import React, { useRef, useEffect } from "react";
 import Slider from "react-slick"
 
 import "./vendor/slick-theme.scss"
@@ -7,8 +7,12 @@ import "./slider.scss"
 
 
 const SimpleSlider = ({children, customSettings = {}}) => {
-  // console.log(customSettings)
   let slider = React.useRef(null)
+
+  useEffect(() => {
+    console.log(slider.current);
+  }, [slider]);
+
   const settings = {
     dots: true,
     arrows: false,
@@ -21,17 +25,18 @@ const SimpleSlider = ({children, customSettings = {}}) => {
   }
 
   const renderArrows = ({slider}) => {
+    console.log(slider)
     return (
       <div className="slider-arrow">
         <div
           className="arrow-btn prev"
-          onClick={() =>slider.slickPrev()}
+          onClick={() => slider.current.slickPrev()}
         >
           <span>{'<--'}</span>
         </div>
         <div
           className="arrow-btn next"
-          onClick={() => slider.slickNext()}
+          onClick={() => slider.current.slickNext()}
         >
           <span>{'-->'}</span>
         </div>
@@ -44,9 +49,7 @@ const SimpleSlider = ({children, customSettings = {}}) => {
         <Slider ref={slider} {...settings}>
           {children}
         </Slider>
-        {renderArrows({ 
-          slider: slider.current 
-        })}
+        {renderArrows({ slider })}
       </>
   )
 }

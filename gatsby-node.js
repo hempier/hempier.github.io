@@ -69,6 +69,55 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
               }
             }
+            ... on ContentfulComponentPartnersAboutUs {
+              node_locale
+              internalName
+              name
+              title
+              content {
+                node_locale
+                internalName
+                link
+                image {
+                  title
+                  file {
+                    url
+                  }
+                }
+              }
+            }
+            ... on ContentfulComponentPageTopBanner {
+              node_locale
+              internalName
+              heading
+              description {
+                childMarkdownRemark {
+                  rawMarkdownBody
+                }
+              }
+              image {
+                title
+                file {
+                  url
+                }
+              }
+            }
+            ... on ContentfulComponentAwards {
+							node_locale
+              internalName
+              name
+              title
+              content {
+								node_locale
+                internalName
+                year
+                description {
+									childMarkdownRemark {
+										htmlAst
+                  }
+                }
+              }
+            }
           }
         }
       }
