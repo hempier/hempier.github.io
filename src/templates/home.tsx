@@ -15,7 +15,8 @@ import { filterPageLocale, Locale } from "../components/locale-provider"
 const locale = Locale.Ua
 
 export default ({ pageContext: { page } }) => {
-  const localizedPage = filterPageLocale(page, locale)
+  // const localizedPage = filterPageLocale(page, locale)
+  const localizedPage = page
 
   console.log(JSON.stringify(page, null, 4))
 
