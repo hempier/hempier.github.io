@@ -89,5 +89,6 @@ module.exports = {
     },
     `gatsby-plugin-emotion`,
     `hast-to-hyperscript`,
+    `gatsby-plugin-no-index`,
   ],
 }
