@@ -1,13 +1,12 @@
 import * as React from "react"
-import { Link, StaticQuery, graphql } from "gatsby";
+import { Link, StaticQuery, graphql } from "gatsby"
 import "./header.scss"
-
 
 export default () => (
   <StaticQuery
     query={graphql`
       {
-        allContentfulComposePage (filter: { node_locale: { eq: "uk-UA" } }) {
+        allContentfulComposePage(filter: { node_locale: { eq: "uk-UA" } }) {
           nodes {
             slug
             title
@@ -24,27 +23,31 @@ export default () => (
         }
       }
     `}
-    render={({ allContentfulComposePage}) => (
-      <header className="header container">
-        <nav className="header__navigation">
-          {allContentfulComposePage.nodes.map((link, id) => (
-            <>
-              <Link
-                to={`/${link.node_locale}/${link.slug}`}
-                key={id}
-                className="header__navigation-link"
-              >
-                {link.title}
-              </Link>
-            </>
-          ))}
-        </nav>
+    render={({ allContentfulComposePage, contentfulComponentHeaderLogo }) => (
+      <header className="header">
+        <div className="header__inner-wrap container">
+          <Link
+            to={`/`}
+            className="header__logo"
+          >
+            <img src={contentfulComponentHeaderLogo.image.file.url}
+              alt={contentfulComponentHeaderLogo.internalName}/>
+          </Link>
+          <nav className="header__navigation">
+            {allContentfulComposePage.nodes.map((link, id) => (
+              <>
+                <Link
+                  to={`/${link.node_locale}/${link.slug}`}
+                  key={id}
+                  className="header__navigation-link"
+                >
+                  {link.title}
+                </Link>
+              </>
+            ))}
+          </nav>
+        </div>
       </header>
     )}
   />
-);
-
-// function filterHomeLogoLink(pageSlug: {slug}) {
-//   pageSlug.slug === 'home'
-
-// }
+)

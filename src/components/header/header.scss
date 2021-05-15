@@ -1,17 +1,30 @@
-.header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+@import "../../styles/variables.scss";
 
-    min-height: 112px;
+.header {
+    position: sticky;
+    top: 0;
+    background-color: $service-white;
+    z-index: 1;
+
+    &__inner-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
     &__logo {}
 
-    &__navigation {
-        color: red;
-    }
+    &__navigation {}
 
     &__navigation-link {
         margin-right: 40px;
+        text-decoration: none;
+        color: $text-black;
+
+        &:hover, &:focus {
+            color: $main-site;
+        }
+
         &:last-shild {
             margin-right: 0;
         }

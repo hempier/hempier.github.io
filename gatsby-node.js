@@ -28,6 +28,11 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
                 ctaText
+                image {
+                  file {
+                    url
+                  }
+                }
               }
             }
             ... on ContentfulComponentInformayionSection {

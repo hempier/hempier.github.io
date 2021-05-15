@@ -5,10 +5,14 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Poppins", "Helvetica", "Arial", sans-serif;;
   font-size: 16px;
   line-height: 1.5;
   color: $text-black;
+}
+
+.content>:not(:last-child):not(:only-child) {
+  margin-bottom: 7rem;
 }
 
 $headings-margin-bottom: 15px;
@@ -84,4 +88,19 @@ $paragraph-margin-bottom: 15px;
 p {
   margin-top: 0;
   margin-bottom: $paragraph-margin-bottom;
+}
+
+.cta-link {
+  display: inline-block;
+  padding: 15px 50px;
+  border: 1px solid $main-site;
+  line-height: 1.7;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $text-black;
+
+  &:hover {
+    background-color: $main-site;
+    color: $service-white;
+  }
 }

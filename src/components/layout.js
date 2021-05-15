@@ -32,7 +32,7 @@ const Layout = ({children}) => {
   return (
     <>
       <Header/>
-      <main>{children}</main>
+      <main className="content">{children}</main>
       <Footer/>
     </>
   )
