@@ -1,6 +1,8 @@
-import React from "react";
-import hastToHyperscript from "hast-to-hyperscript";
+import * as React from "react"
+import rehypeReact from "rehype-react"
 
-export function renderHtmlToReact (node) {
-  // return hastToHyperscript(React.createElement, node);
-};
+const renderAst = new rehypeReact({
+  createElement: React.createElement,
+}).Compiler
+
+export default renderAst

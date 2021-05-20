@@ -9,6 +9,7 @@ const productsSliderSettings = {
   speed: 500,
   slidesToShow: 3,
   slidesToScroll: 1,
+  className: 'products-slider',
 }
 
 
@@ -24,23 +25,27 @@ const ProductsSlider = ({ component }) => {
     <section className="products-slider container">
       <span className="products-slider__name subtitle-2">{component.name}</span>
       <h2 className="products-slider__title">{component.title}</h2>
-      <SimpleSlider customSettings={productsSliderSettings}>
-        {content.map((props, id) => (
-          <ProductsSliderItem key={id.toString()} {...props} />
-        ))}
-      </SimpleSlider>
+      <div className="products-slider__inner-wrap">
+        <SimpleSlider customSettings={productsSliderSettings}>
+          {content.map((props, id) => (
+            <ProductsSliderItem key={id.toString()} {...props} />
+          ))}
+        </SimpleSlider>
+      </div>
     </section>
   )
 }
 
-const ProductsSliderItem = ({ name, title, description, ctaText }) => (
+const ProductsSliderItem = ({ image, title, description, ctaText }) => (
   <div className="products-slider__item">
-    <h3 className="products-slider__name">{name}</h3>
-    <h1 className="products-slider__title">{title}</h1>
+    <div className="products-slider__image-wrap">
+      <img src={image.file.url} alt="" className="products-slider__image"/>
+    </div>
+    <h3 className="products-slider__heading">{title}</h3>
     <p className="products-slider__description">
       {description.childMarkdownRemark.rawMarkdownBody}
     </p>
-    <a href="" className="products-slider__cta">
+    <a href="" className="products-slider__cta learn-more">
       {ctaText}
     </a>
   </div>

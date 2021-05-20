@@ -2,6 +2,7 @@ import React from "react"
 import HeroSlider from "../components/hero-slider/hero-slider"
 import InformationSection from "../components/information-section/information-section"
 import ProductsSlider from "../components/products-slider/products-slider"
+import ProjectsSlider from "../components/projects-slider/projects-slider"
 import PartnersAboutUsSlider from "../components/partners-about-us-slider/partners-about-us-slider"
 
 import Layout from "../components/layout"
@@ -36,6 +37,10 @@ export default ({ pageContext: { page } }) => {
     localizedPage,
     ComponentInternalName.ProductSlider
   )
+  const projectsSlider = findByInternalName(
+    localizedPage,
+    ComponentInternalName.ProjectsSlider
+  )
   const partnersAboutUsSlider = findByInternalName(
     localizedPage,
     ComponentInternalName.PartnersAboutUsSlider
@@ -48,8 +53,7 @@ export default ({ pageContext: { page } }) => {
       <PartnersAboutUsSlider component={partnersAboutUsSlider} />
       <InformationSection {...infoSectionHempcrete} />
       <ProductsSlider component={productsSlider} />
-
-      <div>{page.title}</div>
+      <ProjectsSlider component={projectsSlider}/>
     </Layout>
   )
 }

@@ -4,9 +4,12 @@
   box-sizing: border-box;
 }
 
+html {
+  font-size: 16px;
+}
+
 body {
   font-family: "Poppins", "Helvetica", "Arial", sans-serif;;
-  font-size: 16px;
   line-height: 1.5;
   color: $text-black;
 }
@@ -101,6 +104,34 @@ p {
 
   &:hover {
     background-color: $main-site;
+    color: $service-white;
+  }
+}
+
+.learn-more {
+  position: relative;
+  padding-left: 3rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: $text-black;
+
+  &:hover {
+    color: $main-site;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 2rem;
+    height: .125rem;
+    background-color: $main-site;
+
+  }
+
+  &_light {
     color: $service-white;
   }
 }

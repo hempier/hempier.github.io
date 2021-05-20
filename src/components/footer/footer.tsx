@@ -1,16 +1,17 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
+import IconLocation from "../../images/footer/icon-location.svg"
+import IconTelephone from "../../images/footer/icon-telephone.svg"
 import "./footer.scss"
 
-export default function Footer() {
+const  Footer = () => {
   return (
     <StaticQuery
       query={graphql`
         query {
           contentfulComponentFooter {
-            node_locale
             entrie
+            node_locale
             footerLogo {
               file {
                 url
@@ -21,6 +22,7 @@ export default function Footer() {
                 rawMarkdownBody
               }
             }
+            vat
             phone
             socialHeading
             socialLinks {
@@ -41,40 +43,47 @@ export default function Footer() {
         }
       `}
       render={data => (
-        <footer className="footer container">
-          <div className="row">
-            <div className="col-6">
-              <img
-                src={data.contentfulComponentFooter.footerLogo.file.url}
-                className="footer__logo"/>
-                <div className="footer__address">
-                  {data.contentfulComponentFooter.address.childMarkdownRemark.rawMarkdownBody}
+        <footer className="footer">
+          <div className="footer__inner-wrap container">
+            <div className="row">
+              <div className="col-6">
+                  <a href="/">
+                    <img
+                      src={data.contentfulComponentFooter.footerLogo.file.url}
+                      className="footer__logo"/>
+                  </a>
+                  <div className="footer__address">
+                    <IconLocation className="footer__address-icon" />
+                    {data.contentfulComponentFooter.address.childMarkdownRemark.rawMarkdownBody}
+                    <div className="footer__vat">{data.contentfulComponentFooter.vat}</div>
+                  </div>
+                  <div className="footer__phone">
+                    <IconTelephone className="footer__phone-icon" />
+                    {data.contentfulComponentFooter.phone}
+                  </div>
+              </div>
+              <div className="col-6">
+                <h4 className="footer__social-heading">
+                  {data.contentfulComponentFooter.socialHeading}
+                </h4>
+                <div className="footer__social-list">
+                  {data.contentfulComponentFooter.socialLinks.map((link, i) => {
+                    return (
+                      <a href={link.link}
+                        target="_blank"
+                        className="footer__social-link">
+                          <img src={link.image.file.url} alt=""/>
+                      </a>
+                    )
+                  })}
                 </div>
-                <div className="footer__phone">
-                  {data.contentfulComponentFooter.phone}
+                <div className="footer__advertisement">
+                  {data.contentfulComponentFooter.advertisement.childMarkdownRemark.rawMarkdownBody}
                 </div>
-            </div>
-            <div className="col-6">
-              <div className="footer__social-heading">
-                {data.contentfulComponentFooter.socialHeading}
+                <span className="footer__copyright">
+                  {data.contentfulComponentFooter.copyright}
+                </span>
               </div>
-              <div className="footer__social-list">
-                {data.contentfulComponentFooter.socialLinks.map((link, i) => {
-                  return (
-                    <a href={link.link}
-                      target="_blank"
-                      className="footer__social-link">
-                        <img src={link.image.file.url} alt=""/>
-                    </a>
-                  )
-                })}
-              </div>
-              <div className="footer__social-heading">
-                {data.contentfulComponentFooter.advertisement.childMarkdownRemark.rawMarkdownBody}
-              </div>
-              <span className="footer__copyright">
-                {data.contentfulComponentFooter.copyright}
-              </span>
             </div>
           </div>
         </footer>
@@ -82,3 +91,5 @@ export default function Footer() {
     />
   )
 }
+
+export default Footer

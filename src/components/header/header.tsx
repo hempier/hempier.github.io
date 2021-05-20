@@ -23,31 +23,34 @@ export default () => (
         }
       }
     `}
-    render={({ allContentfulComposePage, contentfulComponentHeaderLogo }) => (
-      <header className="header">
-        <div className="header__inner-wrap container">
-          <Link
-            to={`/`}
-            className="header__logo"
-          >
-            <img src={contentfulComponentHeaderLogo.image.file.url}
-              alt={contentfulComponentHeaderLogo.internalName}/>
-          </Link>
-          <nav className="header__navigation">
-            {allContentfulComposePage.nodes.map((link, id) => (
-              <>
-                <Link
-                  to={`/${link.node_locale}/${link.slug}`}
-                  key={id}
-                  className="header__navigation-link"
-                >
-                  {link.title}
-                </Link>
-              </>
-            ))}
-          </nav>
-        </div>
-      </header>
-    )}
+    render={({ allContentfulComposePage, contentfulComponentHeaderLogo }) => {
+      return (
+        <header className="header">
+          <div className="header__inner-wrap container">
+            <Link
+              to={`/`}
+              className="header__logo"
+            >
+              <img src={contentfulComponentHeaderLogo.image.file.url}
+                alt={contentfulComponentHeaderLogo.internalName}/>
+            </Link>
+            <nav className="header__navigation">
+              {allContentfulComposePage.nodes.map((link, id) => (
+                <>
+                  <Link
+                    to={`/${link.node_locale}/${link.slug}`}
+                    key={id}
+                    className="header__navigation-link"
+                  >
+                    {link.title}
+                  </Link>
+                </>
+              ))}
+            </nav>
+          </div>
+        </header>
+      )
+    }
+  }
   />
 )

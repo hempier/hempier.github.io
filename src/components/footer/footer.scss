@@ -1,0 +1,57 @@
+@import "../../styles/variables.scss";
+
+.footer {
+    margin-top: 7rem;
+    padding: 4rem 0;
+    background-color: $service-light-gray;
+
+    &__logo {
+        margin-bottom: 2rem;
+    }
+
+    %footer-info-field {
+        position: relative;
+        padding-left: 2rem;
+        color: $text-dark-grey;
+    }
+
+    %footer-info-icon {
+        position: absolute;
+        left: 0;
+    }
+
+    &__address {
+        @extend %footer-info-field;
+        max-width: 420px;
+    }
+
+    &__phone {
+        @extend %footer-info-field;
+        margin-top: 1rem;
+    }
+
+    &__address-icon {
+        @extend %footer-info-icon;
+    }
+
+    &__phone-icon {
+        @extend %footer-info-icon;
+    }
+
+    &__social-heading {
+        margin-bottom: 2rem;
+    }
+
+    &__social-list {
+        margin-bottom: 2rem;
+    }
+
+    &__social-link {
+        margin-right: 2rem;
+    }
+
+    &__advertisement {
+        margin-bottom: 2rem;
+        color: $text-dark-grey;
+    }
+}

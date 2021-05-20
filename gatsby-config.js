@@ -63,9 +63,9 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: "gatsby-transformer-remark",
       options: {
-        plugins: []
+        plugins: ["@rstacruz/gatsby-remark-component"]
       }
     },
     `gatsby-transformer-sharp`,
@@ -75,10 +75,10 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `gatsby-starter-default`,
-        short_name: `starter`,
+        short_name: `hempire`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#40BB88`,
+        theme_color: `#40BB88`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
@@ -96,7 +96,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-emotion`,
-    `hast-to-hyperscript`,
     `gatsby-plugin-no-index`,
   ],
 }

@@ -1,4 +1,8 @@
-.products-slider {
+@import "../../styles/variables.scss";
+
+.projects-slider {
+    $self: &;
+
     &__name {}
     &__title {
         margin-bottom: 3rem;
@@ -14,10 +18,17 @@
     }
 
     &__item {
+        position: relative;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
+
+        &:hover {
+            #{ $self }__content-inner {
+                display: block;
+            }
+        }
     }
 
     &__image {
@@ -25,9 +36,26 @@
         min-height: 19rem;
     }
 
+    &__content {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 2rem 1.5rem;
+        background: linear-gradient(360deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+        color: $service-white;
+    }
+
+    &__content-inner {
+        display: none;
+    }
+
+    &__heading {
+        color: $service-white;
+    }
+
     &__description {
-        margin-top: 1rem;
-        height: 4rem;
+        margin-bottom: 1rem;
     }
 
 

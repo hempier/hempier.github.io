@@ -123,6 +123,77 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
               }
             }
+            ... on ContentfulComponentProjectsSlider {
+              node_locale
+              internalName
+              name
+              title
+              content {
+                node_locale
+                internalName
+                image {
+									file {
+										url
+                  }
+                }
+                title
+                description {
+									childMarkdownRemark {
+										rawMarkdownBody
+                  }
+                }
+                ctaText
+              }
+            }
+            ... on ContentfulComponentPageText {
+              internalName
+              node_locale
+              text {
+                childMarkdownRemark {
+                  htmlAst
+                }
+              }
+            }
+            ... on ContentfulComponentAdvantages {
+              node_locale
+              internalName
+              name
+              title
+              content {
+                node_locale
+                internalName
+                image {
+                  file {
+                    url
+                  }
+                }
+                heading
+                description {
+                  childMarkdownRemark {
+                    rawMarkdownBody
+                  }
+                }
+              }
+            }
+            ... on ContentfulComponentAplicationAreas {
+              node_locale
+              internalName
+              content {
+                node_locale
+                internalName
+                image {
+                  file {
+                    url
+                  }
+                }
+                heading
+                description {
+                  childMarkdownRemark {
+                    rawMarkdownBody
+                  }
+                }
+              }
+            }
           }
         }
       }

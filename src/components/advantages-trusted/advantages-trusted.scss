@@ -1,6 +1,6 @@
 @import "../../styles/variables.scss";
 
-.awards {
+.advantages {
 
     &__inner-wrap {
         margin-top: 3rem;
@@ -10,14 +10,14 @@
         margin-bottom: 3rem;
     }
 
-    &__heading {
-        color: $main-site;
-
+    &__image {
+        margin-bottom: 1rem;
     }
+    &__heading {
+        min-height: 3rem;
+    }
+
     &__description {
 
-    }
-    .accent {
-        color: $main-site;
     }
 }

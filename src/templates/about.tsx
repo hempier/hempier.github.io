@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import PartnersAboutUsSlider from "../components/partners-about-us-slider/partners-about-us-slider"
 import TopPageBanner from "../components/top-banner/top-banner"
 import AwardsTrusted from "../components/awards-trusted/awards-trusted"
+import PageText from "../components/page-text/page-text"
 
 import {
   findByInternalName,
@@ -31,9 +32,15 @@ export default ({ pageContext: { page } }) => {
     ComponentInternalName.AboutPageAwards
   )
 
+  const aboutPageText = findByInternalName(
+    localizedPage,
+    ComponentInternalName.AboutPageText
+  )
+
   return (
     <Layout>
       <TopPageBanner {...aboutPageTopBanner} />
+      <PageText text={aboutPageText} />
       <AwardsTrusted items={aboutPageAwards}/>
       <PartnersAboutUsSlider component={partnersAboutUsSlider} />
     </Layout>

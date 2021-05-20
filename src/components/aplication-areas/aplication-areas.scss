@@ -1,0 +1,35 @@
+@import "../../styles/variables.scss";
+
+.aplication-areas {
+
+    &__inner-wrap {
+        margin-top: 3rem;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 3rem;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    &__image {
+        // margin-bottom: 1rem;
+    }
+    &__heading {
+        margin-bottom: 2rem;
+    }
+
+    &__description {
+    }
+}
