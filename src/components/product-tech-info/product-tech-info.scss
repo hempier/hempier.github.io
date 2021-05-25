@@ -1,0 +1,38 @@
+@import "../../styles/variables.scss";
+
+.product-tech {
+    padding: 7rem 0;
+    background-color: $service-light-gray;
+
+    &__inner-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__image {
+        min-height: 27rem;
+        height: 27rem;
+        margin-right: 2rem;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    &__title {
+        margin-bottom: 3rem;
+    }
+
+    &__info {
+        margin-bottom: 3rem;
+    }
+
+    &__value {
+        color: $text-dark-grey;
+    }
+}

@@ -13,6 +13,16 @@ export enum ComponentInternalName {
   HempcreteAdvantagesTrusted = "hempcrete-advantages-trusted",
   HempcreteBenefitsTrusted = "hempcrete-environmental-benefits",
   HempcreteAplicationAreas = "hempcrete-aplication-areas",
+  FeedbackForm = "feedback-form",
+  PlpTopBanner = "plp-top-banner",
+  ProductsList = "products-list",
+  PlpInformationAdvertisement = "plp-information-advertisement",
+  PdpFifthElementDescription = "product-desc-fifth-element",
+  PdpFifthElementUsages = "pdp-fifth-element-usages",
+  PdpFifthElementTechInfo = "pdp-fifth-element-tech-info",
+  ContactTopBanner = "contact-top-banner",
+  ContactAddress = "contact-address",
+  ContactFeedbackForm = "contact-feedback-form",
 }
 
 export function findByInternalName(page: any, name: ComponentInternalName) {

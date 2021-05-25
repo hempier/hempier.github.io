@@ -14,6 +14,7 @@ exports.createPages = async ({ graphql, actions }) => {
           slug
           title
           node_locale
+          navigationIncluded
           content {
             ... on ContentfulComponentHeroSlider {
               node_locale
@@ -193,6 +194,107 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
               }
+            }
+            ... on ContentfulComponentFeedbackForm {
+              node_locale
+              internalName
+              image {
+                file {
+                  url
+                }
+              }
+              title
+              subtitle
+              nameFieldLable
+              phoneFieldLable
+              emailFieldLable
+              commentsFieldLable
+              ctaText
+            }
+            ... on ContentfulComponentInformationAdvertisement {
+              internalName
+              node_locale
+              title
+              description {
+                childMarkdownRemark {
+                  rawMarkdownBody
+                }
+              }
+              ctaText
+            }
+            ... on ContentfulComponentProductsList {
+              internalName
+              node_locale
+              content {
+                internalName
+                node_locale
+                image {
+                  file {
+                    url
+                  }
+                }
+                title
+                description {
+                  childMarkdownRemark {
+                    rawMarkdownBody
+                  }
+                }
+                ctaText
+                ctaLink {
+                  slug
+                }
+              }
+            }
+            ... on ContentfulComponentProductDescription {
+              internalName
+              node_locale
+              image {
+                file {
+                  url
+                }
+              }
+              title
+              description {
+                childMarkdownRemark {
+                  htmlAst
+                }
+              }
+              price
+              quantity
+              ctaText
+            }
+            ... on ContentfulComponentProductTechnicalInformation {
+              internalName
+              node_locale
+              image {
+                file {
+                  url
+                }
+              }
+              name
+              title
+              characteristics {
+                node_locale
+                techLabel
+                techValue
+              }
+              documentationLinkText
+            }
+            ... on ContentfulComponentContactInfo {
+              internalName
+              node_locale
+              title
+              firmName
+              addressLabel
+              addressValue
+              regonLabel
+              regonValue
+              vatLabel
+              vatValue
+              phoneLabel
+              phoneValue
+              emailTitle
+              email
             }
           }
         }

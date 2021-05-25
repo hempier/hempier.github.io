@@ -1,0 +1,11 @@
+@import "../../styles/variables.scss";
+
+.promo {
+    padding: 4.5rem;
+    background-color: $main-site;
+    color: $service-white;
+
+    &__title {
+        color: $service-white;
+    }
+}

@@ -4,8 +4,9 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import PartnersAboutUsSlider from "../components/partners-about-us-slider/partners-about-us-slider"
 import TopPageBanner from "../components/top-banner/top-banner"
-import AwardsTrusted from "../components/awards-trusted/awards-trusted"
 import PageText from "../components/page-text/page-text"
+import AwardsTrusted from "../components/awards-trusted/awards-trusted"
+import FeedbackForm from "../components/feedback-form/feedback-form"
 
 import {
   findByInternalName,
@@ -31,10 +32,13 @@ export default ({ pageContext: { page } }) => {
     localizedPage,
     ComponentInternalName.AboutPageAwards
   )
-
   const aboutPageText = findByInternalName(
     localizedPage,
     ComponentInternalName.AboutPageText
+  )
+  const feedbackForm = findByInternalName(
+    localizedPage,
+    ComponentInternalName.FeedbackForm
   )
 
   return (
@@ -43,6 +47,7 @@ export default ({ pageContext: { page } }) => {
       <PageText text={aboutPageText} />
       <AwardsTrusted items={aboutPageAwards}/>
       <PartnersAboutUsSlider component={partnersAboutUsSlider} />
+      <FeedbackForm {...feedbackForm}/>
     </Layout>
   )
 }

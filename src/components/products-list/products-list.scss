@@ -1,0 +1,33 @@
+.products-list {
+    &__name {}
+    &__title {
+        margin-bottom: 3rem;
+    }
+
+    &__inner-wrap {
+        position: relative;
+    }
+
+    &__image-wrap {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 4rem;
+    }
+
+    &__image {
+        height: 19rem;
+        min-height: 19rem;
+    }
+
+    &__description {
+        margin-top: 1rem;
+        // height: 4rem;
+    }
+}

@@ -6,7 +6,10 @@ export default () => (
   <StaticQuery
     query={graphql`
       {
-        allContentfulComposePage(filter: { node_locale: { eq: "uk-UA" } }) {
+        allContentfulComposePage(filter: {
+            node_locale: { eq: "uk-UA" },
+            navigationIncluded: { eq: true }
+          }) {
           nodes {
             slug
             title

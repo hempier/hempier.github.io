@@ -5,6 +5,7 @@ import TopPageBanner from "../components/top-banner/top-banner"
 import PageText from "../components/page-text/page-text"
 import AdvantagesTrusted from "../components/advantages-trusted/advantages-trusted"
 import AplicationAreas from "../components/aplication-areas/aplication-areas"
+import FeedbackForm from "../components/feedback-form/feedback-form"
 
 import {
   findByInternalName,
@@ -38,6 +39,10 @@ export default ({ pageContext: { page } }) => {
     localizedPage,
     ComponentInternalName.HempcreteAplicationAreas
   )
+  const feedbackForm = findByInternalName(
+    localizedPage,
+    ComponentInternalName.FeedbackForm
+  )
 
   return (
     <Layout>
@@ -46,6 +51,7 @@ export default ({ pageContext: { page } }) => {
       <AplicationAreas items={hempcreteAplicationAreas} />
       <AdvantagesTrusted items={hempcreteAdvantagesTrusted}/>
       <AdvantagesTrusted items={hempcreteBenefitsTrusted}/>
+      <FeedbackForm {...feedbackForm}/>
     </Layout>
   )
 }
