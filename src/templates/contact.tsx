@@ -33,8 +33,16 @@ export default ({ pageContext: { page } }) => {
   return (
     <Layout>
       <ContactTopBanner {...contactTopBanner} />
-      <ContactAddress {...contactAddress} />
-      <ContactFeedbackForm {...contactFeedbackForm} />
+      <section className="container">
+        <div className="row">
+          <div className="col-6">
+            <ContactAddress {...contactAddress} />
+          </div>
+          <div className="col-6">
+            <ContactFeedbackForm {...contactFeedbackForm} />
+          </div>
+        </div>
+      </section>
     </Layout>
   )
 }

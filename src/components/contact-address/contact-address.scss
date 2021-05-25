@@ -1,0 +1,49 @@
+@import "../../styles/variables.scss";
+
+%icon-section {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+%icon {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  color: $main-site;
+}
+.contact-address {
+  &__address {
+    @extend %icon-section;
+  }
+
+  &__phone {
+    @extend %icon-section;
+    margin-bottom: 3rem;
+  }
+
+  &__email {
+    @extend %icon-section;
+  }
+
+  &__icon {
+    @extend %icon;
+
+    &_address {
+      top: 0;
+      transform: translateY(0);
+    }
+  }
+
+  &__fieldset {
+    line-height: 2;
+  }
+
+  &__label {
+  }
+
+  &__value {
+    color: $text-dark-grey;
+  }
+}

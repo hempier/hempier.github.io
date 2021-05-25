@@ -22,7 +22,7 @@ export enum ComponentInternalName {
   PdpFifthElementTechInfo = "pdp-fifth-element-tech-info",
   ContactTopBanner = "contact-top-banner",
   ContactAddress = "contact-address",
-  ContactFeedbackForm = "contact-feedback-form",
+  ContactFeedbackForm = "feedback-form",
 }
 
 export function findByInternalName(page: any, name: ComponentInternalName) {

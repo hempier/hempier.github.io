@@ -1,23 +1,47 @@
 @import "../../styles/variables.scss";
 
 .feedback-form {
-    $background-shift: 10rem;
-    min-height: 43rem;
-    padding-top: $background-shift;
+  $self: &;
+  $background-shift: 10rem;
 
-    &__inner-wrap {
-        position: relative;
-        max-width: 36rem;
-        padding: 4.5rem;
-        margin-top: -$background-shift;
-        background-color: $service-white;
-        box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
-    }
+  min-height: 43rem;
+  padding-top: $background-shift;
 
-    .container {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-end;
+  &__inner-wrap {
+    position: relative;
+    max-width: 36rem;
+    padding: 4.5rem;
+    margin-top: -$background-shift;
+    background-color: $service-white;
+    box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
+  }
+
+  &__fieldset-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    & > :not(:last-child):not(:only-child) {
+      margin-bottom: 3rem;
     }
+    
+    #{ $self }__fieldset {
+        width: calc((100% - (1.8rem * 1)) / 2);
+    }
+  }
+
+  &__fieldset {
+    &:nth-child(odd) {
+      margin-right: 1.8rem;
+    }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
 }
