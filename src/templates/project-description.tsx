@@ -33,7 +33,7 @@ export default ({ pageContext: { page } }) => {
   return (
     <Layout>
       <TopPageBanner {...projectsListTopBanner} />
-      <ProjectsList component={projectsList} />
+      {/* <ProjectsList component={projectsList} /> */}
       <FeedbackForm {...plpFeedbackForm} />
     </Layout>
   )
