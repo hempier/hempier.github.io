@@ -296,6 +296,18 @@ exports.createPages = async ({ graphql, actions }) => {
               emailTitle
               email
             }
+            ... on ContentfulComponentProjectsList {
+              internalName
+              node_locale
+              content {
+                image {
+                  file {
+                    url
+                  }
+                }
+                title
+              }
+            }
           }
         }
       }

@@ -1,0 +1,29 @@
+.projects-list {
+    &__name {}
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__inner-wrap {
+        position: relative;
+    }
+
+    &__image-wrap {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 4rem;
+    }
+
+    &__image {
+        height: 19rem;
+        min-height: 19rem;
+    }
+
+}
