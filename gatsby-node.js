@@ -109,17 +109,17 @@ exports.createPages = async ({ graphql, actions }) => {
               }
             }
             ... on ContentfulComponentAwards {
-							node_locale
+              node_locale
               internalName
               name
               title
               content {
-								node_locale
+                node_locale
                 internalName
                 year
                 description {
-									childMarkdownRemark {
-										htmlAst
+                  childMarkdownRemark {
+                    htmlAst
                   }
                 }
               }
@@ -133,14 +133,14 @@ exports.createPages = async ({ graphql, actions }) => {
                 node_locale
                 internalName
                 image {
-									file {
-										url
+                  file {
+                    url
                   }
                 }
                 title
                 description {
-									childMarkdownRemark {
-										rawMarkdownBody
+                  childMarkdownRemark {
+                    rawMarkdownBody
                   }
                 }
                 ctaText
@@ -340,15 +340,28 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `)
   const edges = result.data.allContentfulComposePage.nodes
+  console.log("edges:", JSON.stringify(edges, null, 4))
+  const allLocales = [
+    ...new Set(
+      edges.map(e => {
+        return e.node_locale
+      })
+    ),
+  ]
+  console.log("allLocales:", JSON.stringify(allLocales, null, 4))
   edges.forEach(page => {
     createPage({
       path: `/${page.node_locale}/${page.slug}`,
       component: path.resolve(`./src/templates/${page.slug}.tsx`),
       context: {
         page,
+        allLocales: allLocales.map(loc => ({
+          name: loc,
+          pathname: `/${loc}/${page.slug}`
+        }))
       },
     })
-    if (page.node_locale === 'uk-UA' && page.slug === 'home') {
+    if (page.node_locale === "uk-UA" && page.slug === "home") {
       createPage({
         path: `/`,
         component: path.resolve(`./src/templates/${page.slug}.tsx`),

@@ -13,25 +13,24 @@ import { filterPageLocale, Locale } from "../components/locale-provider"
 
 const locale = Locale.Ua
 
-export default ({ pageContext: { page } }) => {
-  // const localizedPage = filterPageLocale(page, locale)
+export default ({ pageContext: { page, allLocales } }) => {
   const localizedPage = page
 
   const contactTopBanner = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.ContactTopBanner
   )
   const contactAddress = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.ContactAddress
   )
   const contactFeedbackForm = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.ContactFeedbackForm
   )
 
   return (
-    <Layout>
+    <Layout allLocales={allLocales} currentLocale={page.node_locale}>
       <ContactTopBanner {...contactTopBanner} />
       <section className="container">
         <div className="row">

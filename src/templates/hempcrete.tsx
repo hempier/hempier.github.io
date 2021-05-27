@@ -15,7 +15,7 @@ import { filterPageLocale, Locale } from "../components/locale-provider"
 
 const locale = Locale.Ua
 
-export default ({ pageContext: { page } }) => {
+export default ({ pageContext: { page,allLocales } }) => {
   // const localizedPage = filterPageLocale(page, locale)
   const localizedPage = page
 
@@ -45,7 +45,7 @@ export default ({ pageContext: { page } }) => {
   )
 
   return (
-    <Layout>
+    <Layout  allLocales={allLocales} currentLocale={page.node_locale}>
       <TopPageBanner {...hempcretePageTopBanner} />
       <PageText text={hempcretePageText} />
       <AplicationAreas items={hempcreteAplicationAreas} />
