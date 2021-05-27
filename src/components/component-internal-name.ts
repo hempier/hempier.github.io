@@ -25,6 +25,9 @@ export enum ComponentInternalName {
   ContactFeedbackForm = "feedback-form",
   ProjectsListTopBanner = "projects-list-top-banner",
   ProjectsList = "projects-list",
+  ProjectTechTopBanner = "project-description-top-banner",
+  ProjectTechDetails = "project-details",
+  ProjectGallery = "project-gallery",
 }
 
 export function findByInternalName(page: any, name: ComponentInternalName) {

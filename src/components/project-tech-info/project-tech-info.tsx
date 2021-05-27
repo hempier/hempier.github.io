@@ -4,19 +4,17 @@ import "./project-tech-info.scss"
 
 const ProjectTechInfo = ({
   image,
-  name,
   title,
   characteristics,
 }) => {
   return (
-    <section className="project-tech">
-      <div className="project-tech__inner-wrap container">
+    <section className="project-tech container">
+      <div className="project-tech__inner-wrap row">
         <div className="project-tech__image col-6">
           <img src={image.file.url} alt="" />
         </div>
         <div className="project-tech__content">
-          <h2 className="project-tech__name subtitle-2">{name}</h2>
-          <h2 className="project-tech__title">{title}</h2>
+          <h3 className="project-tech__title">{title}</h3>
           <ul className="project-tech__info">
               {characteristics.map((item, id) => (
                 <li className="project-tech__info-item" key={id.toString()}>

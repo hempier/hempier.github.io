@@ -1,26 +1,21 @@
 @import "../../styles/variables.scss";
 
-.product-tech {
-    padding: 7rem 0;
-    background-color: $service-light-gray;
-
+.project-tech {
     &__inner-wrap {
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
     }
 
     &__image {
-        min-height: 27rem;
-        height: 27rem;
+        min-height: 20rem;
+        height: 20rem;
         margin-right: 2rem;
     }
 
     &__content {
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: flex-start;
     }
 
@@ -29,7 +24,7 @@
     }
 
     &__info {
-        margin-bottom: 3rem;
+        // margin-bottom: 3rem;
     }
 
     &__value {

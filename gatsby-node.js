@@ -308,6 +308,32 @@ exports.createPages = async ({ graphql, actions }) => {
                 title
               }
             }
+            ... on ContentfulComponentProjectTechnicalInformation {
+              internalName
+              node_locale
+              image {
+                file {
+                  url
+                }
+              }
+              title
+              characteristics {
+                techLabel
+                techValue
+              }
+            }
+            ... on ContentfulComponentProjectGallery {
+              internalName
+              name
+              title
+              content {
+                image {
+                  file {
+                    url
+                  }
+                }
+              }
+            }
           }
         }
       }

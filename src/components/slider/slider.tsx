@@ -11,7 +11,7 @@ const SimpleSlider = ({ children, customSettings = {} }) => {
   let slider = React.useRef(null)
 
   useEffect(() => {
-    console.log(slider.current)
+    // console.log(slider.current)
   }, [slider])
 
   const settings = {
@@ -51,7 +51,6 @@ const SimpleSlider = ({ children, customSettings = {} }) => {
   }
 
   const renderArrows = ({ slider }) => {
-    console.log(slider)
     return (
       <div className="slider-arrow">
         <div

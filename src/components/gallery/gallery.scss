@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+
+.gallery {
+    %hover-state {
+        &:hover {
+            color: $main-site;
+        }
+    }
+
+    &__arrow {
+
+        position: absolute;
+        top: -5rem;
+        right: 0;
+        width: 2.5rem;
+        cursor: pointer;
+        color: $service-dark-gray;
+
+        &_prev {
+            right: 3.7rem;
+            @extend %hover-state;
+        }
+
+        &_next {
+            @extend %hover-state;
+        }
+    }
+}

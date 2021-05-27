@@ -2,7 +2,8 @@ import React from "react"
 
 import Layout from "../components/layout"
 import TopPageBanner from "../components/top-banner/top-banner"
-import ProjectsList from "../components/projects-list/projects-list"
+import ProjectsDetails from "../components/project-tech-info/project-tech-info"
+import ProjectGallery from "../components/project-gallery/project-gallery"
 import FeedbackForm from "../components/feedback-form/feedback-form"
 
 import {
@@ -17,13 +18,17 @@ export default ({ pageContext: { page } }) => {
   // const localizedPage = filterPageLocale(page, locale)
   const localizedPage = page
 
-  const projectsListTopBanner = findByInternalName(
+  const projectTopBanner = findByInternalName(
     localizedPage,
-    ComponentInternalName.ProjectsListTopBanner
+    ComponentInternalName.ProjectTechTopBanner
   )
-  const projectsList = findByInternalName(
+  const projectDetails = findByInternalName(
     localizedPage,
-    ComponentInternalName.ProjectsList
+    ComponentInternalName.ProjectTechDetails
+  )
+  const projectGallery = findByInternalName(
+    localizedPage,
+    ComponentInternalName.ProjectGallery
   )
   const plpFeedbackForm = findByInternalName(
     localizedPage,
@@ -32,8 +37,9 @@ export default ({ pageContext: { page } }) => {
 
   return (
     <Layout>
-      <TopPageBanner {...projectsListTopBanner} />
-      {/* <ProjectsList component={projectsList} /> */}
+      <TopPageBanner {...projectTopBanner} />
+      <ProjectsDetails {...projectDetails} />
+      <ProjectGallery component={projectGallery}/>
       <FeedbackForm {...plpFeedbackForm} />
     </Layout>
   )

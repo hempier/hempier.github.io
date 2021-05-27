@@ -17,7 +17,7 @@
         background-color: rgba(0, 0, 0, .5);
     }
 
-    &__title {
+    &__title, &__description {
         position: relative;
         color: $service-white;
         z-index: 2;
