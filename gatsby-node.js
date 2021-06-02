@@ -242,6 +242,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 ctaText
                 ctaLink {
                   slug
+                  productSlug
                 }
               }
             }
@@ -337,9 +338,104 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulComposeProductPage {
+        nodes {
+          slug
+          productSlug
+          title
+          node_locale
+          navigationIncluded
+          content {
+            ... on ContentfulComponentProductDescription {
+              internalName
+              node_locale
+              image {
+                file {
+                  url
+                }
+              }
+              title
+              description {
+                childMarkdownRemark {
+                  htmlAst
+                }
+              }
+              price
+              quantity
+              ctaText
+            }
+            ... on ContentfulComponentAdvantages {
+              node_locale
+              internalName
+              name
+              title
+              content {
+                node_locale
+                internalName
+                image {
+                  file {
+                    url
+                  }
+                }
+                heading
+                description {
+                  childMarkdownRemark {
+                    rawMarkdownBody
+                  }
+                }
+              }
+            }
+            ... on ContentfulComponentInformationAdvertisement {
+              internalName
+              node_locale
+              title
+              description {
+                childMarkdownRemark {
+                  rawMarkdownBody
+                }
+              }
+              ctaText
+            }
+            ... on ContentfulComponentProductTechnicalInformation {
+              internalName
+              node_locale
+              image {
+                file {
+                  url
+                }
+              }
+              name
+              title
+              characteristics {
+                node_locale
+                techLabel
+                techValue
+              }
+              documentationLinkText
+            }
+            ... on ContentfulComponentFeedbackForm {
+              node_locale
+              internalName
+              image {
+                file {
+                  url
+                }
+              }
+              title
+              subtitle
+              nameFieldLable
+              phoneFieldLable
+              emailFieldLable
+              commentsFieldLable
+              ctaText
+            }
+          }
+        }
+      }
     }
   `)
   const edges = result.data.allContentfulComposePage.nodes
+  const products = result.data.allContentfulComposeProductPage.nodes
   console.log("edges:", JSON.stringify(edges, null, 4))
   const allLocales = [
     ...new Set(
@@ -350,17 +446,19 @@ exports.createPages = async ({ graphql, actions }) => {
   ]
   console.log("allLocales:", JSON.stringify(allLocales, null, 4))
   edges.forEach(page => {
-    createPage({
-      path: `/${page.node_locale}/${page.slug}`,
-      component: path.resolve(`./src/templates/${page.slug}.tsx`),
-      context: {
-        page,
-        allLocales: allLocales.map(loc => ({
-          name: loc,
-          pathname: `/${loc}/${page.slug}`
-        }))
-      },
-    })
+    if (page.slug !== "pdp-fifth-element") {
+      createPage({
+        path: `/${page.node_locale}/${page.slug}`,
+        component: path.resolve(`./src/templates/${page.slug}.tsx`),
+        context: {
+          page,
+          allLocales: allLocales.map(loc => ({
+            name: loc,
+            pathname: `/${loc}/${page.slug}`,
+          })),
+        },
+      })
+    }
     if (page.node_locale === "uk-UA" && page.slug === "home") {
       createPage({
         path: `/`,
@@ -368,8 +466,25 @@ exports.createPages = async ({ graphql, actions }) => {
         context: {
           // Data passed to context is available in page queries as GraphQL variables.
           page,
+          allLocales: allLocales.map(loc => ({
+            name: loc,
+            pathname: `/${loc}/${page.slug}`,
+          })),
         },
       })
     }
+  })
+  products.forEach(page => {
+    createPage({
+      path: `/${page.node_locale}/${page.slug}/${page.productSlug}/`,
+      component: path.resolve(`./src/templates/pdp-fifth-element.tsx`),
+      context: {
+        page,
+        allLocales: allLocales.map(loc => ({
+          name: loc,
+          pathname: `/${loc}/${page.slug}/${page.productSlug}/`,
+        })),
+      },
+    })
   })
 }

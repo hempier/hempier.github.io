@@ -2,8 +2,7 @@ import * as React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 import "./header.scss"
 
-export default ({ currentLocale }) => {
-  console.log("currentLocale H:", currentLocale)
+export default ({ currentLocale, allLocales }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -34,7 +33,7 @@ export default ({ currentLocale }) => {
         return (
           <header className="header">
             <div className="header__inner-wrap container">
-              <Link to={`/`} className="header__logo">
+              <Link to={`/${currentLocale}/home`} className="header__logo">
                 <img
                   src={contentfulComponentHeaderLogo.image.file.url}
                   alt={contentfulComponentHeaderLogo.internalName}
@@ -45,7 +44,7 @@ export default ({ currentLocale }) => {
                   <>
                     <Link
                       to={`/${currentLocale}/${link.slug}`}
-                      key={id}
+                      key={id.toString()}
                       className="header__navigation-link"
                     >
                       {link.title}
@@ -53,6 +52,21 @@ export default ({ currentLocale }) => {
                   </>
                 ))}
               </nav>
+              <div className="header__locale">
+                {allLocales
+                  ? allLocales.map(loc => {
+                      return (
+                        <a
+                          key={loc.name}
+                          href={loc.pathname}
+                          className="header__locale-items"
+                        >
+                          {loc.name}
+                        </a>
+                      )
+                    })
+                  : null}
+              </div>
             </div>
           </header>
         )

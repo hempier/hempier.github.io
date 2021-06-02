@@ -15,32 +15,32 @@ import { filterPageLocale, Locale } from "../components/locale-provider"
 
 const locale = Locale.Ua
 
-export default ({ pageContext: { page,allLocales } }) => {
+export default ({ pageContext: { page, allLocales } }) => {
   // const localizedPage = filterPageLocale(page, locale)
-  const localizedPage = page
+  // const localizedPage = page
 
   const hempcretePageTopBanner = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.HempcreteTopBanner
   )
   const hempcretePageText = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.HempcretePageText
   )
   const hempcreteAdvantagesTrusted = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.HempcreteAdvantagesTrusted
   )
   const hempcreteBenefitsTrusted = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.HempcreteBenefitsTrusted
   )
   const hempcreteAplicationAreas = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.HempcreteAplicationAreas
   )
   const feedbackForm = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.FeedbackForm
   )
 

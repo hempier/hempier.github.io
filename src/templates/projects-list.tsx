@@ -15,18 +15,18 @@ const locale = Locale.Ua
 
 export default ({ pageContext: { page, allLocales } }) => {
   // const localizedPage = filterPageLocale(page, locale)
-  const localizedPage = page
+  // const localizedPage = page
 
   const projectsListTopBanner = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.ProjectsListTopBanner
   )
   const projectsList = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.ProjectsList
   )
   const plpFeedbackForm = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.FeedbackForm
   )
 

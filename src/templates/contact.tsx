@@ -14,7 +14,7 @@ import { filterPageLocale, Locale } from "../components/locale-provider"
 const locale = Locale.Ua
 
 export default ({ pageContext: { page, allLocales } }) => {
-  const localizedPage = page
+  // const localizedPage = page
 
   const contactTopBanner = findByInternalName(
     page,

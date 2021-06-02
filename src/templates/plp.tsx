@@ -14,31 +14,31 @@ import { filterPageLocale, Locale } from "../components/locale-provider"
 
 const locale = Locale.Ua
 
-export default ({ pageContext: { page, allLocales } }) => {
+export default ({ pageContext: { page, allLocales, currentLocale } }) => {
   // const localizedPage = filterPageLocale(page, locale)
-  const localizedPage = page
+  // const localizedPage = page
 
   const plpPageTopBanner = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.PlpTopBanner
   )
   const productsList = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.ProductsList
   )
   const plpInformationAdv = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.PlpInformationAdvertisement
   )
   const plpFeedbackForm = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.FeedbackForm
   )
 
   return (
     <Layout  allLocales={allLocales} currentLocale={page.node_locale}>
       <TopPageBanner {...plpPageTopBanner} />
-      <ProductsList component={productsList} />
+      <ProductsList component={productsList} currentLocale={page.node_locale} />
       <Advertisement {...plpInformationAdv} />
       <FeedbackForm {...plpFeedbackForm} />
     </Layout>

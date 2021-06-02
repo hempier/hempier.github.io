@@ -17,9 +17,11 @@ export enum ComponentInternalName {
   PlpTopBanner = "plp-top-banner",
   ProductsList = "products-list",
   PlpInformationAdvertisement = "plp-information-advertisement",
-  PdpFifthElementDescription = "product-desc-fifth-element",
-  PdpFifthElementUsages = "pdp-fifth-element-usages",
-  PdpFifthElementTechInfo = "pdp-fifth-element-tech-info",
+
+  PdpFifthElementDescription = "product-description",
+  PdpFifthElementUsages = "product-usages",
+  PdpFifthElementTechInfo = "technical-information",
+
   ContactTopBanner = "contact-top-banner",
   ContactAddress = "contact-address",
   ContactFeedbackForm = "feedback-form",

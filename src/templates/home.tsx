@@ -17,32 +17,32 @@ const locale = Locale.Ua
 
 export default ({ pageContext: { page, allLocales } }) => {
   // const localizedPage = filterPageLocale(page, locale)
-  const localizedPage = page
+  // const localizedPage = page
 
-  console.log(JSON.stringify(page, null, 4))
+  // console.log(JSON.stringify(page, null, 4))
 
 
   const heroSliderItems =
-    findByInternalName(localizedPage, ComponentInternalName.HeroSlider)
+    findByInternalName(page, ComponentInternalName.HeroSlider)
       ?.content || []
   const infoSectionAboutUs = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.InfoSectionAboutUs
   )
   const infoSectionHempcrete = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.InfoSectionHempcrete
   )
   const productsSlider = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.ProductSlider
   )
   const projectsSlider = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.ProjectsSlider
   )
   const partnersAboutUsSlider = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.PartnersAboutUsSlider
   )
 

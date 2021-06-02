@@ -17,26 +17,26 @@ const locale = Locale.Ua
 
 export default ({ pageContext: { page, allLocales } }) => {
   // const localizedPage = filterPageLocale(page, locale)
-  const localizedPage = page
+  // const localizedPage = page
 
   const pdpProductDescrition = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.PdpFifthElementDescription
   )
   const pdpUsagesTrusted = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.PdpFifthElementUsages
   )
   const pdpInformationAdv = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.PlpInformationAdvertisement
   )
   const pdpTechInfo = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.PdpFifthElementTechInfo
   )
   const pdpFeedbackForm = findByInternalName(
-    localizedPage,
+    page,
     ComponentInternalName.FeedbackForm
   )
 
