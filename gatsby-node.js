@@ -444,19 +444,21 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     ),
   ]
-  console.log("allLocales:", JSON.stringify(allLocales, null, 4))
+  // console.log("allLocales:", JSON.stringify(allLocales, null, 4))
   edges.forEach(page => {
-    createPage({
-      path: `/${page.node_locale}/${page.slug}`,
-      component: path.resolve(`./src/templates/${page.slug}.tsx`),
-      context: {
-        page,
-        allLocales: allLocales.map(loc => ({
-          name: loc,
-          pathname: `/${loc}/${page.slug}`,
-        })),
-      },
-    })
+    if (page.slug !== "pdp-fifth-element") {
+      createPage({
+        path: `/${page.node_locale}/${page.slug}`,
+        component: path.resolve(`./src/templates/${page.slug}.tsx`),
+        context: {
+          page,
+          allLocales: allLocales.map(loc => ({
+            name: loc,
+            pathname: `/${loc}/${page.slug}`,
+          })),
+        },
+      })
+    }
     if (page.node_locale === "uk-UA" && page.slug === "home") {
       createPage({
         path: `/`,
