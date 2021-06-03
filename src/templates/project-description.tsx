@@ -39,7 +39,9 @@ export default ({ pageContext: { page, allLocales } }) => {
     <Layout  allLocales={allLocales} currentLocale={page.node_locale}>
       <TopPageBanner {...projectTopBanner} />
       <ProjectsDetails {...projectDetails} />
-      <ProjectGallery component={projectGallery}/>
+      <section className="project-info">
+        <ProjectGallery component={projectGallery}/>
+      </section>
       <FeedbackForm {...plpFeedbackForm} />
     </Layout>
   )

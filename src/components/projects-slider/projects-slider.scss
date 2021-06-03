@@ -69,4 +69,10 @@
     &.slick-slider .slick-slide > * {
         justify-content: flex-start;
     }
+
+    .slick-slide {
+        height: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }

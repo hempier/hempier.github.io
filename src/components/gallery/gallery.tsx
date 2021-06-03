@@ -32,9 +32,11 @@ const SimpleGallery = ({ children }) => {
   const settingsThumbs = {
     slidesToShow: 4,
     slidesToScroll: 1,
+    arrows: false,
     asNavFor: '.gallery-for',
-    dots: true,
-    centerMode: true,
+    className: 'gallery-thumbs',
+    dots: false,
+    centerMode: false,
     swipeToSlide: true,
     focusOnSelect: true,
     // centerPadding: '10px',

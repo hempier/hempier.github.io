@@ -13,12 +13,12 @@ const ProjectGallery = ({ component }) => {
   }
 
   return (
-    <section className="partners-about-us container">
-      <span className="partners-about-us__name subtitle-2">
+    <section className="project-gallery container">
+      <span className="project-gallery__name subtitle-2">
         {component.name}
       </span>
-      <h2 className="partners-about-us__title">{component.title}</h2>
-      <div className="partners-about-us__inner-wrap">
+      <h2 className="project-gallery__title">{component.title}</h2>
+      <div className="project-gallery__inner-wrap">
         <SimpleGallery>
           {content.map((props, id) => (
             <GalleryItem key={id.toString()} {...props} />
@@ -30,10 +30,10 @@ const ProjectGallery = ({ component }) => {
 }
 
 const GalleryItem = ({ image }) => (
-  <div className="partners-about-us__item">
+  <div className="project-gallery__item">
     <img
       src={image.file.url}
-      className="partners-about-us__image"
+      className="project-gallery__image"
     />
   </div>
 )

@@ -19,4 +19,10 @@
         background-position: center;
         background-size: cover;
     }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 }

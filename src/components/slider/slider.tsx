@@ -17,6 +17,7 @@ const SimpleSlider = ({ children, customSettings = {} }) => {
   const settings = {
     dots: true,
     arrows: false,
+    className: 'slider',
     infinite: true,
     speed: 500,
     slidesToShow: 1,

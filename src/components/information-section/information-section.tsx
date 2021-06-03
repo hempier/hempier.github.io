@@ -11,7 +11,7 @@ const InformationSection = ({ name, title, description, ctaText, image }) => {
       <div className="information-section__inner-wrap container">
         <div className="information-section__image col-6" style={informationSectionImage} />
         <div className="information-section__text">
-          <div className="information-section__subtitle">{name}</div>
+          <div className="information-section__subtitle subtitle-2">{name}</div>
           <h2 className="information-section__title">{title}</h2>
           <p className="information-section__description">
               {description.childMarkdownRemark.rawMarkdownBody}

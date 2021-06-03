@@ -7,6 +7,8 @@
         }
     }
 
+    margin-bottom: 1rem;
+
     &__arrow {
 
         position: absolute;
@@ -24,5 +26,21 @@
         &_next {
             @extend %hover-state;
         }
+    }
+
+    
+}
+
+.thumbnail-gallery-wrap {
+    $thumb-item-padding: 0.5rem;
+
+    margin-right: -$thumb-item-padding;
+    margin-left: -$thumb-item-padding;
+
+
+    .slick-slide {
+        height: auto;
+        padding-left: $thumb-item-padding;
+        padding-right:$thumb-item-padding;
     }
 }
