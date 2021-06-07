@@ -8,10 +8,14 @@
         align-items: flex-start;
     }
 
-    &__image {
+    &__image-wrap {
         min-height: 30rem;
         height: 30rem;
         margin-right: 2rem;
+    }
+    
+    &__image {
+        max-height: 100%;
     }
 
     &__content {

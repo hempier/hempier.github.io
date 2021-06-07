@@ -14,8 +14,8 @@ const ProductDescription = ({
   return (
     <section className="product-description">
       <div className="product-description__inner-wrap container">
-        <div className="product-description__image col-6">
-          <img src={image.file.url} alt="" />
+        <div className="product-description__image-wrap col-6">
+          <img src={image.file.url} alt="" className="product-description__image"/>
         </div>
         <div className="product-description__content">
           <h2 className="product-description__title">{title}</h2>

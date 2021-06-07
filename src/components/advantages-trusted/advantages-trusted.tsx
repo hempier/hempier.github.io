@@ -23,7 +23,7 @@ const AdvantagesTrustedItem = ({ image, heading, description }) => (
     <img src={image.file.url} alt="" className="advantages__image" />
     <h4 className="advantages__heading">{heading}</h4>
     <p className="advantages__description">
-      {description.childMarkdownRemark.rawMarkdownBody}
+      {description?.childMarkdownRemark.rawMarkdownBody || null}
     </p>
   </div>
 )
