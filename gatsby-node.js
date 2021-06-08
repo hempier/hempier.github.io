@@ -508,7 +508,7 @@ exports.createPages = async ({ graphql, actions }) => {
   ]
   // console.log("allLocales:", JSON.stringify(allLocales, null, 4))
   edges.forEach(page => {
-    if (page.slug !== "pdp-fifth-element") {
+    if (page.slug !== "pdp-fifth-element" && page.slug !== "project-description") {
       createPage({
         path: `/${page.node_locale}/${page.slug}`,
         component: path.resolve(`./src/templates/${page.slug}.tsx`),

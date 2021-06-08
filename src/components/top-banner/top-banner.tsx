@@ -13,7 +13,7 @@ const TopBanner = (props) => {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-image: url(${image.file.url});
+    background-image: url(${image?.file.url || []});
   `
   return (
     <TopBannerBackground className="top-banner">
