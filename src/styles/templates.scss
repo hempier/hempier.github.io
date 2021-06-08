@@ -1,5 +1,14 @@
+// Page specific selectors
+
 // Project description page
 .project-info {
-    padding: 7rem 0;
+    padding: 7rem 0 14rem;
+    margin-bottom: -10rem!important;
     background-color: $service-light-gray;
+
+    &__inner-wrap {
+        max-width: 62rem;
+        margin-right: auto;
+        margin-left: auto;
+    }
 }

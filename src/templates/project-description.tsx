@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import TopPageBanner from "../components/top-banner/top-banner"
 import ProjectsDetails from "../components/project-tech-info/project-tech-info"
 import ProjectGallery from "../components/project-gallery/project-gallery"
+import ProjectText from "../components/project-text/project-text"
 import FeedbackForm from "../components/feedback-form/feedback-form"
 
 import {
@@ -30,6 +31,10 @@ export default ({ pageContext: { page, allLocales } }) => {
     page,
     ComponentInternalName.ProjectGallery
   )
+  const projectText = findByInternalName(
+    page,
+    ComponentInternalName.ProjectText
+  )
   const plpFeedbackForm = findByInternalName(
     page,
     ComponentInternalName.FeedbackForm
@@ -40,7 +45,10 @@ export default ({ pageContext: { page, allLocales } }) => {
       <TopPageBanner {...projectTopBanner} />
       <ProjectsDetails {...projectDetails} />
       <section className="project-info">
-        <ProjectGallery component={projectGallery}/>
+        <div className="project-info__inner-wrap">
+          <ProjectGallery component={projectGallery}/>
+          <ProjectText text={projectText}/>
+        </div>
       </section>
       <FeedbackForm {...plpFeedbackForm} />
     </Layout>

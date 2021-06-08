@@ -301,37 +301,19 @@ exports.createPages = async ({ graphql, actions }) => {
               internalName
               node_locale
               content {
-                image {
-                  file {
-                    url
-                  }
-                }
+                internalName
+                node_locale
                 title
-              }
-            }
-            ... on ContentfulComponentProjectTechnicalInformation {
-              internalName
-              node_locale
-              image {
-                file {
-                  url
-                }
-              }
-              title
-              characteristics {
-                techLabel
-                techValue
-              }
-            }
-            ... on ContentfulComponentProjectGallery {
-              internalName
-              name
-              title
-              content {
                 image {
                   file {
                     url
                   }
+                }
+                shortDescription
+                ctaText
+                projectLink {
+                  slug
+                  projectSlug
                 }
               }
             }
@@ -432,10 +414,90 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulComposeProjectPage {
+        nodes {
+          slug
+          projectSlug
+          title
+          node_locale
+          navigationIncluded
+          content {
+            ... on ContentfulComponentPageTopBanner {
+              node_locale
+              internalName
+              heading
+              description {
+                childMarkdownRemark {
+                  rawMarkdownBody
+                }
+              }
+              image {
+                title
+                file {
+                  url
+                }
+              }
+            }
+            ... on ContentfulComponentProjectTechnicalInformation {
+              internalName
+              node_locale
+              image {
+                file {
+                  url
+                }
+              }
+              title
+              characteristics {
+                techLabel
+                techValue
+              }
+            }
+            ... on ContentfulComponentProjectGallery {
+              internalName
+              name
+              title
+              content {
+                image {
+                  file {
+                    url
+                  }
+                }
+              }
+            }
+            ... on ContentfulComponentProjectText {
+              internalName
+              node_locale
+              text {
+                childMarkdownRemark {
+                  htmlAst
+                }
+              }
+            }
+            ... on ContentfulComponentFeedbackForm {
+              node_locale
+              internalName
+              image {
+                file {
+                  url
+                }
+              }
+              title
+              subtitle
+              nameFieldLable
+              phoneFieldLable
+              emailFieldLable
+              commentsFieldLable
+              ctaText
+            }
+          }
+        }
+      }
     }
   `)
   const edges = result.data.allContentfulComposePage.nodes
   const products = result.data.allContentfulComposeProductPage.nodes
+  const projects = result.data.allContentfulComposeProjectPage.nodes
+
   console.log("edges:", JSON.stringify(edges, null, 4))
   const allLocales = [
     ...new Set(
@@ -483,6 +545,19 @@ exports.createPages = async ({ graphql, actions }) => {
         allLocales: allLocales.map(loc => ({
           name: loc,
           pathname: `/${loc}/${page.slug}/${page.productSlug}/`,
+        })),
+      },
+    })
+  })
+  projects.forEach(page => {
+    createPage({
+      path: `/${page.node_locale}/${page.slug}/${page.projectSlug}/`,
+      component: path.resolve(`./src/templates/project-description.tsx`),
+      context: {
+        page,
+        allLocales: allLocales.map(loc => ({
+          name: loc,
+          pathname: `/${loc}/${page.slug}/${page.projectSlug}/`,
         })),
       },
     })

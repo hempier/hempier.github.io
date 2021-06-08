@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .projects-list {
     &__name {}
     &__title {
@@ -8,17 +10,18 @@
         position: relative;
     }
 
-    &__image-wrap {
-        position: relative;
-        margin-bottom: 2rem;
-    }
-
     &__item {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
         margin-bottom: 4rem;
+        text-decoration: none;
+    }
+
+    &__image-wrap {
+        position: relative;
+        margin-bottom: 2rem;
     }
 
     &__image {
@@ -26,4 +29,12 @@
         min-height: 19rem;
     }
 
+    &__heading {
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        color: $text-dark-grey;
+        margin-bottom: 1rem;
+    }
 }

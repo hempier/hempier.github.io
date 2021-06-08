@@ -13,7 +13,7 @@ const ProjectGallery = ({ component }) => {
   }
 
   return (
-    <section className="project-gallery container">
+    <section className="project-gallery">
       <span className="project-gallery__name subtitle-2">
         {component.name}
       </span>
