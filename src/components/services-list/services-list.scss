@@ -1,0 +1,40 @@
+@import "../../styles/variables.scss";
+
+.services-list {
+    &__name {}
+    &__title {
+        margin-bottom: 2rem;
+    }
+
+    &__inner-wrap {
+        position: relative;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 4rem;
+        text-decoration: none;
+    }
+
+    &__image-wrap {
+        position: relative;
+        margin-bottom: 2rem;
+    }
+
+    &__image {
+        height: 19rem;
+        min-height: 19rem;
+    }
+
+    &__heading {
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        color: $text-dark-grey;
+        margin-bottom: 1rem;
+    }
+}

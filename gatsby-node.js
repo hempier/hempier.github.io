@@ -317,6 +317,26 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
               }
             }
+            ... on ContentfulComponentServicesList {
+							internalName
+              node_locale
+              content {
+								internalName
+                node_locale
+                image {
+									file {
+										url
+                  }
+                }
+                title
+                shortDescription
+                ctaText
+                ctaLink {
+									slug
+                  projectSlug
+                }
+              }
+            }
           }
         }
       }
@@ -492,11 +512,74 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      allContentfulComposeServicePage {
+        nodes {
+          slug
+          projectSlug
+          title
+          node_locale
+          navigationIncluded
+          content {
+            ... on ContentfulComponentPageTopBanner {
+              node_locale
+              internalName
+              heading
+              description {
+                childMarkdownRemark {
+                  rawMarkdownBody
+                }
+              }
+              image {
+                title
+                file {
+                  url
+                }
+              }
+            }
+            ... on ContentfulComponentAplicationAreasService {
+              internalName
+              node_locale
+              content {
+                internalName
+                node_locale
+                image {
+                  file {
+                    url
+                  }
+                }
+                heading
+                description {
+                  childMarkdownRemark {
+                    rawMarkdownBody
+                  }
+                }
+              }
+            }
+            ... on ContentfulComponentFeedbackForm {
+              node_locale
+              internalName
+              image {
+                file {
+                  url
+                }
+              }
+              title
+              subtitle
+              nameFieldLable
+              phoneFieldLable
+              emailFieldLable
+              commentsFieldLable
+              ctaText
+            }
+          }
+        }
+      }
     }
   `)
   const edges = result.data.allContentfulComposePage.nodes
   const products = result.data.allContentfulComposeProductPage.nodes
   const projects = result.data.allContentfulComposeProjectPage.nodes
+  const services = result.data.allContentfulComposeServicePage.nodes
 
   console.log("edges:", JSON.stringify(edges, null, 4))
   const allLocales = [
@@ -553,6 +636,19 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/${page.node_locale}/${page.slug}/${page.projectSlug}/`,
       component: path.resolve(`./src/templates/project-description.tsx`),
+      context: {
+        page,
+        allLocales: allLocales.map(loc => ({
+          name: loc,
+          pathname: `/${loc}/${page.slug}/${page.projectSlug}/`,
+        })),
+      },
+    })
+  })
+  services.forEach(page => {
+    createPage({
+      path: `/${page.node_locale}/${page.slug}/${page.projectSlug}/`,
+      component: path.resolve(`./src/templates/service-description.tsx`),
       context: {
         page,
         allLocales: allLocales.map(loc => ({
