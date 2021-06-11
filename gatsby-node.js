@@ -188,11 +188,6 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
                 heading
-                description {
-                  childMarkdownRemark {
-                    rawMarkdownBody
-                  }
-                }
               }
             }
             ... on ContentfulComponentFeedbackForm {

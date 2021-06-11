@@ -23,9 +23,11 @@ const AplicationAreasItem = ({ image, heading, description }) => (
     <img src={image.file.url} alt="" className="aplication-areas__image col-6" />
     <div className="aplication-areas__content col-6">
       <h4 className="aplication-areas__heading">{heading}</h4>
-      <p className="aplication-areas__description">
-        {description.childMarkdownRemark.rawMarkdownBody}
-      </p>
+      {Boolean(description?.childMarkdownRemark) &&
+        <p className="aplication-areas__description">
+          {description.childMarkdownRemark.rawMarkdownBody}
+        </p>
+      }
     </div>
   </div>
 )
