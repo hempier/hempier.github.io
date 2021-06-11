@@ -353,6 +353,21 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
               }
             }
+            ... on ContentfulComponentCarbonDioxidCounter {
+              internalName
+              node_locale
+              name
+              title
+              heading
+              tonsLabel
+              kilogramsLabel
+              gramsLabel
+              miligramsLabel
+              carCarbonEmissionTitle
+              carCarbonEmissionNumber
+              peoplesCarbonEmissionTitle
+              peoplesCarbonEmissionNumber
+            }
           }
         }
       }

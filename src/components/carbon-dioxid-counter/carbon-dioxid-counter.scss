@@ -1,0 +1,29 @@
+@import "../../styles/variables.scss";
+
+.information-section {
+    padding: 7rem 0;
+    background-color: $service-light-gray;
+    
+    &__inner-wrap {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    &__image {
+        width: 100%;
+        height: 30rem;
+        min-height: 30rem;
+        margin-right: 2rem;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+}

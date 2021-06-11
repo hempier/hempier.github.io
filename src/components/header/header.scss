@@ -35,4 +35,17 @@
             color: $main-site;
         }
     }
+
+    &__locale {
+    }
+
+    &__locale-items {
+        margin-right: 10px;
+        text-decoration: none;
+        color: inherit;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
 }

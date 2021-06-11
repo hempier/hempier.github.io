@@ -37,7 +37,9 @@ export enum ComponentInternalName {
   ServicesListTopBanner = "services-top-banner",
   ServicesList = "services-list",
   ServiceTopBanner = "service-top-banner",
-  ServiceAplicationAreas = "service-aplication-areas"
+  ServiceAplicationAreas = "service-aplication-areas",
+
+  CarbonDioxidCounter = "carbon-dioxid-counter"
 }
 
 export function findByInternalName(page: any, name: ComponentInternalName) {

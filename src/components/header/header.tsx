@@ -2,6 +2,11 @@ import * as React from "react"
 import { Link, StaticQuery, graphql } from "gatsby"
 import "./header.scss"
 
+const localeMap = {
+  'uk-UA': 'Укр',
+  'ru-RU': 'Рус'
+}
+
 export default ({ currentLocale, allLocales }) => {
   return (
     <StaticQuery
@@ -17,6 +22,7 @@ export default ({ currentLocale, allLocales }) => {
               slug
               title
               node_locale
+              position
             }
           }
           contentfulComponentHeaderLogo {
@@ -40,7 +46,7 @@ export default ({ currentLocale, allLocales }) => {
                 />
               </Link>
               <nav className="header__navigation">
-                {allContentfulComposePage.nodes.map((link, id) => (
+                {allContentfulComposePage.nodes.sort((a, b) => a.position - b.position).map((link, id) => (
                   <>
                     <Link
                       to={`/${currentLocale}/${link.slug}`}
@@ -62,7 +68,7 @@ export default ({ currentLocale, allLocales }) => {
                           href={loc.pathname}
                           className="header__locale-items"
                         >
-                          {loc.name}
+                          {' '+localeMap[loc.name]}
                         </a>
                       )
                     })
