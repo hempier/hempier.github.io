@@ -46,6 +46,7 @@ export default ({ currentLocale, allLocales }) => {
                       to={`/${currentLocale}/${link.slug}`}
                       key={id.toString()}
                       className="header__navigation-link"
+                      activeClassName="header__navigation-link_active"
                     >
                       {link.title}
                     </Link>

@@ -1,0 +1,73 @@
+@import "../../styles/variables.scss";
+
+.services-trusted {
+    $self: &;
+
+    &__title {
+        margin-bottom: 3rem;
+    }
+
+    &__inner-wrap {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        display: flex;
+        flex: 0 0 50%;
+        max-width: 50%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        text-decoration: none;
+        color: inherit;
+
+        &:hover {
+            #{ $self }__image {
+                opacity: .75;
+            }
+        }
+
+        &:nth-child(n+3) {
+            flex-direction: row-reverse;
+
+            #{ $self }__content-wrap {
+                &:before {
+                    top: auto;
+                    left: -20px;
+                    bottom: 2rem;
+                    transform: rotate(180deg);
+                }
+            }
+        }
+    }
+
+    &__image {
+        width: calc(100% / 2);
+    }
+
+    &__content-wrap {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: calc(100% / 2);
+        padding: 2rem 1rem;
+        background-color: $service-light-gray;
+        text-align: center;
+
+        &:before {
+            content: "";
+            position: absolute;
+            top: 2rem;
+            right: -20px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 17px 0 17px 21px;
+            border-color: transparent transparent transparent $service-light-gray;
+            z-index: 2;
+        }
+    }
+}

@@ -22,7 +22,7 @@ const ServicesList = ({ component, currentLocale }) => {
 }
 
 const ServicesListItem = ({ image, title, shortDescription, ctaText, ctaLink, currentLocale }) => (
-  <a href={ctaLink ? `/${currentLocale}/${ctaLink.slug}/${ctaLink.projectSlug}` : null} className="services-list__item col-6">
+  <a href={ctaLink ? `/${currentLocale}/${ctaLink.slug}/${ctaLink.serviceSlug}` : null} className="services-list__item col-6">
     <div className="services-list__image-wrap">
       <img src={image.file.url} alt="" className="services-list__image"/>
     </div>

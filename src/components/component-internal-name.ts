@@ -25,6 +25,7 @@ export enum ComponentInternalName {
   ContactTopBanner = "contact-top-banner",
   ContactAddress = "contact-address",
   ContactFeedbackForm = "feedback-form",
+  
   ProjectsListTopBanner = "projects-list-top-banner",
   ProjectsList = "projects-list",
   ProjectTechTopBanner = "project-top-banner",
@@ -32,6 +33,7 @@ export enum ComponentInternalName {
   ProjectGallery = "project-gallery",
   ProjectText = "project-text",
 
+  ServicesTrusted = "services-trusted",
   ServicesListTopBanner = "services-top-banner",
   ServicesList = "services-list",
   ServiceTopBanner = "service-top-banner",

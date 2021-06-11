@@ -328,7 +328,28 @@ exports.createPages = async ({ graphql, actions }) => {
                 ctaText
                 ctaLink {
 									slug
-                  projectSlug
+                  serviceSlug
+                }
+              }
+            }
+            ... on ContentfulComponentServicesTrusted {
+              internalName
+              node_locale
+              name
+              title
+              content {
+                node_locale
+                image {
+                  file {
+                    url
+                  }
+                }
+                title
+                shortDescription
+                ctaText
+                ctaLink {
+									slug
+                  serviceSlug
                 }
               }
             }
@@ -510,7 +531,7 @@ exports.createPages = async ({ graphql, actions }) => {
       allContentfulComposeServicePage {
         nodes {
           slug
-          projectSlug
+          serviceSlug
           title
           node_locale
           navigationIncluded
@@ -642,13 +663,13 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   services.forEach(page => {
     createPage({
-      path: `/${page.node_locale}/${page.slug}/${page.projectSlug}/`,
+      path: `/${page.node_locale}/${page.slug}/${page.serviceSlug}/`,
       component: path.resolve(`./src/templates/service-description.tsx`),
       context: {
         page,
         allLocales: allLocales.map(loc => ({
           name: loc,
-          pathname: `/${loc}/${page.slug}/${page.projectSlug}/`,
+          pathname: `/${loc}/${page.slug}/${page.serviceSlug}/`,
         })),
       },
     })
