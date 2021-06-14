@@ -9,9 +9,14 @@
     }
 
     &__image-wrap {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
         min-height: 30rem;
         height: 30rem;
         margin-right: 2rem;
+        background-color: $service-light-gray;
     }
     
     &__image {
@@ -28,6 +33,7 @@
     &__title {}
 
     &__description {
+        width: 100%;
         padding-bottom: 2rem;
         border-bottom: 1px solid $service-dark-gray;
         color: $text-dark-grey;
