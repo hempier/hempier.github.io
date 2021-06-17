@@ -367,6 +367,9 @@ exports.createPages = async ({ graphql, actions }) => {
               carCarbonEmissionNumber
               peoplesCarbonEmissionTitle
               peoplesCarbonEmissionNumber
+              initialMg
+              incrementMg
+              initialDate
             }
           }
         }

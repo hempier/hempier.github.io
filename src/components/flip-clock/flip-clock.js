@@ -1,6 +1,10 @@
 import * as React from "react"
 import "./flip-clock.scss"
 
+const carbonAxiliration = 277;
+const totalCarbon = 5860000000;
+let startDate = 1623763639688;
+
 // function component
 const AnimatedCard = ({ animation, digit }) => {
   return (
@@ -69,6 +73,8 @@ class FlipClock extends React.Component {
       minutesShuffle: true,
       seconds: 0,
       secondsShuffle: true,
+      miliseconds: 0,
+      milisecondsShuffle: true,
     }
   }
 

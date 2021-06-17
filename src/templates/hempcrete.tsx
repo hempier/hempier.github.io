@@ -6,6 +6,7 @@ import PageText from "../components/page-text/page-text"
 import AdvantagesTrusted from "../components/advantages-trusted/advantages-trusted"
 import AplicationAreas from "../components/aplication-areas/aplication-areas"
 import FeedbackForm from "../components/feedback-form/feedback-form"
+import CarbonDioxidCounter from "../components/carbon-dioxid-counter/carbon-dioxid-counter"
 
 import {
   findByInternalName,
@@ -39,10 +40,16 @@ export default ({ pageContext: { page, allLocales } }) => {
     page,
     ComponentInternalName.HempcreteAplicationAreas
   )
+  const carbonDioxidCounter = findByInternalName(
+    page,
+    ComponentInternalName.CarbonDioxidCounter
+  )
   const feedbackForm = findByInternalName(
     page,
     ComponentInternalName.FeedbackForm
   )
+
+  console.log("carbonDioxidCounter", carbonDioxidCounter)
 
   return (
     <Layout  allLocales={allLocales} currentLocale={page.node_locale}>
@@ -51,6 +58,7 @@ export default ({ pageContext: { page, allLocales } }) => {
       <AplicationAreas items={hempcreteAplicationAreas} />
       <AdvantagesTrusted items={hempcreteAdvantagesTrusted}/>
       <AdvantagesTrusted items={hempcreteBenefitsTrusted}/>
+      <CarbonDioxidCounter {...carbonDioxidCounter}/>
       <FeedbackForm {...feedbackForm}/>
     </Layout>
   )
