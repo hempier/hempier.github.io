@@ -71,6 +71,7 @@ const FeedbackForm = props => {
                 required
                 type="text"
                 id="name"
+                name="name"
                 className="feedback-form__input form-input"
               />
             </div>
@@ -85,6 +86,7 @@ const FeedbackForm = props => {
                 required
                 type="phone"
                 id="phone"
+                name="phone"
                 className="feedback-form__input form-input"
               />
             </div>
@@ -99,6 +101,7 @@ const FeedbackForm = props => {
                 required
                 type="email"
                 id="email"
+                name="email"
                 className="feedback-form__input form-input"
               />
             </div>
@@ -112,6 +115,7 @@ const FeedbackForm = props => {
               <input
                 type="text"
                 id="comment"
+                name="comment"
                 className="feedback-form__input form-input"
               />
             </div>

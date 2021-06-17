@@ -23,20 +23,16 @@
     justify-content: flex-start;
     align-items: stretch;
 
-    & > :not(:last-child):not(:only-child) {
-      margin-bottom: 3rem;
-    }
-    
     #{ $self }__fieldset {
         width: calc((100% - (1.8rem * 1)) / 2);
+
+        &:nth-child(odd) {
+          margin-right: 1.8rem;
+        }
     }
   }
 
-  &__fieldset {
-    &:nth-child(odd) {
-      margin-right: 1.8rem;
-    }
-  }
+  &__fieldset {}
 
   .container {
     display: flex;
