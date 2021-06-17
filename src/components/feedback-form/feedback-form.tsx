@@ -1,5 +1,6 @@
 import * as React from "react"
 import styled from "@emotion/styled"
+import axios from "axios";
 
 import "./feedback-form.scss"
 
@@ -23,18 +24,51 @@ const FeedbackForm = props => {
     background-image: url(${image.file.url});
   `
 
+  const [serverState, setServerState] = React.useState({
+    submitting: false,
+    status: null
+  });
+
+  const handleServerResponse = (ok, msg, form) => {
+    setServerState({
+      submitting: false,
+      status: { ok, msg }
+    });
+    if (ok) {
+      form.reset();
+    }
+  };
+  
+  const handleOnSubmit = e => {
+    e.preventDefault();
+    const form = e.target;
+    setServerState({ submitting: true });
+    axios({
+      method: "post",
+      url: "https://getform.io/f/fd79ffaa-e0d5-42b2-b125-41458a780f9e",
+      data: new FormData(form)
+    })
+      .then(r => {
+        handleServerResponse(true, "Thanks!", form);
+      })
+      .catch(r => {
+        handleServerResponse(false, r.response.data.error, form);
+      });
+  };
+
   return (
     <FeedbackFromBackground className="feedback-form">
       <div className="container">
         <div className="feedback-form__inner-wrap">
           <h2 className="feedback-form__title">{title}</h2>
           <p className="feedback-form__subtitle">{subtitle}</p>
-          <form action="" className="feedback-form__form form-body" id="feedback-form">
+          <form onSubmit={handleOnSubmit} className="feedback-form__form form-body" id="feedback-form">
             <div className="feedback-form__fieldset form-fieldset">
               <label htmlFor="name" className="feedback-form__label form-label">
                 {nameFieldLable}
               </label>
               <input
+                required
                 type="text"
                 id="name"
                 className="feedback-form__input form-input"
@@ -48,7 +82,8 @@ const FeedbackForm = props => {
                 {phoneFieldLable}
               </label>
               <input
-                type="text"
+                required
+                type="phone"
                 id="phone"
                 className="feedback-form__input form-input"
               />
@@ -61,20 +96,8 @@ const FeedbackForm = props => {
                 {emailFieldLable}
               </label>
               <input
-                type="text"
-                id="email"
-                className="feedback-form__input form-input"
-              />
-            </div>
-            <div className="feedback-form__fieldset form-fieldset">
-              <label
-                htmlFor="email"
-                className="feedback-form__label form-label"
-              >
-                {emailFieldLable}
-              </label>
-              <input
-                type="text"
+                required
+                type="email"
                 id="email"
                 className="feedback-form__input form-input"
               />

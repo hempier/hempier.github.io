@@ -1,6 +1,6 @@
 import * as React from "react"
 import "./carbon-dioxid-counter.scss"
-import CAbsorbCounter from "../flip-clock/cabsorb-counter"
+import CAbsorbCounter from "../cabsorb-counter/cabsorb-counter"
 
 const CarbonDioxidCounter = ({
   name,

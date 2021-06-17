@@ -1,5 +1,5 @@
 import * as React from "react"
-import "./flip-clock.scss"
+import "./cabsorb-counter.scss"
 import { useEffect, useState } from "react"
 
 import IconCarEmission from "../../images/cabsorb-counter/car-carbon-emission.svg"
