@@ -58,12 +58,14 @@
                 height: 50%;
                 background: linear-gradient(180deg, #25A872 0%, rgba(24, 134, 88, 0) 100%);
             }
-            
         }
 
-        &__label {
-
+        &__value-inner-wrap {
+            position: relative;
+            z-index: 2;
         }
+
+        &__label {}
     }
 
     .cabsorb-emission {

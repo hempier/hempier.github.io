@@ -9,7 +9,9 @@ import IconPeoplesEmission from "../../images/cabsorb-counter/peoples-carbon-emi
 const StaticCard = ({ value, measure }) => {
   return (
     <div className="cabsorb-counter__item">
-      <span className="cabsorb-counter__value">{value}</span>
+      <span className="cabsorb-counter__value">
+        <span className="cabsorb-counter__value-inner-wrap">{value}</span>
+      </span>
       <span className="cabsorb-counter__label">{measure}</span>
     </div>
   )

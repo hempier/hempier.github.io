@@ -6,6 +6,7 @@ import PartnersAboutUsSlider from "../components/partners-about-us-slider/partne
 import TopPageBanner from "../components/top-banner/top-banner"
 import PageText from "../components/page-text/page-text"
 import AwardsTrusted from "../components/awards-trusted/awards-trusted"
+import CarbonDioxidCounter from "../components/carbon-dioxid-counter/carbon-dioxid-counter"
 import FeedbackForm from "../components/feedback-form/feedback-form"
 
 import {
@@ -36,6 +37,10 @@ export default ({ pageContext: { page, allLocales } }) => {
     page,
     ComponentInternalName.AboutPageText
   )
+  const carbonDioxidCounter = findByInternalName(
+    page,
+    ComponentInternalName.CarbonDioxidCounter
+  )
   const feedbackForm = findByInternalName(
     page,
     ComponentInternalName.FeedbackForm
@@ -46,6 +51,7 @@ export default ({ pageContext: { page, allLocales } }) => {
       <TopPageBanner {...aboutPageTopBanner} />
       <PageText text={aboutPageText} />
       <AwardsTrusted items={aboutPageAwards}/>
+      <CarbonDioxidCounter {...carbonDioxidCounter}/>
       <PartnersAboutUsSlider component={partnersAboutUsSlider} />
       <FeedbackForm {...feedbackForm}/>
     </Layout>
