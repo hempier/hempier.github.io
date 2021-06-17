@@ -55,7 +55,7 @@ const CAbsorbCounter = ({ props, measure }) => {
             <IconCarEmission className="cabsorb-emission__icon" />
           </div>
           <div className="cabsorb-emission__conten">
-            <strong className="cabsorb-emission__value">1234</strong>
+            <strong className="cabsorb-emission__value">{props.carCarbonEmissionNumber}</strong>
             <div className="cabsorb-emission__description">{props.carCarbonEmissionTitle}</div>
           </div>
         </div>
@@ -64,7 +64,7 @@ const CAbsorbCounter = ({ props, measure }) => {
             <IconPeoplesEmission className="cabsorb-emission__icon" />
           </div>
           <div className="cabsorb-emission__conten">
-            <strong className="cabsorb-emission__value">1234</strong>
+            <strong className="cabsorb-emission__value">{props.peoplesCarbonEmissionNumber}</strong>
             <div className="cabsorb-emission__description">{props.peoplesCarbonEmissionTitle}</div>
           </div>
         </div>

@@ -615,7 +615,7 @@ exports.createPages = async ({ graphql, actions }) => {
   const projects = result.data.allContentfulComposeProjectPage.nodes
   const services = result.data.allContentfulComposeServicePage.nodes
 
-  console.log("edges:", JSON.stringify(edges, null, 4))
+  // console.log("edges:", JSON.stringify(edges, null, 4))
   const allLocales = [
     ...new Set(
       edges.map(e => {

@@ -65,7 +65,9 @@
             z-index: 2;
         }
 
-        &__label {}
+        &__label {
+            text-transform: uppercase;
+        }
     }
 
     .cabsorb-emission {

@@ -32,6 +32,8 @@ const CarbonDioxidCounter = ({
     initialDate,
     carCarbonEmissionTitle,
     peoplesCarbonEmissionTitle,
+    carCarbonEmissionNumber,
+    peoplesCarbonEmissionNumber,
   }
 
   return (
