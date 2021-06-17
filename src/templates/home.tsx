@@ -54,9 +54,9 @@ export default ({ pageContext: { page, allLocales } }) => {
   return (
     <Layout  allLocales={allLocales} currentLocale={page.node_locale}>
       <HeroSlider items={heroSliderItems} />
-      <InformationSection {...infoSectionAboutUs} />
+      <InformationSection {...infoSectionAboutUs} currentLocale={page.node_locale} />
       <PartnersAboutUsSlider component={partnersAboutUsSlider} />
-      <InformationSection {...infoSectionHempcrete} />
+      <InformationSection {...infoSectionHempcrete} currentLocale={page.node_locale} />
       <ProductsSlider component={productsSlider} />
       <ServicesTrusted component={servicesTrusted} currentLocale={page.node_locale} />
       <ProjectsSlider component={projectsSlider}/>

@@ -52,6 +52,9 @@ exports.createPages = async ({ graphql, actions }) => {
                   url
                 }
               }
+              ctaLink {
+                slug
+              }
             }
             ... on ContentfulComponentProductsSlider {
               node_locale
