@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import "./projects-slider.scss"
 import SimpleSlider from "../slider/slider"
 
@@ -35,8 +36,8 @@ const ProjectsSlider = ({ component }) => {
   )
 }
 
-const ProjectsSliderItem = ({ image, title, description, ctaText }) => (
-  <div className="projects-slider__item">
+const ProjectsSliderItem = ({ image, title, description, ctaText, ctaLink, currentLocale }) => (
+  <Link to={ctaLink ? `/${currentLocale}/${ctaLink.slug}/${ctaLink.serviceSlug}` : null} className="projects-slider__item">
     <img src={image.file.url} alt="" className="projects-slider__image"/>
     <div className="projects-slider__content">
       <h4 className="projects-slider__heading">{title}</h4>
@@ -44,12 +45,12 @@ const ProjectsSliderItem = ({ image, title, description, ctaText }) => (
         <p className="projects-slider__description">
           {description.childMarkdownRemark.rawMarkdownBody}
         </p>
-        <a href="" className="projects-slider__cta learn-more learn-more_light">
+        <span className="projects-slider__cta learn-more learn-more_light">
           {ctaText}
-        </a>
+        </span>
       </div>
     </div>
-  </div>
+  </Link>
 )
 
 export default ProjectsSlider

@@ -8,6 +8,10 @@ const localeMap = {
 }
 
 export default ({ currentLocale, allLocales }) => {
+  const isPartiallyActive = ({ isPartiallyCurrent }) => {
+    return isPartiallyCurrent ? { className: "header__navigation-link header__navigation-link_active" } : null
+  }
+
   return (
     <StaticQuery
       query={graphql`
@@ -52,7 +56,7 @@ export default ({ currentLocale, allLocales }) => {
                       to={`/${currentLocale}/${link.slug}`}
                       key={id.toString()}
                       className="header__navigation-link"
-                      activeClassName="header__navigation-link_active"
+                      getProps={link === "/" ? undefined : isPartiallyActive}
                     >
                       {link.title}
                     </Link>
@@ -63,13 +67,14 @@ export default ({ currentLocale, allLocales }) => {
                 {allLocales
                   ? allLocales.map(loc => {
                       return (
-                        <a
+                        <Link
                           key={loc.name}
-                          href={loc.pathname}
-                          className="header__locale-items"
+                          to={loc.pathname}
+                          className="header__locale-item"
+                          activeClassName="header__locale-item_active"
                         >
-                          {' '+localeMap[loc.name]}
-                        </a>
+                          {localeMap[loc.name]}
+                        </Link>
                       )
                     })
                   : null}

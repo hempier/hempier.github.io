@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import "./advertisement.scss"
 
 const Advertisement = ({ title, description, ctaText }) => {
@@ -9,7 +10,7 @@ const Advertisement = ({ title, description, ctaText }) => {
         <p className="promo__description">
             {description.childMarkdownRemark.rawMarkdownBody}
         </p>
-        {ctaText ? <a href="" className="promo__cta cta-link cta-link_promo">{ctaText}</a> : null}
+        {ctaText ? <Link to="" className="promo__cta cta-link cta-link_promo">{ctaText}</Link> : null}
       </div>
     </section>
   )

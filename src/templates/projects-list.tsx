@@ -33,7 +33,7 @@ export default ({ pageContext: { page, allLocales } }) => {
   return (
     <Layout  allLocales={allLocales} currentLocale={page.node_locale}>
       <TopPageBanner {...projectsListTopBanner} />
-      <ProjectsList component={projectsList} currentLocale={page.node_locale} />
+      <ProjectsList component={projectsList} currentLocale={page.node_locale} listingPage={page.slug} />
       <FeedbackForm {...plpFeedbackForm} />
     </Layout>
   )

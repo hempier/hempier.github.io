@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import "./information-section.scss"
 
 const InformationSection = ({
@@ -28,8 +29,8 @@ const InformationSection = ({
             {description.childMarkdownRemark.rawMarkdownBody}
           </p>
           {ctaText ? (
-            <a
-              href={
+            <Link
+              to={
                 ctaLink
                   ? `/${currentLocale}/${ctaLink.slug}`
                   : null
@@ -37,7 +38,7 @@ const InformationSection = ({
               className="information-section__cta cta-link"
             >
               {ctaText}
-            </a>
+            </Link>
           ) : null}
         </div>
       </div>

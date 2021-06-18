@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import "./services-trusted.scss"
 
 const ServicesTrusted = ({ component, currentLocale }) => {
@@ -32,7 +33,7 @@ const ServicesTrustedItem = ({
   ctaLink,
   currentLocale,
 }) => (
-  <a href={ctaLink ? `/${currentLocale}/${ctaLink.slug}/${ctaLink.serviceSlug}` : null} className="services-trusted__item">
+  <Link to={ctaLink ? `/${currentLocale}/${ctaLink.slug}/${ctaLink.serviceSlug}` : null} className="services-trusted__item">
     <div className="services-trusted__content-wrap">
       <h4 className="services-trusted__heading">{title}</h4>
       <p className="services-trusted__description">{shortDescription}</p>
@@ -41,7 +42,7 @@ const ServicesTrustedItem = ({
       </a>
     </div>
     <img src={image.file.url} alt="" className="services-trusted__image" />
-  </a>
+  </Link>
 )
 
 export default ServicesTrusted

@@ -32,7 +32,7 @@ const Layout = ({ children, allLocales, currentLocale }) => {
     <>
       <Header currentLocale={currentLocale} allLocales={allLocales} />
       <main className="content">{children}</main>
-      <Footer />
+      <Footer currentLocale={currentLocale}/>
     </>
   )
 }

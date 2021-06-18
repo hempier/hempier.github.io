@@ -1,10 +1,11 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
 import IconLocation from "../../images/footer/icon-location.svg"
 import IconTelephone from "../../images/footer/icon-telephone.svg"
 import "./footer.scss"
 
-const  Footer = () => {
+const  Footer = ({ currentLocale }) => {
   return (
     <StaticQuery
       query={graphql`
@@ -47,11 +48,11 @@ const  Footer = () => {
           <div className="footer__inner-wrap container">
             <div className="row">
               <div className="col-6">
-                  <a href="/">
+                  <Link to={`/${currentLocale}/home`}>
                     <img
                       src={data.contentfulComponentFooter.footerLogo.file.url}
                       className="footer__logo"/>
-                  </a>
+                  </Link>
                   <div className="footer__address">
                     <IconLocation className="footer__address-icon" />
                     {data.contentfulComponentFooter.address.childMarkdownRemark.rawMarkdownBody}

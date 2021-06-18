@@ -618,7 +618,6 @@ exports.createPages = async ({ graphql, actions }) => {
   const projects = result.data.allContentfulComposeProjectPage.nodes
   const services = result.data.allContentfulComposeServicePage.nodes
 
-  // console.log("edges:", JSON.stringify(edges, null, 4))
   const allLocales = [
     ...new Set(
       edges.map(e => {
@@ -626,6 +625,13 @@ exports.createPages = async ({ graphql, actions }) => {
       })
     ),
   ]
+
+  const listingPages = {
+    productsListing: "plp",
+    projectsListing: "projects-list",
+    servicesListing: "services-list",
+  }
+
   // console.log("allLocales:", JSON.stringify(allLocales, null, 4))
   edges.forEach(page => {
     if (page.slug !== "pdp-fifth-element" && page.slug !== "project-description") {
@@ -658,39 +664,39 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   products.forEach(page => {
     createPage({
-      path: `/${page.node_locale}/${page.slug}/${page.productSlug}/`,
+      path: `/${page.node_locale}/${listingPages.productsListing}/${page.productSlug}/`,
       component: path.resolve(`./src/templates/pdp.tsx`),
       context: {
         page,
         allLocales: allLocales.map(loc => ({
           name: loc,
-          pathname: `/${loc}/${page.slug}/${page.productSlug}/`,
+          pathname: `/${loc}/${listingPages.productsListing}/${page.productSlug}/`,
         })),
       },
     })
   })
   projects.forEach(page => {
     createPage({
-      path: `/${page.node_locale}/${page.slug}/${page.projectSlug}/`,
+      path: `/${page.node_locale}/${listingPages.projectsListing}/${page.projectSlug}/`,
       component: path.resolve(`./src/templates/project-description.tsx`),
       context: {
         page,
         allLocales: allLocales.map(loc => ({
           name: loc,
-          pathname: `/${loc}/${page.slug}/${page.projectSlug}/`,
+          pathname: `/${loc}/${listingPages.projectsListing}/${page.projectSlug}/`,
         })),
       },
     })
   })
   services.forEach(page => {
     createPage({
-      path: `/${page.node_locale}/${page.slug}/${page.serviceSlug}/`,
+      path: `/${page.node_locale}/${listingPages.servicesListing}/${page.serviceSlug}/`,
       component: path.resolve(`./src/templates/service-description.tsx`),
       context: {
         page,
         allLocales: allLocales.map(loc => ({
           name: loc,
-          pathname: `/${loc}/${page.slug}/${page.serviceSlug}/`,
+          pathname: `/${loc}/${listingPages.servicesListing}/${page.serviceSlug}/`,
         })),
       },
     })

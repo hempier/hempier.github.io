@@ -23,7 +23,7 @@
         color: $text-black;
 
         &:hover, &:focus {
-            text-decoration: underline   ;
+            text-decoration: underline;
             color: $main-site;
         }
 
@@ -39,13 +39,17 @@
     &__locale {
     }
 
-    &__locale-items {
-        margin-right: 10px;
+    &__locale-item {
+        margin-right: 1rem;
         text-decoration: none;
         color: inherit;
 
         &:last-child {
             margin-right: 0;
+        }
+
+        &_active {
+            color: $main-site;
         }
     }
 }

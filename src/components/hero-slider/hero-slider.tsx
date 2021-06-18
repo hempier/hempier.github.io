@@ -1,6 +1,7 @@
 import * as React from "react"
-import "./hero-slider.scss"
+import { Link } from "gatsby"
 import SimpleSlider from "../slider/slider"
+import "./hero-slider.scss"
 
 const HeroSlider = ({ items }) => (
   <section className="hero-slider">
@@ -25,9 +26,9 @@ const HeroSliderItem = ({ name, title, description, ctaText, image }) => {
           <p className="hero-slider__description">
             {description.childMarkdownRemark.rawMarkdownBody}
           </p>
-          <a href="" className="hero-slider__cta cta-link">
+          <Link to="" className="hero-slider__cta cta-link">
             {ctaText}
-          </a>
+          </Link>
         </div>
         <div className="hero-slider__image" style={sliderItemImage} />
       </div>

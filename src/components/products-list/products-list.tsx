@@ -1,8 +1,9 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import "./products-list.scss"
 
 
-const ProductsList = ({ component, currentLocale }) => {
+const ProductsList = ({ component, currentLocale, listingPage }) => {
   const contentPresent = Boolean(component?.content)
   const content = component.content
 
@@ -16,15 +17,15 @@ const ProductsList = ({ component, currentLocale }) => {
       <h2 className="products-list__title">{component.title}</h2>
       <div className="products-list__inner-wrap row">
           {content.map((props, id) => (
-            <ProductsListItem key={id.toString()} {...props} currentLocale={currentLocale} />
+            <ProductsListItem key={id.toString()} {...props} currentLocale={currentLocale} listingPage={listingPage} />
           ))}
       </div>
     </section>
   )
 }
 
-const ProductsListItem = ({ image, title, description, ctaText, ctaLink, currentLocale }) => (
-  <div className="products-list__item col-4">
+const ProductsListItem = ({ image, title, description, ctaText, ctaLink, currentLocale, listingPage }) => (
+  <Link to={ctaLink ? `/${currentLocale}/${listingPage}/${ctaLink.productSlug}` : null} className="products-list__item col-4">
     <div className="products-list__image-wrap">
       <img src={image.file.url} alt="" className="products-list__image"/>
     </div>
@@ -32,10 +33,10 @@ const ProductsListItem = ({ image, title, description, ctaText, ctaLink, current
     <p className="products-list__description">
       {description.childMarkdownRemark.rawMarkdownBody}
     </p>
-    <a href={ctaLink ? `/${currentLocale}/${ctaLink.slug}/${ctaLink.productSlug}` : null} className="products-list__cta learn-more">
+    <span className="products-list__cta learn-more">
       {ctaText}
-    </a>
-  </div>
+    </span>
+  </Link>
 )
 
 export default ProductsList

@@ -1,3 +1,5 @@
+@import "../../styles/variables.scss";
+
 .products-list {
     &__name {}
     &__title {
@@ -19,6 +21,7 @@
         justify-content: space-between;
         align-items: flex-start;
         margin-bottom: 4rem;
+        text-decoration: none;
     }
 
     &__image {
@@ -29,5 +32,6 @@
     &__description {
         flex: 1;
         margin-top: 1rem;
+        color: $text-dark-grey;
     }
 }

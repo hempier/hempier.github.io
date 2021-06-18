@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Link } from "gatsby"
 import "./products-slider.scss"
 import SimpleSlider from "../slider/slider"
 
@@ -37,7 +38,7 @@ const ProductsSlider = ({ component }) => {
 }
 
 const ProductsSliderItem = ({ image, title, description, ctaText }) => (
-  <div className="products-slider__item">
+  <Link to="" className="products-slider__item">
     <div className="products-slider__image-wrap">
       <img src={image.file.url} alt="" className="products-slider__image"/>
     </div>
@@ -45,10 +46,10 @@ const ProductsSliderItem = ({ image, title, description, ctaText }) => (
     <p className="products-slider__description">
       {description.childMarkdownRemark.rawMarkdownBody}
     </p>
-    <a href="" className="products-slider__cta learn-more">
+    <span className="products-slider__cta learn-more">
       {ctaText}
-    </a>
-  </div>
+    </span>
+  </Link>
 )
 
 export default ProductsSlider
