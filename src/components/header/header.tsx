@@ -11,10 +11,9 @@ export default ({ currentLocale, allLocales }) => {
   const isPartiallyActiveNavigation = ({ isPartiallyCurrent }) =>
     isPartiallyCurrent ? { className: "header__navigation-link header__navigation-link_active" } : null
 
-  const isCurrentActiveLocalization = ({ isCurrent }) =>{
-    console.log("localization", isCurrent)
-    return isCurrent ? { className: "header__locale-item header__locale-item_active" } : null
-  }
+  const isCurrentActiveLocalization = ({ isCurrent }) =>
+    isCurrent ? { className: "header__locale-item header__locale-item_active" } : null
+
   return (
     <StaticQuery
       query={graphql`

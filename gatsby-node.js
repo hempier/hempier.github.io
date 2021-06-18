@@ -636,13 +636,13 @@ exports.createPages = async ({ graphql, actions }) => {
   edges.forEach(page => {
     if (page.slug !== "pdp-fifth-element" && page.slug !== "project-description") {
       createPage({
-        path: `/${page.node_locale}/${page.slug}/`,
+        path: `/${page.node_locale}/${page.slug}`,
         component: path.resolve(`./src/templates/${page.slug}.tsx`),
         context: {
           page,
           allLocales: allLocales.map(loc => ({
             name: loc,
-            pathname: `/${loc}/${page.slug}/`,
+            pathname: `/${loc}/${page.slug}`,
           })),
         },
       })
@@ -656,7 +656,7 @@ exports.createPages = async ({ graphql, actions }) => {
           page,
           allLocales: allLocales.map(loc => ({
             name: loc,
-            pathname: `/${loc}/${page.slug}/`,
+            pathname: `/${loc}/${page.slug}`,
           })),
         },
       })
@@ -664,39 +664,39 @@ exports.createPages = async ({ graphql, actions }) => {
   })
   products.forEach(page => {
     createPage({
-      path: `/${page.node_locale}/${listingPages.productsListing}/${page.productSlug}/`,
+      path: `/${page.node_locale}/${listingPages.productsListing}/${page.productSlug}`,
       component: path.resolve(`./src/templates/pdp.tsx`),
       context: {
         page,
         allLocales: allLocales.map(loc => ({
           name: loc,
-          pathname: `/${loc}/${listingPages.productsListing}/${page.productSlug}/`,
+          pathname: `/${loc}/${listingPages.productsListing}/${page.productSlug}`,
         })),
       },
     })
   })
   projects.forEach(page => {
     createPage({
-      path: `/${page.node_locale}/${listingPages.projectsListing}/${page.projectSlug}/`,
+      path: `/${page.node_locale}/${listingPages.projectsListing}/${page.projectSlug}`,
       component: path.resolve(`./src/templates/project-description.tsx`),
       context: {
         page,
         allLocales: allLocales.map(loc => ({
           name: loc,
-          pathname: `/${loc}/${listingPages.projectsListing}/${page.projectSlug}/`,
+          pathname: `/${loc}/${listingPages.projectsListing}/${page.projectSlug}`,
         })),
       },
     })
   })
   services.forEach(page => {
     createPage({
-      path: `/${page.node_locale}/${listingPages.servicesListing}/${page.serviceSlug}/`,
+      path: `/${page.node_locale}/${listingPages.servicesListing}/${page.serviceSlug}`,
       component: path.resolve(`./src/templates/service-description.tsx`),
       context: {
         page,
         allLocales: allLocales.map(loc => ({
           name: loc,
-          pathname: `/${loc}/${listingPages.servicesListing}/${page.serviceSlug}/`,
+          pathname: `/${loc}/${listingPages.servicesListing}/${page.serviceSlug}`,
         })),
       },
     })
