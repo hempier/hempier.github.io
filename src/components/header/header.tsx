@@ -8,10 +8,13 @@ const localeMap = {
 }
 
 export default ({ currentLocale, allLocales }) => {
-  const isPartiallyActive = ({ isPartiallyCurrent }) => {
-    return isPartiallyCurrent ? { className: "header__navigation-link header__navigation-link_active" } : null
-  }
+  const isPartiallyActiveNavigation = ({ isPartiallyCurrent }) =>
+    isPartiallyCurrent ? { className: "header__navigation-link header__navigation-link_active" } : null
 
+  const isCurrentActiveLocalization = ({ isCurrent }) =>{
+    console.log("localization", isCurrent)
+    return isCurrent ? { className: "header__locale-item header__locale-item_active" } : null
+  }
   return (
     <StaticQuery
       query={graphql`
@@ -56,7 +59,7 @@ export default ({ currentLocale, allLocales }) => {
                       to={`/${currentLocale}/${link.slug}`}
                       key={id.toString()}
                       className="header__navigation-link"
-                      getProps={link === "/" ? undefined : isPartiallyActive}
+                      getProps={link === "/" ? undefined : isPartiallyActiveNavigation}
                     >
                       {link.title}
                     </Link>
@@ -65,15 +68,15 @@ export default ({ currentLocale, allLocales }) => {
               </nav>
               <div className="header__locale">
                 {allLocales
-                  ? allLocales.map(loc => {
+                  ? allLocales.map(link => {
                       return (
                         <Link
-                          key={loc.name}
-                          to={loc.pathname}
+                          to={link.pathname}
+                          key={link.name}
                           className="header__locale-item"
-                          activeClassName="header__locale-item_active"
+                          getProps={isCurrentActiveLocalization}
                         >
-                          {localeMap[loc.name]}
+                          {localeMap[link.name]}
                         </Link>
                       )
                     })

@@ -656,7 +656,7 @@ exports.createPages = async ({ graphql, actions }) => {
           page,
           allLocales: allLocales.map(loc => ({
             name: loc,
-            pathname: `/${loc}/${page.slug}`,
+            pathname: `/${loc}/${page.slug}/`,
           })),
         },
       })
