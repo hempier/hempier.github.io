@@ -636,13 +636,13 @@ exports.createPages = async ({ graphql, actions }) => {
   edges.forEach(page => {
     if (page.slug !== "pdp-fifth-element" && page.slug !== "project-description") {
       createPage({
-        path: `/${page.node_locale}/${page.slug}`,
+        path: `/${page.node_locale}/${page.slug}/`,
         component: path.resolve(`./src/templates/${page.slug}.tsx`),
         context: {
           page,
           allLocales: allLocales.map(loc => ({
             name: loc,
-            pathname: `/${loc}/${page.slug}`,
+            pathname: `/${loc}/${page.slug}/`,
           })),
         },
       })
