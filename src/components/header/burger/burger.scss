@@ -1,6 +1,7 @@
 @import "../../../styles/variables.scss";
 
 .burger {
+    display: none;
     position: absolute;
     top: 50%;
     right: 2rem;
@@ -15,7 +16,6 @@
     cursor: pointer;
     padding: 0;
     z-index: 10;
-    display: none;
 
     &:focus {
         outline: none;

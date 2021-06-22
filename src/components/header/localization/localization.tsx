@@ -8,7 +8,7 @@ const Localization = ({ allLocales }) => {
     "uk-UA": "Укр",
     "ru-RU": "Рус",
   }
-  
+
   const isCurrentActiveLocalization = ({ isCurrent }) =>
     isCurrent
       ? { className: "header__locale-item header__locale-item_active" }

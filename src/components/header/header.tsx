@@ -15,18 +15,12 @@ export default ({ currentLocale, allLocales }) => {
   const node = useRef(); 
   useOnClickOutside(node, () => setOpen(false));
 
-  const isCurrentActiveLocalization = ({ isCurrent }) =>
-    isCurrent
-      ? { className: "header__locale-item header__locale-item_active" }
-      : null
-
   return (
     <StaticQuery
       query={graphql`
         {
           allContentfulComposePage(
             filter: {
-              node_locale: { eq: "uk-UA" }
               navigationIncluded: { eq: true }
             }
           ) {
@@ -48,9 +42,12 @@ export default ({ currentLocale, allLocales }) => {
         }
       `}
       render={({ allContentfulComposePage, contentfulComponentHeaderLogo }) => {
-        const navigationItems = allContentfulComposePage.nodes.sort(
-          (a, b) => a.position - b.position
-        )
+        const navigationItems = allContentfulComposePage.nodes
+          .filter(locale => locale.node_locale === currentLocale)
+          .sort(
+            (a, b) => a.position - b.position
+          )
+
         const logo = {
           url: contentfulComponentHeaderLogo.image.file.url,
           alt: contentfulComponentHeaderLogo.internalName,
