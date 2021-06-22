@@ -9,11 +9,11 @@ const partnersAboutUsSliderSettings = {
 
 const PartnersAboutUs = ({ component }) => {
   const contentPresent = Boolean(component?.content)
-  const content = component.content
-
   if (!contentPresent) {
     return <div>no content</div>
   }
+
+  const content = component.content
 
   return (
     <section className="partners-about-us container">

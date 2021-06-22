@@ -1,0 +1,25 @@
+@import "../../../styles/variables.scss";
+
+.header {
+    &__navigation {}
+
+    &__navigation-link {
+        margin-right: 40px;
+        text-decoration: none;
+        line-height: 1.5rem;
+        color: $text-black;
+
+        &:hover, &:focus {
+            text-decoration: underline;
+            color: $main-site;
+        }
+
+        &:last-shild {
+            margin-right: 0;
+        }
+
+        &_active {
+            color: $main-site;
+        }
+    }
+}

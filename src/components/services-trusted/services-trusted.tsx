@@ -33,7 +33,8 @@ const ServicesTrustedItem = ({
   ctaLink,
   currentLocale,
 }) => (
-  <Link to={ctaLink ? `/${currentLocale}/${ctaLink.slug}/${ctaLink.serviceSlug}` : null} className="services-trusted__item">
+  // @TODO: remove static declaration of 'service list' page
+  <Link to={ctaLink ? `/${currentLocale}/services-list/${ctaLink.serviceSlug}` : null} className="services-trusted__item">
     <div className="services-trusted__content-wrap">
       <h4 className="services-trusted__heading">{title}</h4>
       <p className="services-trusted__description">{shortDescription}</p>
