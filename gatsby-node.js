@@ -147,6 +147,10 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
                 ctaText
+                ctaLink {
+                  slug
+                  projectSlug
+                }
               }
             }
             ... on ContentfulComponentPageText {

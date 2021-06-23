@@ -44,6 +44,11 @@
 
     &__image {
         width: calc(100% / 2);
+        object-fit: cover;
+    }
+
+    &__description {
+        min-height: 4.5rem;
     }
 
     &__content-wrap {
@@ -53,6 +58,7 @@
         justify-content: center;
         align-items: center;
         width: calc(100% / 2);
+        min-height: 17.3rem;
         padding: 2rem 1rem;
         background-color: $service-light-gray;
         text-align: center;

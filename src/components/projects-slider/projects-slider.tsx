@@ -13,7 +13,7 @@ const productsSliderSettings = {
   className: 'projects-slider',
 }
 
-const ProjectsSlider = ({ component }) => {
+const ProjectsSlider = ({ component, currentLocale }) => {
   const contentPresent = Boolean(component?.content)
   const content = component.content
 
@@ -28,7 +28,7 @@ const ProjectsSlider = ({ component }) => {
       <div className="projects-slider__inner-wrap">
         <SimpleSlider customSettings={productsSliderSettings}>
           {content.map((props, id) => (
-            <ProjectsSliderItem key={id.toString()} {...props} />
+            <ProjectsSliderItem key={id.toString()} {...props} currentLocale={currentLocale}/>
           ))}
         </SimpleSlider>
       </div>
@@ -37,7 +37,7 @@ const ProjectsSlider = ({ component }) => {
 }
 
 const ProjectsSliderItem = ({ image, title, description, ctaText, ctaLink, currentLocale }) => (
-  <Link to={ctaLink ? `/${currentLocale}/${ctaLink.slug}/${ctaLink.serviceSlug}` : null} className="projects-slider__item">
+  <Link to={ctaLink ? `/${currentLocale}/projects-list/${ctaLink.projectSlug}` : null} className="projects-slider__item">
     <img src={image.file.url} alt="" className="projects-slider__image"/>
     <div className="projects-slider__content">
       <h4 className="projects-slider__heading">{title}</h4>
