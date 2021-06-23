@@ -227,6 +227,9 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
               }
               ctaText
+              ctaLink {
+                slug
+              }
             }
             ... on ContentfulComponentProductsList {
               internalName

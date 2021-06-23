@@ -39,7 +39,7 @@ export default ({ pageContext: { page, allLocales, currentLocale } }) => {
     <Layout  allLocales={allLocales} currentLocale={page.node_locale}>
       <TopPageBanner {...plpPageTopBanner} />
       <ProductsList component={productsList} currentLocale={page.node_locale} listingPage={page.slug} />
-      <Advertisement {...plpInformationAdv} />
+      <Advertisement {...plpInformationAdv} currentLocale={page.node_locale}/>
       <FeedbackForm {...plpFeedbackForm} />
     </Layout>
   )
