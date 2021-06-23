@@ -71,6 +71,10 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
                 ctaText
+                ctaLink {
+                  slug
+                  productSlug
+                }
                 image {
                   file {
                     url

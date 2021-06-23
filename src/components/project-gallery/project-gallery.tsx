@@ -6,7 +6,7 @@ const ProjectGallery = ({ component }) => {
   const contentPresent = Boolean(component?.content)
   const content = component.content
 
-  console.log('test'+JSON.stringify(content, null, 4))
+  // console.log('test'+JSON.stringify(content, null, 4))
 
   if (!contentPresent) {
     return <div>no content</div>
@@ -32,7 +32,7 @@ const ProjectGallery = ({ component }) => {
 const GalleryItem = ({ image }) => (
   <div className="project-gallery__item">
     <img
-      src={image.file.url}
+      src={image?.file.url || []}
       className="project-gallery__image"
     />
   </div>
