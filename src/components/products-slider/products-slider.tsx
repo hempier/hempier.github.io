@@ -40,7 +40,7 @@ const ProductsSlider = ({ component, currentLocale }) => {
 const ProductsSliderItem = ({ image, title, description, ctaText, ctaLink, currentLocale }) => (
   <Link to={ctaLink ? `/${currentLocale}/plp/${ctaLink.productSlug}` : null} className="products-slider__item">
     <div className="products-slider__image-wrap">
-      <img src={image.file.url} alt="" className="products-slider__image"/>
+      <img src={image?.file.url || []} alt="" className="products-slider__image"/>
     </div>
     <h3 className="products-slider__heading">{title}</h3>
     <p className="products-slider__description">
