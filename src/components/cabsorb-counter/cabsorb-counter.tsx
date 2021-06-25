@@ -8,10 +8,10 @@ import IconPeoplesEmission from "../../images/cabsorb-counter/peoples-carbon-emi
 // function component
 const StaticCard = ({ value, measure }) => {
   return (
-    <div className="cabsorb-counter__item">
-      <span className="cabsorb-counter__value">
+    <div className="cabsorb-counter__item col-xs-12 col-sm-6 col-lg-3">
+      <div className="cabsorb-counter__value">
         <span className="cabsorb-counter__value-inner-wrap">{value}</span>
-      </span>
+      </div>
       <span className="cabsorb-counter__label">{measure}</span>
     </div>
   )
@@ -49,7 +49,7 @@ const CAbsorbCounter = ({ props, measure }) => {
           <StaticCard value={grams} measure={measure.gramsLabel}/>
           <StaticCard value={miligrams} measure={measure.miligramsLabel}/>
       </div>
-      <div className="cabsorb-emission">
+      <div className="cabsorb-emission col-xs-12">
         <div className="cabsorb-emission__item">
           <div className="cabsorb-emission__icon-wrap">
             <IconCarEmission className="cabsorb-emission__icon" />

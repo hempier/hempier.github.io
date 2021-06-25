@@ -39,10 +39,10 @@ const CarbonDioxidCounter = ({
   return (
     <section className="carbon-counter container">
       <div className="carbon-counter__inner-wrap">
-        <div className="carbon-counter__subtitle subtitle-2">{name}</div>
-        <h2 className="carbon-counter__title">{title}</h2>
+        <div className="carbon-counter__subtitle subtitle-2 col-xs-12">{name}</div>
+        <h2 className="carbon-counter__title col-xs-12">{title}</h2>
         <div className="carbon-counter__content">
-          <h3 className="carbon-counter__heading">{heading}</h3>
+          <h3 className="carbon-counter__heading col-xs-12">{heading}</h3>
           <CAbsorbCounter props={cAbsorbCounterProps}  measure={measureLabels}/>
         </div>
       </div>

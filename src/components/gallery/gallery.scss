@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .gallery {
     %hover-state {
@@ -7,10 +8,18 @@
         }
     }
 
+    // height: 22.5rem;
     margin-bottom: 1rem;
+    
+    // @include respond-to('lg') {
+    //     height: 28.75rem;
+    // }
+    
+    // @include respond-to('lg') {
+    //     height: 33.75rem;
+    // }
 
     &__arrow {
-
         position: absolute;
         top: -5rem;
         right: 0;
@@ -28,10 +37,39 @@
         }
     }
 
-    
+    .slick-slide {
+        height: auto!important;
+
+        & > * {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+        }
+    }
 }
 
-.thumbnail-gallery-wrap {
+.gallery-wrapper {
+    .project-gallery__item {
+        height: 22.5rem;
+
+        @include respond-to('lg') {
+            height: 28.75rem;
+        }
+
+        @include respond-to('lg') {
+            height: 33.75rem;
+        }
+        
+        img {
+            object-fit: cover;
+        }
+    }
+}
+
+.thumbnail-gallery-wrapper {
     $thumb-item-padding: 0.5rem;
 
     margin-right: -$thumb-item-padding;
@@ -42,5 +80,12 @@
         height: auto;
         padding-left: $thumb-item-padding;
         padding-right:$thumb-item-padding;
+    }
+
+    .project-gallery__item {
+        height: 9rem;
+        img {
+            object-fit: cover;
+        }
     }
 }

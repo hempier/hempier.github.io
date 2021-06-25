@@ -7,9 +7,9 @@ const AdvantagesTrusted = ({ items }) => {
 
   return (
     <section className="advantages container">
-      <div className="advantages__name subtitle-1">{items.name}</div>
-      <h2 className="advantages__title">{items.title}</h2>
-      <div className="advantages__inner-wrap row">
+      <div className="advantages__name subtitle-1 col-xs-12">{items.name}</div>
+      <h2 className="advantages__title col-xs-12">{items.title}</h2>
+      <div className="advantages__inner-wrap">
         {advantagesTrustedItems.map((props, id) => (
           <AdvantagesTrustedItem key={id.toString()} {...props} />
         ))}
@@ -19,7 +19,7 @@ const AdvantagesTrusted = ({ items }) => {
 }
 
 const AdvantagesTrustedItem = ({ image, heading, description }) => (
-  <div className="advantages__item col-3">
+  <div className="advantages__item col-xs-12 col-xm-6 col-sm-4 col-md-3">
     <img src={image.file.url} alt="" className="advantages__image" />
     <h4 className="advantages__heading">{heading}</h4>
     <p className="advantages__description">

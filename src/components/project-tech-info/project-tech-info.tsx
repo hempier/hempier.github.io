@@ -9,12 +9,12 @@ const ProjectTechInfo = ({
 }) => {
   return (
     <section className="project-tech container">
-      <div className="project-tech__inner-wrap row">
-        <div className="project-tech__image col-6">
+      <div className="project-tech__inner-wrap">
+        <div className="project-tech__image col-xs-12 col-lg-6">
           <img src={image.file.url} alt="" />
         </div>
-        <div className="project-tech__content">
-          <h3 className="project-tech__title">{title}</h3>
+        <div className="project-tech__content col-xs-12 col-lg-5 off-lg-1">
+          <h2 className="project-tech__title">{title}</h2>
           <ul className="project-tech__info">
               {characteristics.map((item, id) => (
                 <li className="project-tech__info-item" key={id.toString()}>

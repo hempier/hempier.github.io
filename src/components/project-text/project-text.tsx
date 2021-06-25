@@ -7,7 +7,7 @@ const PageText = props => {
   const { text } = props
 
   return (
-    <div className="project-text">
+    <div className="project-text col-xs-12">
       {renderAst(text?.text.childMarkdownRemark.htmlAst || [])}
     </div>
   )

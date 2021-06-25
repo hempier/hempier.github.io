@@ -1,34 +1,33 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .feedback-form {
   $self: &;
+  padding-top: $fg-gutter*2;
+  padding-bottom: $fg-gutter*2;
   $background-shift: 10rem;
 
-  min-height: 43rem;
-  padding-top: $background-shift;
+
+
+  @include respond-to('md') {
+    min-height: 43rem;
+    padding-top: $background-shift;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+    background-clip: content-box;
+  }
 
   &__inner-wrap {
     position: relative;
-    max-width: 36rem;
-    padding: 4.5rem;
-    margin-top: -$background-shift;
+    padding: 1.5rem;
     background-color: $service-white;
-    box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
-  }
 
-  &__fieldset-wrap {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: stretch;
-
-    #{ $self }__fieldset {
-        width: calc((100% - (1.8rem * 1)) / 2);
-
-        &:nth-child(odd) {
-          margin-right: 1.8rem;
-        }
+    @include respond-to('md') {
+      max-width: 36rem;
+      padding: 4.5rem;
+      margin-top: -$background-shift;
+      box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
     }
   }
 

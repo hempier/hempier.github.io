@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .services-trusted {
     $self: &;
@@ -9,15 +10,16 @@
 
     &__inner-wrap {
         display: flex;
-        flex-wrap: wrap;
+
+        @include respond-to('sm') {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
     }
 
     &__item {
         display: flex;
-        flex: 0 0 50%;
-        max-width: 50%;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-direction: column-reverse;
         justify-content: flex-start;
         text-decoration: none;
         color: inherit;
@@ -28,23 +30,33 @@
             }
         }
 
-        &:nth-child(n+3) {
-            flex-direction: row-reverse;
+        @include respond-to('sm') {
+            flex: 0 0 50%;
+            max-width: 50%;
+            flex-direction: row;
+            flex-wrap: wrap;
 
-            #{ $self }__content-wrap {
-                &:before {
-                    top: auto;
-                    left: -20px;
-                    bottom: 2rem;
-                    transform: rotate(180deg);
+            &:nth-child(n+3) {
+                flex-direction: row-reverse;
+
+                #{ $self }__content-wrap {
+                    &:before {
+                        top: auto;
+                        left: -20px;
+                        bottom: 2rem;
+                        transform: rotate(180deg);
+                    }
                 }
             }
         }
     }
 
     &__image {
-        width: calc(100% / 2);
         object-fit: cover;
+
+        @include respond-to('sm') {
+            width: calc(100% / 2);
+        }
     }
 
     &__description {
@@ -57,23 +69,26 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: calc(100% / 2);
-        min-height: 17.3rem;
         padding: 2rem 1rem;
         background-color: $service-light-gray;
         text-align: center;
 
-        &:before {
-            content: "";
-            position: absolute;
-            top: 2rem;
-            right: -20px;
-            width: 0;
-            height: 0;
-            border-style: solid;
-            border-width: 17px 0 17px 21px;
-            border-color: transparent transparent transparent $service-light-gray;
-            z-index: 2;
+        @include respond-to('sm') {
+            width: calc(100% / 2);
+            min-height: 17.3rem;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: 2rem;
+                right: -20px;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 17px 0 17px 21px;
+                border-color: transparent transparent transparent $service-light-gray;
+                z-index: 2;
+            }
         }
     }
 }

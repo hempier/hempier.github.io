@@ -12,12 +12,12 @@ const ProductDescription = ({
   ctaText,
 }) => {
   return (
-    <section className="product-description">
-      <div className="product-description__inner-wrap container">
-        <div className="product-description__image-wrap col-6">
+    <section className="product-description container">
+      <div className="product-description__inner-wrap">
+        <div className="product-description__image-wrap col-xs-12 col-lg-6">
           <img src={image.file.url} alt="" className="product-description__image"/>
         </div>
-        <div className="product-description__content">
+        <div className="product-description__content col-xs-12 col-lg-5 off-lg-1">
           <h2 className="product-description__title">{title}</h2>
           <div className="product-description__description">
             {renderAst(description.childMarkdownRemark.htmlAst)}

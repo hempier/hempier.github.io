@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .projects-slider {
     $self: &;
@@ -6,6 +7,7 @@
     margin-bottom: 7rem;
 
     &__name {}
+    
     &__title {
         margin-bottom: 3rem;
     }
@@ -34,8 +36,12 @@
     }
 
     &__image {
-        height: 19rem;
+        object-fit: cover;
         min-height: 19rem;
+
+        @include respond-to('sm') {
+            height: 19rem;
+        }
     }
 
     &__content {
@@ -62,10 +68,23 @@
 
 
     .slider-arrow {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin-top: -4.5rem;
+        justify-content: space-between;
+
+        @include respond-to('sm') {
+            position: absolute;
+            top: 0;
+            right: $fg-gutter;
+            margin-top: -4.5rem;
+        }
+
+        @include respond-to('lg') {
+            right: 0;
+        }
+    }
+
+    .slick-list {
+        margin-right: -$fg-gutter;
+        margin-left: -$fg-gutter;
     }
 
     &.slick-slider .slick-slide > * {

@@ -1,3 +1,6 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
 .partners-about-us {
     &__inner-wrap {
         position: relative;
@@ -6,7 +9,15 @@
     &__name {}
 
     &__title {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
+
+        @include respond-to('sm') {
+            margin-bottom: 2em;
+        }
+
+        @include respond-to('lg') {
+            margin-bottom: 3rem;
+        }
     }
 
     &__item {
@@ -28,9 +39,17 @@
     }
 
     .slider-arrow {
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin-top: -4.5rem;
+        justify-content: space-between;
+
+        @include respond-to('sm') {
+            position: absolute;
+            top: 0;
+            right: $fg-gutter;
+            margin-top: -4.5rem;
+        }
+
+        @include respond-to('lg') {
+            right: 0;
+        }
     }
 }

@@ -7,8 +7,18 @@
     background-color: $service-light-gray;
 
     &__inner-wrap {
-        max-width: 62rem;
-        margin-right: auto;
-        margin-left: auto;
+        @include respond-to('lg') {
+            width: 100%;
+            max-width: 62rem;
+            margin-right: auto;
+            margin-left: auto;
+        }
     }
+}
+
+// Contact page
+.contact {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

@@ -1,41 +1,62 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .services-list {
     &__name {}
     &__title {
-        margin-bottom: 2rem;
+        margin-bottom: 3rem;
     }
 
     &__inner-wrap {
         position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    &__image-wrap {
+        margin-bottom: 2rem;
     }
 
     &__item {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: flex-start;
-        margin-bottom: 4rem;
+        align-items: stretch;
+        margin-bottom: 3rem;
         text-decoration: none;
-    }
 
-    &__image-wrap {
-        position: relative;
-        margin-bottom: 2rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        @include respond-to('sm') {
+            margin-bottom: 4rem;
+        }
     }
 
     &__image {
-        height: 19rem;
+        object-fit: cover;
+        min-width: 100%;
         min-height: 19rem;
+
+        @include respond-to('sm') {
+            height: 19rem;
+        }
     }
 
     &__heading {
-        margin-bottom: 1rem;
+        @include respond-to('xm') {
+            min-height: 2rem;
+        }
+        @include respond-to('sm') {
+            // min-height: 3rem;
+        }
     }
 
     &__description {
         flex: 1;
-        margin-bottom: 1rem;
+        // margin-top: 1rem;
         color: $text-dark-grey;
     }
 }

@@ -1,10 +1,19 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .header {
-    &__navigation {}
+    &__navigation {
+        display: none;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond-to('lg') {
+            display: flex;
+        }
+    }
 
     &__navigation-link {
-        margin-right: 40px;
         text-decoration: none;
         line-height: 1.5rem;
         color: $text-black;

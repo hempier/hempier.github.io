@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .carbon-counter {
     &__inner-wrap {}
@@ -11,81 +12,22 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        padding: 7.5rem;
+        align-items: stretch;
+        padding-top: $fg-gutter;
+        padding-bottom: $fg-gutter;
         background-color: $service-light-gray;
+
+        @include respond-to('lg') {
+            padding: 7.5rem;
+        }
     }
 
     &__heading {
-        margin-bottom: 3rem;
         text-transform: uppercase;
-    }
+        text-align: center;
 
-    .cabsorb-counter {
-        display: flex;
-        margin-bottom: 4rem;
-
-        &__item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 10.8rem;
-            margin-right: 1.8rem;
-
-            &:last-child {
-                margin-right: 0;
-            }
-        }
-
-        &__value {
-            position: relative;
-            height: 11rem;
-            width: 100%;
-            margin-bottom: 1rem;
-            background-color: $main-site;
-            border-radius: 1rem;
-            font-size: 4.8rem;
-            line-height: 11rem;
-            text-align: center;
-            color: $service-white;
-
-            &:after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                height: 50%;
-                background: linear-gradient(180deg, #25A872 0%, rgba(24, 134, 88, 0) 100%);
-            }
-        }
-
-        &__value-inner-wrap {
-            position: relative;
-            z-index: 2;
-        }
-
-        &__label {
-            text-transform: uppercase;
-        }
-    }
-
-    .cabsorb-emission {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: stretch;
-
-        &__item {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-        }
-
-        &__icon-wrap {
-            margin-right: 1.5rem;
+        @include respond-to('lg') {
+            margin-bottom: 3rem;
         }
     }
 }

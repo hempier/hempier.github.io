@@ -1,9 +1,18 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .promo {
-    padding: 4.5rem;
+    padding: 2.5rem;
     background-color: $main-site;
     color: $service-white;
+
+    @include respond-to('md') {
+        padding: 3.5rem;
+    }
+
+    @include respond-to('lg') {
+        padding: 4.5rem;
+    }
 
     &__title {
         color: $service-white;

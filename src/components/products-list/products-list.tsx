@@ -13,9 +13,17 @@ const ProductsList = ({ component, currentLocale, listingPage }) => {
 
   return (
     <section className="products-list container">
-      <span className="products-list__name subtitle-2">{component.name}</span>
-      <h2 className="products-list__title">{component.title}</h2>
-      <div className="products-list__inner-wrap row">
+      {Boolean(component?.name) &&
+        <span className="products-list__name subtitle-2 col-xs-12">
+          {component.name}
+        </span>
+      }
+      {Boolean(component?.title) &&
+        <h2 className="products-list__title col-xs-12">
+          {component.title}
+        </h2>
+      }
+      <div className="products-list__inner-wrap">
           {content.map((props, id) => (
             <ProductsListItem key={id.toString()} {...props} currentLocale={currentLocale} listingPage={listingPage} />
           ))}
@@ -25,17 +33,21 @@ const ProductsList = ({ component, currentLocale, listingPage }) => {
 }
 
 const ProductsListItem = ({ image, title, description, ctaText, ctaLink, currentLocale, listingPage }) => (
-  <Link to={ctaLink ? `/${currentLocale}/${listingPage}/${ctaLink.productSlug}` : null} className="products-list__item col-4">
-    <div className="products-list__image-wrap">
-      <img src={image.file.url} alt="" className="products-list__image"/>
-    </div>
-    <h3 className="products-list__heading">{title}</h3>
-    <p className="products-list__description">
-      {description.childMarkdownRemark.rawMarkdownBody}
-    </p>
-    <span className="products-list__cta learn-more">
-      {ctaText}
-    </span>
+  <Link
+    to={ctaLink
+    ? `/${currentLocale}/${listingPage}/${ctaLink.productSlug}`
+    : null}
+    className="products-list__item col-xs-12 col-xm-6 col-sm-4">
+      <div className="products-list__image-wrap">
+        <img src={image.file.url} alt="" className="products-list__image"/>
+      </div>
+      <h3 className="products-list__heading">{title}</h3>
+      <p className="products-list__description">
+        {description.childMarkdownRemark.rawMarkdownBody}
+      </p>
+      <span className="products-list__cta learn-more">
+        {ctaText}
+      </span>
   </Link>
 )
 

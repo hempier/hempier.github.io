@@ -7,7 +7,7 @@ const PageText = props => {
   const { text } = props
 
   return (
-    <div className="page-text">
+    <div className="page-text col-xs">
       {renderAst(text.text.childMarkdownRemark.htmlAst)}
     </div>
   )

@@ -19,7 +19,6 @@ const FeedbackForm = props => {
   const FeedbackFromBackground = styled.div`
     background-repeat: no-repeat;
     background-position: center;
-    background-clip: content-box;
     background-size: cover;
     background-image: url(${image.file.url});
   `
@@ -57,9 +56,9 @@ const FeedbackForm = props => {
   };
 
   return (
-    <FeedbackFromBackground className="feedback-form">
+    <FeedbackFromBackground className="feedback-form col-xs">
       <div className="container">
-        <div className="feedback-form__inner-wrap">
+        <div className="feedback-form__inner-wrap col-xs-12">
           <h2 className="feedback-form__title">{title}</h2>
           <p className="feedback-form__subtitle">{subtitle}</p>
           <form onSubmit={handleOnSubmit} className="feedback-form__form form-body" id="feedback-form">

@@ -1,0 +1,10 @@
+@mixin respond-to ($brakepoint) {
+    @each $val in $fg-breakpoints {
+        @if nth($val, 1) == $brakepoint {
+            $size: nth($val, 2);
+            @media only screen and (min-width: #{$size}) {
+                @content;
+            }
+        }
+    }
+}

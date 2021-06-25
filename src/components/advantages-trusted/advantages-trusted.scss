@@ -3,10 +3,15 @@
 .advantages {
 
     &__inner-wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         margin-top: 3rem;
     }
 
     &__item {
+        justify-content: flex-start;
+        align-items: flex-start;
         margin-bottom: 3rem;
     }
 

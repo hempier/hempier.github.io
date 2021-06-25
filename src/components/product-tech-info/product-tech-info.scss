@@ -1,20 +1,32 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .product-tech {
-    padding: 7rem 0;
+    padding: 2.5rem 0;
     background-color: $service-light-gray;
+    
+    @include respond-to('sm') {
+        padding: 3.5rem;
+    }
+    @include respond-to('lg') {
+        padding: 7rem;
+    }
 
     &__inner-wrap {
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
+        flex-direction: column;
+
+        @include respond-to('lg') {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     &__image {
-        min-height: 27rem;
-        height: 27rem;
-        margin-right: 2rem;
+        @include respond-to('lg') {
+            min-height: 27rem;
+            height: 27rem;
+        }
     }
 
     &__content {

@@ -17,12 +17,12 @@ const InformationSection = ({
 
   return (
     <section className="information-section">
-      <div className="information-section__inner-wrap container">
+      <div className="information-section__inner-wrap container row">
         <div
-          className="information-section__image col-6"
+          className="information-section__image col-xs-12 col-md-6"
           style={informationSectionImage}
         />
-        <div className="information-section__text">
+        <div className="information-section__text col-xs-12 col-md-5 off-md-1">
           <div className="information-section__subtitle subtitle-2">{name}</div>
           <h2 className="information-section__title">{title}</h2>
           <p className="information-section__description">

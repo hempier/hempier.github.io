@@ -1,16 +1,18 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .project-tech {
     &__inner-wrap {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+
+        @include respond-to('lg') {
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
-    &__image {
-        min-height: 20rem;
-        height: 20rem;
-        margin-right: 2rem;
-    }
+    &__image {}
 
     &__content {
         display: flex;
@@ -20,11 +22,9 @@
     }
 
     &__title {
-        margin-bottom: 3rem;
     }
 
     &__info {
-        // margin-bottom: 3rem;
     }
 
     &__value {

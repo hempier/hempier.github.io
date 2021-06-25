@@ -12,7 +12,7 @@ import "./header.scss"
 
 export default ({ currentLocale, allLocales }) => {
   const [open, setOpen] = useState(false)
-  const node = useRef(); 
+  const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
 
   return (
@@ -53,13 +53,13 @@ export default ({ currentLocale, allLocales }) => {
           alt: contentfulComponentHeaderLogo.internalName,
         }
 
-        const node = useRef(); 
+        const node = useRef();
         useOnClickOutside(node, () => setOpen(false));
 
         return (
           <header className="header">
-            <div className="header__inner-wrap container">
-              <Link to={`/${currentLocale}/home`} className="header__logo">
+            <div className="header__inner-wrap container row" ref={node}>
+              <Link to={`/${currentLocale}/home`} className="header__logo col-lg-3">
                 <img
                   src={logo.url}
                   alt={logo.alt}
@@ -70,11 +70,12 @@ export default ({ currentLocale, allLocales }) => {
                 currentLocale={currentLocale}
               />
               <Localization allLocales={allLocales} />
-              <div ref={node}>
-                <BurgerNavigation open={open} setOpen={setOpen} />
+              <BurgerNavigation open={open} setOpen={setOpen} />
+              <div className="header-mobile">
                 <HeaderNavigationMobile
                   open={open}
                   navigationItems={navigationItems}
+                  allLocales={allLocales}
                   currentLocale={currentLocale}
                   logo={logo}
                 />

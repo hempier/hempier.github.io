@@ -12,13 +12,17 @@ const ServicesTrusted = ({ component, currentLocale }) => {
 
   return (
     <section className="services-trusted container">
-      <span className="services-trusted__name subtitle-2">
+      <span className="services-trusted__name subtitle-2 col-xs">
         {component.name}
       </span>
-      <h2 className="services-trusted__title">{component.title}</h2>
-      <div className="services-trusted__inner-wrap">
+      <h2 className="services-trusted__title col-xs">{component.title}</h2>
+      <div className="services-trusted__inner-wrap col-xs">
         {content.map((props, id) => (
-          <ServicesTrustedItem key={id.toString()} {...props} currentLocale={currentLocale}/>
+          <ServicesTrustedItem
+            key={id.toString()}
+            {...props}
+            currentLocale={currentLocale}
+          />
         ))}
       </div>
     </section>
@@ -34,13 +38,18 @@ const ServicesTrustedItem = ({
   currentLocale,
 }) => (
   // @TODO: remove static declaration of 'service list' page
-  <Link to={ctaLink ? `/${currentLocale}/services-list/${ctaLink.serviceSlug}` : null} className="services-trusted__item">
+  <Link
+    to={
+      ctaLink ? `/${currentLocale}/services-list/${ctaLink.serviceSlug}` : null
+    }
+    className="services-trusted__item"
+  >
     <div className="services-trusted__content-wrap">
       <h4 className="services-trusted__heading">{title}</h4>
       <p className="services-trusted__description">{shortDescription}</p>
-      <a href="" className="services-trusted__cta learn-more">
+      <span className="services-trusted__cta learn-more">
         {ctaText}
-      </a>
+      </span>
     </div>
     <img src={image.file.url} alt="" className="services-trusted__image" />
   </Link>

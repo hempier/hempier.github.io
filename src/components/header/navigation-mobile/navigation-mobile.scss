@@ -1,9 +1,20 @@
 @import "../../../styles/variables.scss";
+@import "../../../styles/mixins.scss";
 
 .header-mobile {
+
+    @include respond-to('lg') {
+        display: none;
+    }
+
     &__logotype {
         max-width: 100%;
         padding: 0 3rem;
+        
+        @include respond-to('xs') {
+            align-self: center;
+            max-width: 80%;
+        }
     }
 
     &__navigation {
@@ -51,5 +62,11 @@
             text-decoration: underline;
             color: $main-site;
         }
+    }
+
+    .header__locale {
+        display: flex;
+        justify-content: space-evenly;
+        padding: 1rem 3.5rem;
     }
 }

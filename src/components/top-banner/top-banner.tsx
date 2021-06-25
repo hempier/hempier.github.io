@@ -18,9 +18,9 @@ const TopBanner = (props) => {
   return (
     <TopBannerBackground className="top-banner">
       <div className="top-banner__inner-wrap container">
-        <h1 className="top-banner__title">{heading}</h1>
+        <h1 className="top-banner__title col-xs">{heading}</h1>
         {Boolean(description?.childMarkdownRemark) &&
-          <p className="top-banner__description">
+          <p className="top-banner__description col-xs">
             {description.childMarkdownRemark.rawMarkdownBody}
           </p>
         }

@@ -1,23 +1,58 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
-.feedback-form {
-    $background-shift: 10rem;
+.feedback-form-contact {
+    $self: &;
+
+
+    width: 100%;
     min-height: 43rem;
-    padding-top: $background-shift;
+
 
     &__inner-wrap {
         position: relative;
-        max-width: 36rem;
-        padding: 4.5rem;
-        margin-top: -$background-shift;
+        width: 100%;
+        padding: 2.5rem;
         background-color: $service-white;
         box-shadow: 0 4px 20px rgb(0 0 0 / 15%);
+
+        @include respond-to('md') {
+            padding: 3.5rem;
+        }
+
+        @include respond-to('lg') {
+            max-width: 36rem;
+            padding: 4.5rem;
+
+        }
     }
 
-    .container {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-        align-items: flex-end;
+    &__form {
+        max-width: 100%;
     }
+
+    &__fieldset-wrap {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+
+        #{ $self }__fieldset {
+            width: 100%;
+
+            &:nth-child(odd) {
+                margin-bottom: 2.5rem;
+            }
+
+            @include respond-to('xm') {
+                width: calc((100% - (1.8rem * 1)) / 2);
+
+                &:nth-child(odd) {
+                    margin-right: 1.8rem;
+                    margin-bottom: 0;
+                }
+            }
+        }
+      }
 }

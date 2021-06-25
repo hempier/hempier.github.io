@@ -45,25 +45,27 @@ const  Footer = ({ currentLocale }) => {
       `}
       render={data => (
         <footer className="footer">
-          <div className="footer__inner-wrap container">
-            <div className="row">
-              <div className="col-6">
-                  <Link to={`/${currentLocale}/home`}>
-                    <img
-                      src={data.contentfulComponentFooter.footerLogo.file.url}
-                      className="footer__logo"/>
-                  </Link>
-                  <div className="footer__address">
-                    <IconLocation className="footer__address-icon" />
-                    {data.contentfulComponentFooter.address.childMarkdownRemark.rawMarkdownBody}
-                    <div className="footer__vat">{data.contentfulComponentFooter.vat}</div>
-                  </div>
-                  <div className="footer__phone">
-                    <IconTelephone className="footer__phone-icon" />
-                    {data.contentfulComponentFooter.phone}
-                  </div>
+          <div className="container row">
+            <div className="col-sm-6 col-xs-12">
+              <div className="footer__inner-wrap">
+                <Link to={`/${currentLocale}/home`}>
+                  <img
+                    src={data.contentfulComponentFooter.footerLogo.file.url}
+                    className="footer__logo"/>
+                </Link>
+                <div className="footer__address">
+                  <IconLocation className="footer__address-icon" />
+                  {data.contentfulComponentFooter.address.childMarkdownRemark.rawMarkdownBody}
+                  <div className="footer__vat">{data.contentfulComponentFooter.vat}</div>
+                </div>
+                <div className="footer__phone">
+                  <IconTelephone className="footer__phone-icon" />
+                  {data.contentfulComponentFooter.phone}
+                </div>
               </div>
-              <div className="col-6">
+            </div>
+            <div className="col-sm-6 col-xs-12">
+              <div className="footer__inner-wrap">
                 <h4 className="footer__social-heading">
                   {data.contentfulComponentFooter.socialHeading}
                 </h4>
@@ -71,6 +73,7 @@ const  Footer = ({ currentLocale }) => {
                   {data.contentfulComponentFooter.socialLinks.map((link, i) => {
                     return (
                       <a href={link.link}
+                        key={i.toString()}
                         target="_blank"
                         className="footer__social-link">
                           <img src={link.image.file.url} alt=""/>
@@ -78,9 +81,9 @@ const  Footer = ({ currentLocale }) => {
                     )
                   })}
                 </div>
-                <div className="footer__advertisement">
+                <p className="footer__advertisement">
                   {data.contentfulComponentFooter.advertisement.childMarkdownRemark.rawMarkdownBody}
-                </div>
+                </p>
                 <span className="footer__copyright">
                   {data.contentfulComponentFooter.copyright}
                 </span>

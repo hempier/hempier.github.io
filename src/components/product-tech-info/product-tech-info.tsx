@@ -12,10 +12,10 @@ const ProductTechInfo = ({
   return (
     <section className="product-tech">
       <div className="product-tech__inner-wrap container">
-        <div className="product-tech__image col-6">
+        <div className="product-tech__image col-xs-12 col-lg-6">
           <img src={image.file.url} alt="" />
         </div>
-        <div className="product-tech__content">
+        <div className="product-tech__content col-xs-12 col-lg-5 off-lg-1">
           <h2 className="product-tech__name subtitle-2">{name}</h2>
           <h2 className="product-tech__title">{title}</h2>
           <ul className="product-tech__info">

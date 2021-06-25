@@ -32,15 +32,9 @@ export default ({ pageContext: { page, allLocales } }) => {
   return (
     <Layout allLocales={allLocales} currentLocale={page.node_locale}>
       <ContactTopBanner {...contactTopBanner} />
-      <section className="container">
-        <div className="row">
-          <div className="col-6">
-            <ContactAddress {...contactAddress} />
-          </div>
-          <div className="col-6">
-            <ContactFeedbackForm {...contactFeedbackForm} />
-          </div>
-        </div>
+      <section className="contact container">
+        <ContactAddress {...contactAddress} />
+        <ContactFeedbackForm {...contactFeedbackForm} />
       </section>
     </Layout>
   )

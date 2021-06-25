@@ -7,6 +7,7 @@
 
 html {
   width: 100%;
+  min-width: $site-min-width;
   height: 100%;
   font-size: 16px;
 }
@@ -21,10 +22,18 @@ body {
 }
 
 .content>:not(:last-child):not(:only-child) {
-  margin-bottom: 7rem;
+  margin-bottom: 2.5rem;
+
+  @include respond-to('sm') {
+    margin-bottom: 3.5rem;
+  }
+
+  @include respond-to('lg') {
+    margin-bottom: 7rem;
+  }
 }
 
-$headings-margin-bottom: 15px;
+$headings-margin-bottom: 1rem;
 $headings-font-weight: 700;
 $headings-line-height: 1.2;
 $headings-color: $text-black;
@@ -164,12 +173,19 @@ p {
 }
 
 .form-body {
-  max-width: 36.75rem;
   width: 100%;
   background-color: $service-white;
 
   &>:not(:last-child):not(:only-child) {
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
+    
+    @include respond-to('md') {
+      margin-bottom: 3rem;
+    }
+  }
+
+  @include respond-to('md') {
+    max-width: 36.75rem;
   }
 }
 
@@ -184,6 +200,16 @@ p {
   font-size: 0.8rem;
   line-height: 1.4;
   color: $text-light-gray;
+
+  @include respond-to('sm') {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  @include respond-to('lg') {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
 }
 
 .form-input {

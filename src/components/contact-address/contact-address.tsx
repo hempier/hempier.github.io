@@ -19,8 +19,8 @@ const  ContactAddress = ({
     emailTitle,
     email}) => {
     return (
-        <section className="contact-address">
-            <h2>{title}</h2>
+        <section className="contact-address col-xs-12 col-lg-6">
+            <h2 className="contact-address__heading">{title}</h2>
             <div className="contact-address__address">
                 <IconLocation className="contact-address__icon contact-address__icon_address"/>
                 <div className="contact-address__fieldset">

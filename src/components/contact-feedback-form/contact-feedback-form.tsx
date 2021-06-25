@@ -48,76 +48,75 @@ const ContactFeedbackForm = props => {
   };
 
   return (
-    <section className="feedback-form">
-      <div className="container">
-        <div className="feedback-form__inner-wrap">
-          <h2 className="feedback-form__title">{title}</h2>
-          <p className="feedback-form__subtitle">{subtitle}</p>
-          <form onSubmit={handleOnSubmit} className="feedback-form__form form-body" id="feedback-form">
-            <div className="feedback-form__fieldset form-fieldset">
-              <label htmlFor="name" className="feedback-form__label form-label">
-                {nameFieldLable}
+    <section className="feedback-form-contact col-xs-12 col-lg-6">
+      <div className="feedback-form-contact__inner-wrap">
+        <h2 className="feedback-form-contact__title">{title}</h2>
+        <p className="feedback-form-contact__subtitle">{subtitle}</p>
+        <form onSubmit={handleOnSubmit} className="feedback-form-contact__form form-body" id="feedback-form-contact">
+          <div className="feedback-form-contact__fieldset form-fieldset">
+            <label htmlFor="name" className="feedback-form-contact__label form-label">
+              {nameFieldLable}
+            </label>
+            <input
+              required
+              type="text"
+              id="name"
+              name="name"
+              className="feedback-form-contact__input form-input"
+            />
+          </div>
+          <div className="feedback-form-contact__fieldset-wrap">
+            <div className="feedback-form-contact__fieldset form-fieldset">
+              <label
+                htmlFor="phone"
+                className="feedback-form-contact__label form-label"
+              >
+                {phoneFieldLable}
               </label>
               <input
                 required
                 type="text"
-                id="name"
-                name="name"
-                className="feedback-form__input form-input"
+                id="phone"
+                name="phone"
+                className="feedback-form-contact__input form-input"
               />
             </div>
-            <div className="feedback-form__fieldset-wrap">
-              <div className="feedback-form__fieldset form-fieldset">
-                <label
-                  htmlFor="phone"
-                  className="feedback-form__label form-label"
-                >
-                  {phoneFieldLable}
-                </label>
-                <input
-                  required
-                  type="text"
-                  id="phone"
-                  name="phone"
-                  className="feedback-form__input form-input"
-                />
-              </div>
-              <div className="feedback-form__fieldset form-fieldset">
-                <label
-                  htmlFor="email"
-                  className="feedback-form__label form-label"
-                >
-                  {emailFieldLable}
-                </label>
-                <input
-                  required
-                  type="text"
-                  id="email"
-                  name="email"
-                  className="feedback-form__input form-input"
-                />
-              </div>
-            </div>
-            <div className="feedback-form__fieldset form-fieldset">
+            <div className="feedback-form-contact__fieldset form-fieldset">
               <label
-                htmlFor="comment"
-                className="feedback-form__label form-label"
+                htmlFor="email"
+                className="feedback-form-contact__label form-label"
               >
-                {commentsFieldLable}
+                {emailFieldLable}
               </label>
               <input
+                required
                 type="text"
-                id="comment"
-                name="comment"
-                className="feedback-form__input form-input"
+                id="email"
+                name="email"
+                className="feedback-form-contact__input form-input"
               />
             </div>
-            <button type="submit" className="feedback-form__submit cta-link">
-              {ctaText}
-            </button>
-          </form>
-        </div>
+          </div>
+          <div className="feedback-form-contact__fieldset form-fieldset">
+            <label
+              htmlFor="comment"
+              className="feedback-form-contact__label form-label"
+            >
+              {commentsFieldLable}
+            </label>
+            <input
+              type="text"
+              id="comment"
+              name="comment"
+              className="feedback-form-contact__input form-input"
+            />
+          </div>
+          <button type="submit" className="feedback-form-contact__submit cta-link">
+            {ctaText}
+          </button>
+        </form>
       </div>
+
     </section>
   )
 }

@@ -1,22 +1,36 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 .awards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     &__inner-wrap {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
         margin-top: 3rem;
+
+        @include respond-to('sm') {
+            flex-direction: row;
+        }
     }
 
     &__item {
-        margin-bottom: 3rem;
+        margin-bottom: 2.5rem;
+
+        @include respond-to('md') {
+            margin-bottom: 3rem;
+        }
     }
 
     &__heading {
         color: $main-site;
 
     }
-    &__description {
+    &__description {}
 
-    }
     .accent {
         color: $main-site;
     }

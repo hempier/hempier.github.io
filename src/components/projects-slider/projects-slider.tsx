@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import "./projects-slider.scss"
 import SimpleSlider from "../slider/slider"
 
-const productsSliderSettings = {
+const projectsSliderSettings = {
   dots: true,
   arrows: false,
   infinite: true,
@@ -11,6 +11,30 @@ const productsSliderSettings = {
   slidesToShow: 3,
   slidesToScroll: 1,
   className: 'projects-slider',
+  responsive: [
+    {
+      breakpoint: 1140,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: true,
+      }
+    },
+    {
+      breakpoint: 700,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1
+      }
+    },
+    {
+      breakpoint: 500,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+  ]
 }
 
 const ProjectsSlider = ({ component, currentLocale }) => {
@@ -23,10 +47,10 @@ const ProjectsSlider = ({ component, currentLocale }) => {
 
   return (
     <section className="projects-slider container">
-      <span className="projects-slider__name subtitle-2">{component.name}</span>
-      <h2 className="projects-slider__title">{component.title}</h2>
-      <div className="projects-slider__inner-wrap">
-        <SimpleSlider customSettings={productsSliderSettings}>
+      <span className="projects-slider__name subtitle-2 col-xs">{component.name}</span>
+      <h2 className="projects-slider__title col-xs">{component.title}</h2>
+      <div className="projects-slider__inner-wrap col-xs">
+        <SimpleSlider customSettings={projectsSliderSettings}>
           {content.map((props, id) => (
             <ProjectsSliderItem key={id.toString()} {...props} currentLocale={currentLocale}/>
           ))}

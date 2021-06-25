@@ -39,7 +39,30 @@ const SimpleGallery = ({ children }) => {
     centerMode: false,
     swipeToSlide: true,
     focusOnSelect: true,
-    // centerPadding: '10px',
+    responsive: [
+      {
+        breakpoint: 1140,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1
+        }
+      },
+      {
+        breakpoint: 500,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
 
   function SamplePrevArrow(props) {
@@ -72,7 +95,7 @@ const SimpleGallery = ({ children }) => {
             {children}
         </Slider>
       </div>
-      <div className="thumbnail-gallery-wrap">
+      <div className="thumbnail-gallery-wrapper">
         <Slider
           {...settingsThumbs}
           asNavFor={nav1}
