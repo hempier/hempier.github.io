@@ -27,7 +27,7 @@
         text-decoration: none;
 
         &:last-child {
-            margin-bottom: 0;
+            // margin-bottom: 0;
         }
 
         @include respond-to('sm') {
