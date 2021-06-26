@@ -27,7 +27,7 @@ const ProjectsListItem = ({ image, title, shortDescription, ctaText, projectLink
     to={projectLink
     ? `/${currentLocale}/${listingPage}/${projectLink.projectSlug}`
     : null}
-    className="projects-list__item col-6 col-xs-12 col-xm-6">
+    className="projects-list__item col-xs-12 col-xm-6">
       <div className="projects-list__image-wrap">
         <img src={image.file.url} alt="" className="projects-list__image"/>
       </div>
