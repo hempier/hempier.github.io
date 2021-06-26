@@ -27,7 +27,7 @@ const ServicesListItem = ({ image, title, shortDescription, ctaText, ctaLink, cu
     to={ctaLink
     ? `/${currentLocale}/${listingPage}/${ctaLink.serviceSlug}`
     : null}
-    className="services-list__item col-6 col-xs-12 col-xm-6 col-sm-4">
+    className="services-list__item col-6 col-xs-12 col-xm-6">
       <div className="services-list__image-wrap">
         <img src={image.file.url} alt="" className="services-list__image"/>
       </div>
