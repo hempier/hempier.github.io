@@ -17,6 +17,17 @@ import { filterPageLocale, Locale } from "../components/locale-provider"
 
 const locale = Locale.Ua
 
+// const PartnersAboutUsSliderSettings = {
+//   responsive: [
+//     {
+//       breakpoint: 1140,
+//       settings: {
+//         slidesToShow: 1,
+//       }
+//     },
+//   ]
+// }
+
 export default ({ pageContext: { page, allLocales } }) => {
   // const localizedPage = filterPageLocale(page, locale)
   // const localizedPage = page
@@ -24,6 +35,10 @@ export default ({ pageContext: { page, allLocales } }) => {
   const partnersAboutUsSlider = findByInternalName(
     page,
     ComponentInternalName.PartnersAboutUsSlider
+  )
+  const aboutPartnersAboutUsSlider = findByInternalName(
+    page,
+    ComponentInternalName.AboutPartnersAboutUsSlider
   )
   const aboutPageTopBanner = findByInternalName(
     page,
@@ -50,6 +65,7 @@ export default ({ pageContext: { page, allLocales } }) => {
     <Layout allLocales={allLocales} currentLocale={page.node_locale}>
       <TopPageBanner {...aboutPageTopBanner} />
       <PageText text={aboutPageText} />
+      <PartnersAboutUsSlider component={aboutPartnersAboutUsSlider} />
       <AwardsTrusted items={aboutPageAwards}/>
       <CarbonDioxidCounter {...carbonDioxidCounter}/>
       <PartnersAboutUsSlider component={partnersAboutUsSlider} />

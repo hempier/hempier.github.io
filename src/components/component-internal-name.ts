@@ -4,6 +4,7 @@ export enum ComponentInternalName {
   InfoSectionHempcrete = "info-section-hempcrete",
   ProductSlider = "products-slider",
   PartnersAboutUsSlider = "partners-about-us",
+  AboutPartnersAboutUsSlider = "about-partners-about-us",
   AboutPageTopBanner = "about-page-top-banner",
   AboutPageAwards = "about-us-awards",
   ProjectsSlider = "projects-slider",
