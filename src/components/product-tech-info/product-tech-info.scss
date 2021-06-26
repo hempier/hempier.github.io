@@ -26,6 +26,7 @@
         @include respond-to('lg') {
             min-height: 27rem;
             height: 27rem;
+            overflow: hidden;
         }
     }
 
