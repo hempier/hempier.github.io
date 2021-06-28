@@ -33,6 +33,10 @@
         text-align: left;
     }
 
+    &__title {
+        margin-bottom: 1rem;
+    }
+
     &__title, &__description {
         position: relative;
         color: $service-white;

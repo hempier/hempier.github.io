@@ -4,11 +4,14 @@
 .cabsorb-counter {
     display: flex;
     flex-direction: column;
-    // margin-bottom: 4rem;
 
     @include respond-to('sm') {
         flex-direction: row;
         flex-wrap: wrap;
+    }
+
+    @include respond-to('lg') {
+        margin-bottom: 3rem;
     }
 
     &__item {
@@ -68,6 +71,11 @@
         flex-direction: row;
         justify-content: center;
         align-items: center;
+        margin-bottom: 1rem;
+
+        @include respond-to('xm') {
+            margin-bottom: 0;
+        }
     }
 
     &__icon-wrap {

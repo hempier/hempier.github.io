@@ -37,11 +37,21 @@
         align-items: flex-start;
     }
 
-    &__title {}
+    &__title {
+        margin-bottom: 1rem;
+
+        @include respond-to('sm') {
+            margin-bottom: 2em;
+        }
+
+        @include respond-to('lg') {
+            margin-bottom: 3rem;
+        }
+    }
 
     &__description {
         width: 100%;
-        padding-bottom: 2rem;
+        // padding-bottom: 2rem;
         border-bottom: 1px solid $service-dark-gray;
         color: $text-dark-grey;
     }

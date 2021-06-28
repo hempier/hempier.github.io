@@ -92,6 +92,7 @@
         color: $service-white;
 
         @include respond-to('lg') {
+            max-width: 50%;
             text-align: left;
             color: inherit;
         }
@@ -99,10 +100,10 @@
 
     &__description {
         color: $service-white;
-        
+
         @include respond-to('lg') {
             max-width: 50%;
-            margin-bottom: 65px;
+            margin-bottom: 3rem;
             color: inherit;
         }
     }
@@ -110,7 +111,11 @@
     &__cta {
         background-color: $main-site;
         color: $service-white;
-        
+    }
+
+    .slider .slick-slide {
+        padding-left: 0;
+        padding-right: 0;
     }
 
     .slider-arrow {

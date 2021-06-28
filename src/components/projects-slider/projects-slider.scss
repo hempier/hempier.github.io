@@ -4,12 +4,20 @@
 .projects-slider {
     $self: &;
 
-    margin-bottom: 7rem;
+    &__name {
+        margin-bottom: 1rem;
+    }
 
-    &__name {}
-    
     &__title {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
+
+        @include respond-to('sm') {
+            margin-bottom: 2em;
+        }
+
+        @include respond-to('lg') {
+            margin-bottom: 3rem;
+        }
     }
 
     &__inner-wrap {
@@ -29,6 +37,18 @@
         align-items: flex-start;
 
         &:hover {
+            #{ $self }__content {
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                background: linear-gradient(360deg, #000000db 0%, #0000005c 100%);
+            }
+
+            #{ $self }__heading {
+                margin-bottom: 1rem;
+            }
+
             #{ $self }__content-inner {
                 display: block;
             }
@@ -76,9 +96,17 @@
             right: $fg-gutter;
             margin-top: -4.5rem;
         }
+    }
+
+    &.slick-slider {
+        margin-bottom: 2.5rem;
+
+        @include respond-to('sm') {
+          margin-bottom: 3.5rem;
+        }
 
         @include respond-to('lg') {
-            right: 0;
+          margin-bottom: 7rem;
         }
     }
 

@@ -41,7 +41,7 @@ const ProductsListItem = ({ image, title, description, ctaText, ctaLink, current
       <div className="products-list__image-wrap">
         <img src={image.file.url} alt="" className="products-list__image"/>
       </div>
-      <h3 className="products-list__heading">{title}</h3>
+      <h4 className="products-list__heading">{title}</h4>
       <p className="products-list__description">
         {description.childMarkdownRemark.rawMarkdownBody}
       </p>

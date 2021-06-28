@@ -3,9 +3,21 @@
 
 .carbon-counter {
     &__inner-wrap {}
+    
+    &__subtitle {
+        margin-bottom: 1rem;
+    }
 
     &__title {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
+
+        @include respond-to('sm') {
+            margin-bottom: 2em;
+        }
+
+        @include respond-to('lg') {
+            margin-bottom: 3rem;
+        }
     }
 
     &__content {
@@ -23,6 +35,7 @@
     }
 
     &__heading {
+        margin-bottom: 1rem;
         text-transform: uppercase;
         text-align: center;
 

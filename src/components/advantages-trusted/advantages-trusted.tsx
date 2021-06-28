@@ -3,7 +3,9 @@ import * as React from "react"
 import "./advantages-trusted.scss"
 
 const AdvantagesTrusted = ({ items }) => {
-  const advantagesTrustedItems = items?.content || []
+  const advantagesTrustedItems = items?.content.sort(
+      (a, b) => a.position - b.position
+    ) || []
 
   return (
     <section className="advantages container">

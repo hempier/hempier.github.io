@@ -65,8 +65,8 @@ export default ({ pageContext: { page, allLocales } }) => {
     <Layout allLocales={allLocales} currentLocale={page.node_locale}>
       <TopPageBanner {...aboutPageTopBanner} />
       <PageText text={aboutPageText} />
-      <PartnersAboutUsSlider component={aboutPartnersAboutUsSlider} />
       <AwardsTrusted items={aboutPageAwards}/>
+      <PartnersAboutUsSlider component={aboutPartnersAboutUsSlider} />
       <CarbonDioxidCounter {...carbonDioxidCounter}/>
       <PartnersAboutUsSlider component={partnersAboutUsSlider} />
       <FeedbackForm {...feedbackForm}/>

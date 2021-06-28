@@ -19,9 +19,9 @@ const AplicationAreas = ({ items }) => {
 }
 
 const AplicationAreasItem = ({ image, heading, description }) => (
-  <div className="aplication-areas__item row">
-    <img src={image.file.url} alt="" className="aplication-areas__image col-xs-12 col-sm-6" />
-    <div className="aplication-areas__content col-xs-12 col-sm-6">
+  <div className="aplication-areas__item">
+    <img src={image.file.url} alt="" className="aplication-areas__image" />
+    <div className="aplication-areas__content">
       <h4 className="aplication-areas__heading">{heading}</h4>
       {Boolean(description?.childMarkdownRemark) &&
         <p className="aplication-areas__description">

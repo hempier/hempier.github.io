@@ -8,10 +8,20 @@
         position: relative;
     }
 
-    &__name {}
+    &__name {
+        margin-bottom: 1rem;
+    }
 
     &__title {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
+
+        @include respond-to('sm') {
+            margin-bottom: 2em;
+        }
+
+        @include respond-to('lg') {
+            margin-bottom: 3rem;
+        }
     }
 
     &__item {

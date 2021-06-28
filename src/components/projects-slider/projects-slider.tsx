@@ -4,7 +4,7 @@ import "./projects-slider.scss"
 import SimpleSlider from "../slider/slider"
 
 const projectsSliderSettings = {
-  dots: true,
+  dots: false,
   arrows: false,
   infinite: true,
   speed: 500,

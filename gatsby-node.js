@@ -185,6 +185,7 @@ exports.createPages = async ({ graphql, actions }) => {
                     rawMarkdownBody
                   }
                 }
+                position
               }
             }
             ... on ContentfulComponentAplicationAreas {

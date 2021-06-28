@@ -6,7 +6,9 @@
         position: relative;
     }
 
-    &__name {}
+    &__name {
+        margin-bottom: 1rem;
+    }
 
     &__title {
         margin-bottom: 1rem;
@@ -34,7 +36,7 @@
 
     &__image {
         max-height: 100%;
-        filter: grayscale(1);
+        // filter: grayscale(1);
         opacity: 1;
     }
 

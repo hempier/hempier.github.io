@@ -30,7 +30,7 @@
         justify-content: center;
 
         @include respond-to('sm') {
-            padding: 2rem;
+            padding: 1rem;
         }
     }
 
