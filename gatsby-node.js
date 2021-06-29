@@ -191,6 +191,8 @@ exports.createPages = async ({ graphql, actions }) => {
             ... on ContentfulComponentAplicationAreas {
               node_locale
               internalName
+              name
+  						title
               content {
                 node_locale
                 internalName
@@ -298,10 +300,6 @@ exports.createPages = async ({ graphql, actions }) => {
               firmName
               addressLabel
               addressValue
-              regonLabel
-              regonValue
-              vatLabel
-              vatValue
               phoneLabel
               phoneValue
               emailTitle

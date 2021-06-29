@@ -1,4 +1,5 @@
 @import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
 
 %icon-section {
   position: relative;
@@ -14,13 +15,38 @@
   color: $main-site;
 }
 .contact-address {
+
+  &__heading {
+    margin-bottom: 1rem;
+
+    @include respond-to('sm') {
+        margin-bottom: 2em;
+    }
+
+    @include respond-to('lg') {
+        margin-bottom: 3rem;
+    }
+  }
+
   &__address {
     @extend %icon-section;
   }
 
   &__phone {
     @extend %icon-section;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+
+    @include respond-to('sm') {
+        margin-bottom: 2em;
+    }
+
+    @include respond-to('lg') {
+        margin-bottom: 3rem;
+    }
+  }
+
+  &__email-heding {
+    margin-bottom: 1rem;
   }
 
   &__email {

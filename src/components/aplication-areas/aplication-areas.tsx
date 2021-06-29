@@ -7,8 +7,16 @@ const AplicationAreas = ({ items }) => {
 
   return (
     <section className="aplication-areas container">
-      <div className="aplication-areas__name subtitle-1 col-xs-12">{items.name}</div>
-      <h2 className="aplication-areas__title col-xs-12">{items.title}</h2>
+      {Boolean(items?.name) &&
+        <div className="aplication-areas__name subtitle-1 col-xs-12">
+          {items.name}
+        </div>
+      }
+      {Boolean(items?.title) &&
+        <h2 className="aplication-areas__title col-xs-12">
+          {items.title}
+        </h2>
+      }
       <div className="aplication-areas__inner-wrap col-xs-12">
         {advantagesTrustedItems.map((props, id) => (
           <AplicationAreasItem key={id.toString()} {...props} />
