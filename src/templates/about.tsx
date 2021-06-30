@@ -66,8 +66,8 @@ export default ({ pageContext: { page, allLocales } }) => {
       <TopPageBanner {...aboutPageTopBanner} />
       <PageText text={aboutPageText} />
       <AwardsTrusted items={aboutPageAwards}/>
-      <PartnersAboutUsSlider component={aboutPartnersAboutUsSlider} />
       <CarbonDioxidCounter {...carbonDioxidCounter}/>
+      <PartnersAboutUsSlider component={aboutPartnersAboutUsSlider} />
       <PartnersAboutUsSlider component={partnersAboutUsSlider} />
       <FeedbackForm {...feedbackForm}/>
     </Layout>
