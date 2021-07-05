@@ -384,6 +384,12 @@ exports.createPages = async ({ graphql, actions }) => {
               incrementMg
               initialDate
             }
+            ... on ContentfulComponentCostCalculator {
+              internalName
+              node_locale
+              name
+              heading
+            }
           }
         }
       }
