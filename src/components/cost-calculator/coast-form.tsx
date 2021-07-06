@@ -113,7 +113,7 @@ class Form extends Component {
               onChange={event => this.handleChange(event)}
             />
             <div className="cost-calculator__metric col-xs-1 col-lg-1">
-              m<sup className="cost-calculator__metric-power">2</sup>
+              м<sup className="cost-calculator__metric-power">2</sup>
             </div>
           </div>
         </div>
@@ -135,7 +135,7 @@ class Form extends Component {
               onChange={event => this.handleChange(event)}
             />
             <div className="cost-calculator__metric col-xs-1 col-lg-1">
-              m<sup className="cost-calculator__metric-power">2</sup>
+              м<sup className="cost-calculator__metric-power">2</sup>
             </div>
           </div>
         </div>
@@ -157,7 +157,7 @@ class Form extends Component {
               onChange={event => this.handleChange(event)}
             />
             <div className="cost-calculator__metric col-xs-1 col-lg-1">
-              m<sup className="cost-calculator__metric-power">2</sup>
+              м<sup className="cost-calculator__metric-power">2</sup>
             </div>
           </div>
         </div>
@@ -180,7 +180,7 @@ class Form extends Component {
               onChange={event => this.handleChange(event)}
             />
             <div className="cost-calculator__metric col-xs-1 col-lg-1">
-              m<sup className="cost-calculator__metric-power">2</sup>
+              м<sup className="cost-calculator__metric-power">2</sup>
             </div>
           </div>
         </div>

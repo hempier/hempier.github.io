@@ -17,6 +17,14 @@
         margin-bottom: 3rem;
     }
   }
+
+  &__inner-wrap {
+    @include respond-to('lg') {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
   
   &__heading {
     margin-bottom: 1rem;
