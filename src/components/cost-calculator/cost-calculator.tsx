@@ -15,7 +15,7 @@ const CostCalculator = ({ name, heading }) => {
         {name}
       </div>
       <h2 className="cost-calculator__title col-xs-12">{heading}</h2>
-      <div className="cost-calculator__inner-wrap row">
+      <div className="cost-calculator__inner-wrap">
           <House
             onClick={e => {
                 const id = e?.target?.id ?? ""
@@ -29,8 +29,8 @@ const CostCalculator = ({ name, heading }) => {
                 if(id.startsWith("slab")) {
                     setSelectedElem("floors")
                 }
-                if(id.startsWith("wall")) {
-                    setSelectedElem("wall")
+                if(id.startsWith("inner-separator")) {
+                    setSelectedElem("inner-separator")
                 }
             }}
             className={

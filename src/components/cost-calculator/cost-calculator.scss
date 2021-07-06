@@ -17,6 +17,30 @@
         margin-bottom: 3rem;
     }
   }
+  
+  &__heading {
+    margin-bottom: 1rem;
+  }
+
+  &__fieldset {
+    &>:not(:last-child):not(:only-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__fieldset-inner {
+    align-items: flex-end;
+  }
+
+  &__metric {
+    flex-direction: row;
+    justify-content: flex-start;
+    line-height: 1;
+  }
+
+  &__metric-power {
+    font-size: .5em;
+  }
 }
 
 svg {
@@ -51,8 +75,8 @@ path{
     stroke-width: 2;
   }
 }
-.floors {
-  #floors {
+.inner-separator {
+  #inner-separator {
     fill: #40BB88;
     fill-opacity: 0.5 !important;
     // stroke: orange;
