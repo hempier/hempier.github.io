@@ -15,7 +15,7 @@ const Localization = ({ allLocales }) => {
       : null
 
   return (
-    <div className="header__locale col-lg-1 off-lg-1">
+    <div className="header__locale col-lg-1 ">
       {allLocales
         ? allLocales.map(link => {
             return (

@@ -1,0 +1,61 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.cost-calculator {
+  &__name {
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+
+    @include respond-to('sm') {
+        margin-bottom: 2em;
+    }
+
+    @include respond-to('lg') {
+        margin-bottom: 3rem;
+    }
+  }
+}
+
+svg {
+    pointer-events: none;
+}
+
+path{
+    pointer-events: auto;
+}
+
+.roof {
+  #roof {
+    fill: #40BB88;
+    fill-opacity: 0.5 !important;
+    // stroke: orange;
+    stroke-width: 2;
+  }
+}
+.floors {
+  #floors {
+    fill: #40BB88;
+    fill-opacity: 0.5 !important;
+    // stroke: orange;
+    stroke-width: 2;
+  }
+}
+.wall {
+  #wall {
+    fill: #40BB88;
+    fill-opacity: 0.5 !important;
+    // stroke: orange;
+    stroke-width: 2;
+  }
+}
+.floors {
+  #floors {
+    fill: #40BB88;
+    fill-opacity: 0.5 !important;
+    // stroke: orange;
+    stroke-width: 2;
+  }
+}

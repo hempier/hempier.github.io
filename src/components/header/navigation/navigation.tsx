@@ -10,7 +10,7 @@ const Navigation = ({navigationItems, currentLocale}) => {
       : null
 
   return (
-    <nav className="header__navigation col-lg-6 off-lg-1">
+    <nav className="header__navigation col-lg-8">
       {navigationItems.map((link, id) => (
           <>
             <Link
