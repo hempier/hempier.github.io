@@ -3,7 +3,7 @@ import React, { Component } from "react"
 class Form extends Component {
   constructor(props) {
     super(props)
-    this.state = { wallWidth: 15, wall: 0, floors: 0, roof: 0, innerSeparator: 0 }
+    this.state = {  wallWidth: 0.15, wall: 0, floors: 0, roof: 0, innerSeparator: 0,  }
   }
 
   //   handleSubmit(event) {
@@ -16,8 +16,11 @@ class Form extends Component {
     this.setState({
       // Computed property names
       // keys of the objects are computed dynamically
-      [event.target.name]: parseInt(event.target.value),
+      [event.target.name]: Number(event.target.value),
     })
+    console.log('name: ', event.target.name)
+    console.log('value: ', parseInt(event.target.value))
+    
   }
 
   //   setRoofValue(e) {
@@ -59,8 +62,8 @@ class Form extends Component {
     totalMaterials = totalWallsMaterial + totalFloorsMaterial + totalRoofMaterial + totalInnerSeparatorMaterial
     totalCoast = totalWallsCoast + totalFloorsCoast + totalRoofCoast + totalInnerSeparatorCoast
 
-    // console.log('wall width: ', this.state.wallWidth)
-    // console.log('wall: ', this.state.wall)
+    console.log('wall width: ', this.state.wallWidth)
+    console.log('wall: ', this.state.wall)
     // console.log('floors: ', this.state.floors)
     // console.log('roof: ', this.state.roof)
     // console.log('innerSeparator: ', this.state.innerSeparator)
@@ -73,9 +76,9 @@ class Form extends Component {
             <label className="radio radio-gradient col-xs-6 col-lg-3">
               <span className="radio__input">
                 <input
-                  checked
                   type="radio"
                   name="wallWidth"
+                  defaultChecked
                   value="0.15"
                   onChange={event => this.handleChange(event)}
                 />
@@ -88,7 +91,7 @@ class Form extends Component {
                 <input
                   type="radio"
                   name="wallWidth"
-                  value="0.4"
+                  defaultValue="0.4"
                   onChange={event => this.handleChange(event)}
                 />
                 <span className="radio__control"></span>
@@ -141,7 +144,7 @@ class Form extends Component {
         </div>
         <div className="cost-calculator__fieldset">
           <h5 className="cost-calculator__heading">Дах</h5>
-          <div className="cost-calculator__fieldset-inner row">
+          <div className="cost-calculator__radio cost-calculator__fieldset-inner row">
             <label htmlFor="roof" className="col-xs-12 col-lg-6">
               Загальна площа даху:
             </label>
@@ -185,11 +188,13 @@ class Form extends Component {
           </div>
         </div>
         <div className="cost-calculator__finals">
-            <div className="cost-calculator__finals-material">
-                TOTAL MATERIAL: {totalMaterials}
+            <div className="cost-calculator__finals-material row">
+                <h4 className="col-xs-6 col-lg-5"> TOTAL MATERIAL:</h4> 
+                <div className="col-xs-6 col-lg-7">{totalMaterials}</div>
             </div>
-            <div className="cost-calculator__finals-cost">
-                TOTAL COST: ₴ {totalCoast}
+            <div className="cost-calculator__finals-cost row">
+                <h4 className="col-xs-6 col-lg-5">TOTAL COST:</h4>  
+                <div className="col-xs-6 col-lg-7">₴ {totalCoast}</div>
             </div>
         </div>
       </form>

@@ -2,28 +2,6 @@ import * as React from "react"
 import "./partners-about-us-slider.scss"
 import SimpleSlider from "../slider/slider"
 
-const partnersAboutUsSliderSettings = {
-  dots: false,
-  slidesToShow: 4,
-  responsive: [
-    {
-      breakpoint: 1140,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-      }
-    },
-    {
-      breakpoint: 768,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
-}
-
 const PartnersAboutUs = ({ component }) => {
   const contentPresent = Boolean(component?.content)
   if (!contentPresent) {
@@ -31,6 +9,28 @@ const PartnersAboutUs = ({ component }) => {
   }
 
   const content = component.content
+
+  const partnersAboutUsSliderSettings = {
+    dots: false,
+    slidesToShow: content.length >= 4 ? 4 : content.length,
+    responsive: [
+      {
+        breakpoint: 1140,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  }
 
   return (
     <section className="partners-about-us container">

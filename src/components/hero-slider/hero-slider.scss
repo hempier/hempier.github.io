@@ -111,6 +111,11 @@
     &__cta {
         background-color: $main-site;
         color: $service-white;
+
+        @include respond-to('lg') {
+            background-color: $service-white;
+            color: inherit;
+        }
     }
 
     .slider .slick-slide {

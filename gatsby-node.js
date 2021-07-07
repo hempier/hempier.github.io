@@ -29,6 +29,10 @@ exports.createPages = async ({ graphql, actions }) => {
                   }
                 }
                 ctaText
+                ctaLink {
+                  slug
+                }
+                externalCtaLink
                 image {
                   file {
                     url
@@ -276,23 +280,6 @@ exports.createPages = async ({ graphql, actions }) => {
               quantity
               ctaText
             }
-            ... on ContentfulComponentProductTechnicalInformation {
-              internalName
-              node_locale
-              image {
-                file {
-                  url
-                }
-              }
-              name
-              title
-              characteristics {
-                node_locale
-                techLabel
-                techValue
-              }
-              documentationLinkText
-            }
             ... on ContentfulComponentContactInfo {
               internalName
               node_locale
@@ -465,6 +452,11 @@ exports.createPages = async ({ graphql, actions }) => {
                 node_locale
                 techLabel
                 techValue
+              }
+              documentation {
+                file {
+                  url
+                }
               }
               documentationLinkText
             }

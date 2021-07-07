@@ -2,6 +2,7 @@ import React from "react"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
+import AboutPartnersAboutUsSlider from "../components/partners-about-us-slider/partners-about-us-slider"
 import PartnersAboutUsSlider from "../components/partners-about-us-slider/partners-about-us-slider"
 import TopPageBanner from "../components/top-banner/top-banner"
 import PageText from "../components/page-text/page-text"
@@ -67,7 +68,7 @@ export default ({ pageContext: { page, allLocales } }) => {
       <PageText text={aboutPageText} />
       <AwardsTrusted items={aboutPageAwards}/>
       <CarbonDioxidCounter {...carbonDioxidCounter}/>
-      <PartnersAboutUsSlider component={aboutPartnersAboutUsSlider} />
+      <AboutPartnersAboutUsSlider component={aboutPartnersAboutUsSlider} />
       <PartnersAboutUsSlider component={partnersAboutUsSlider} />
       <FeedbackForm {...feedbackForm}/>
     </Layout>

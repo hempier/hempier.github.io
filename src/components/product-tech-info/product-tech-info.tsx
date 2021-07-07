@@ -7,6 +7,7 @@ const ProductTechInfo = ({
   name,
   title,
   characteristics,
+  documentation,
   documentationLinkText,
 }) => {
   return (
@@ -26,9 +27,14 @@ const ProductTechInfo = ({
                 </li>
               )) }
           </ul>
-          <a href="" className="product-tech__tech-documentation link">
-            {documentationLinkText}
-          </a>
+          {Boolean(documentation) && (
+            <a href={documentation.file.url}
+               target="_blank"
+               className="product-tech__tech-documentation link"
+            >
+              {documentationLinkText}
+            </a>
+          )}
         </div>
       </div>
     </section>

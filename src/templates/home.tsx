@@ -53,7 +53,7 @@ export default ({ pageContext: { page, allLocales } }) => {
 
   return (
     <Layout  allLocales={allLocales} currentLocale={page.node_locale}>
-      <HeroSlider items={heroSliderItems} />
+      <HeroSlider items={heroSliderItems} currentLocale={page.node_locale}/>
       <InformationSection {...infoSectionAboutUs} currentLocale={page.node_locale} />
       <PartnersAboutUsSlider component={partnersAboutUsSlider} />
       <InformationSection {...infoSectionHempcrete} currentLocale={page.node_locale} />
