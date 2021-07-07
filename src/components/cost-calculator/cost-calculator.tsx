@@ -15,7 +15,7 @@ const CostCalculator = ({ name, heading }) => {
         {name}
       </div>
       <h2 className="cost-calculator__title col-xs-12">{heading}</h2>
-      <div className="cost-calculator__inner-wrap">
+      <div className="cost-calculator__inner-wrap col-xs-12">
           <House
             onClick={e => {
                 const id = e?.target?.id ?? ""
