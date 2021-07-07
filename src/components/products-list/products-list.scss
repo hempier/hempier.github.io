@@ -57,8 +57,11 @@
     }
 
     &__heading {
+        margin-bottom: 1rem;
+
         @include respond-to('xm') {
             min-height: 3.5rem;
+            margin-bottom: 0;
         }
         @include respond-to('sm') {
             // min-height: 3rem;
