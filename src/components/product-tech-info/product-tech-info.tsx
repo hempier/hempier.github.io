@@ -22,8 +22,8 @@ const ProductTechInfo = ({
           <ul className="product-tech__info">
               {characteristics.map((item, id) => (
                 <li className="product-tech__info-item" key={id.toString()}>
-                  <strong className="product-tech__label">{item.techLabel}</strong>
-                  <span className="product-tech__value">{item.techValue}</span>
+                  <strong className="product-tech__label">{item.techItemLabel}</strong>
+                  <span className="product-tech__value">{item.techItemValue}</span>
                 </li>
               )) }
           </ul>
