@@ -461,9 +461,8 @@ exports.createPages = async ({ graphql, actions }) => {
               name
               title
               characteristics {
-                node_locale
-                techLabel
-                techValue
+                techItemLabel
+                techItemValue
               }
               documentation {
                 file {
@@ -525,8 +524,8 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               title
               characteristics {
-                techLabel
-                techValue
+                techItemLabel
+                techItemValue
               }
             }
             ... on ContentfulComponentProjectGallery {

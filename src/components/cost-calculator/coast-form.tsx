@@ -12,7 +12,6 @@ class Form extends Component {
       // keys of the objects are computed dynamically
       [event.target.name]: Number(event.target.value),
     })
-    
   }
 
   render() {
@@ -39,13 +38,13 @@ class Form extends Component {
     let totalWallsCoast = totalWallsMaterial*MATERIAL_CUBIC_METER_COST
 
     let totalFloorsMaterial = this.state.floors * FLOORS_MATERIAL_WIDTH
-    let totalFloorsCoast = totalWallsMaterial*MATERIAL_CUBIC_METER_COST
+    let totalFloorsCoast = totalWallsMaterial * MATERIAL_CUBIC_METER_COST
 
     let totalRoofMaterial = this.state.roof * ROOF_MATERIAL_WIDTH
-    let totalRoofCoast = totalRoofMaterial*MATERIAL_CUBIC_METER_COST
+    let totalRoofCoast = totalRoofMaterial * MATERIAL_CUBIC_METER_COST
 
     let totalInnerSeparatorMaterial = this.state.innerSeparator * INNER_SEPARATOR_MATERIAL_WIDTH
-    let totalInnerSeparatorCoast = totalInnerSeparatorMaterial*MATERIAL_CUBIC_METER_COST
+    let totalInnerSeparatorCoast = totalInnerSeparatorMaterial * MATERIAL_CUBIC_METER_COST
 
     totalMaterials = totalWallsMaterial + totalFloorsMaterial + totalRoofMaterial + totalInnerSeparatorMaterial
     totalCoast = totalWallsCoast + totalFloorsCoast + totalRoofCoast + totalInnerSeparatorCoast
@@ -172,7 +171,7 @@ class Form extends Component {
         </div>
         <div className="cost-calculator__finals">
             <div className="cost-calculator__finals-material row">
-                <h4 className="col-xs-6 col-lg-5"> {this.props.costForm.totalMaterialLabel}</h4> 
+                <h4 className="col-xs-6 col-lg-5"> {this.props.costForm.totalMaterialLabel}</h4>
                 <div className="col-xs-6 col-lg-7">
                   {totalMaterials}
                   <div className="cost-calculator__metric">
@@ -181,7 +180,7 @@ class Form extends Component {
                 </div>
             </div>
             <div className="cost-calculator__finals-cost row">
-                <h4 className="col-xs-6 col-lg-5">{this.props.costForm.totalCostLabel}</h4>  
+                <h4 className="col-xs-6 col-lg-5">{this.props.costForm.totalCostLabel}</h4>
                 <div className="col-xs-6 col-lg-7">
                   {totalCoast} ₴
                 </div>
