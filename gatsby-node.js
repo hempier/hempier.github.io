@@ -376,6 +376,18 @@ exports.createPages = async ({ graphql, actions }) => {
               node_locale
               name
               heading
+              wallsHeading
+              wallWidthLabel
+              wallsAreaLabel
+              floorsHeading
+              floorsAreaLabel
+              roofHeading
+              roofAreaLabel
+              innerSeparatorsHeading
+              innerSeparatorsAreaLabal
+              totalMaterialLabel
+              totalCostLabel
+              hempMixCubicMetetrPrice
             }
           }
         }

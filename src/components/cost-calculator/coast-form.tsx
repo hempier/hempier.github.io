@@ -6,29 +6,14 @@ class Form extends Component {
     this.state = {  wallWidth: 0.15, wall: 0, floors: 0, roof: 0, innerSeparator: 0,  }
   }
 
-  //   handleSubmit(event) {
-  //     const { buildingArea, wallHeight, floors } = this.state
-  //     event.preventDefault()
-  //   }
-
-
   handleChange(event) {
     this.setState({
       // Computed property names
       // keys of the objects are computed dynamically
       [event.target.name]: Number(event.target.value),
     })
-    console.log('name: ', event.target.name)
-    console.log('value: ', parseInt(event.target.value))
     
   }
-
-  //   setRoofValue(e) {
-  //     this.setState({
-  //       ...this.state,
-  //       roofValue: e?.target?.value ?? 0,
-  //     })
-  //   }
 
   render() {
     if (this.props.selectedElem === "wall") {
@@ -45,34 +30,32 @@ class Form extends Component {
     }
 
     let totalCoast, totalMaterials = 0
-    const MATERIAL_CUBIC_METER_COST = 2400;
+    const MATERIAL_CUBIC_METER_COST = this.props.costForm.hempMixCubicMetetrPrice
+    const FLOORS_MATERIAL_WIDTH = 0.2
+    const ROOF_MATERIAL_WIDTH = 0.3
+    const INNER_SEPARATOR_MATERIAL_WIDTH = 0.2
 
     let totalWallsMaterial = this.state.wallWidth * this.state.wall
     let totalWallsCoast = totalWallsMaterial*MATERIAL_CUBIC_METER_COST
 
-    let totalFloorsMaterial = this.state.floors * 0.2
+    let totalFloorsMaterial = this.state.floors * FLOORS_MATERIAL_WIDTH
     let totalFloorsCoast = totalWallsMaterial*MATERIAL_CUBIC_METER_COST
 
-    let totalRoofMaterial = this.state.roof * 0.3
+    let totalRoofMaterial = this.state.roof * ROOF_MATERIAL_WIDTH
     let totalRoofCoast = totalRoofMaterial*MATERIAL_CUBIC_METER_COST
 
-    let totalInnerSeparatorMaterial = this.state.innerSeparator * 0.2
+    let totalInnerSeparatorMaterial = this.state.innerSeparator * INNER_SEPARATOR_MATERIAL_WIDTH
     let totalInnerSeparatorCoast = totalInnerSeparatorMaterial*MATERIAL_CUBIC_METER_COST
 
     totalMaterials = totalWallsMaterial + totalFloorsMaterial + totalRoofMaterial + totalInnerSeparatorMaterial
     totalCoast = totalWallsCoast + totalFloorsCoast + totalRoofCoast + totalInnerSeparatorCoast
 
-    console.log('wall width: ', this.state.wallWidth)
-    console.log('wall: ', this.state.wall)
-    // console.log('floors: ', this.state.floors)
-    // console.log('roof: ', this.state.roof)
-    // console.log('innerSeparator: ', this.state.innerSeparator)
     return (
       <form action="" className="cost-calculator__form form-body">
         <div className="cost-calculator__fieldset">
-          <h5 className="cost-calculator__heading">Стіни</h5>
+          <h5 className="cost-calculator__heading">{this.props.costForm.wallsHeading}</h5>
           <div className="cost-calculator__fieldset-inner row">
-            <div className="col-xs-12 col-lg-6">Товщина стіни:</div>
+            <div className="col-xs-12 col-lg-6">{this.props.costForm.wallWidthLabel}</div>
             <label className="radio radio-gradient col-xs-6 col-lg-3">
               <span className="radio__input">
                 <input
@@ -101,7 +84,7 @@ class Form extends Component {
           </div>
           <div className="cost-calculator__fieldset-inner row">
             <label htmlFor="wall" className="col-xs-12 col-lg-6">
-              Загальна площа стін:
+              {this.props.costForm.wallsAreaLabel}
             </label>
             <input
               ref={r => (this.wallRef = r)}
@@ -121,10 +104,10 @@ class Form extends Component {
           </div>
         </div>
         <div className="cost-calculator__fieldset">
-          <h5 className="cost-calculator__heading">Міжповерхові перекриття</h5>
+          <h5 className="cost-calculator__heading">{this.props.costForm.floorsHeading}</h5>
           <div className="cost-calculator__fieldset-inner row">
             <label htmlFor="floors" className="col-xs-12 col-lg-6">
-              Загальна площа перериттів:
+              {this.props.costForm.floorsAreaLabel}
             </label>
             <input
               ref={r => (this.floorRef = r)}
@@ -143,10 +126,10 @@ class Form extends Component {
           </div>
         </div>
         <div className="cost-calculator__fieldset">
-          <h5 className="cost-calculator__heading">Дах</h5>
+          <h5 className="cost-calculator__heading">{this.props.costForm.roofHeading}</h5>
           <div className="cost-calculator__radio cost-calculator__fieldset-inner row">
             <label htmlFor="roof" className="col-xs-12 col-lg-6">
-              Загальна площа даху:
+              {this.props.costForm.roofAreaLabel}
             </label>
             <input
               ref={r => (this.roofRef = r)}
@@ -165,11 +148,11 @@ class Form extends Component {
           </div>
         </div>
         <div className="cost-calculator__fieldset">
-          <h5 className="cost-calculator__heading">Внутрішні стіни</h5>
+          <h5 className="cost-calculator__heading">{this.props.costForm.innerSeparatorsHeading}</h5>
 
           <div className="cost-calculator__fieldset-inner row">
             <label htmlFor="inner-separator" className="col-xs-12 col-lg-6">
-              Загальна площа внутрішніх стін:
+              {this.props.costForm.innerSeparatorsAreaLabal}
             </label>
             <input
               ref={r => (this.innerSeparatorRef = r)}
@@ -189,12 +172,19 @@ class Form extends Component {
         </div>
         <div className="cost-calculator__finals">
             <div className="cost-calculator__finals-material row">
-                <h4 className="col-xs-6 col-lg-5"> TOTAL MATERIAL:</h4> 
-                <div className="col-xs-6 col-lg-7">{totalMaterials}</div>
+                <h4 className="col-xs-6 col-lg-5"> {this.props.costForm.totalMaterialLabel}</h4> 
+                <div className="col-xs-6 col-lg-7">
+                  {totalMaterials}
+                  <div className="cost-calculator__metric">
+                    м<sup className="cost-calculator__metric-power">3</sup>
+                  </div>
+                </div>
             </div>
             <div className="cost-calculator__finals-cost row">
-                <h4 className="col-xs-6 col-lg-5">TOTAL COST:</h4>  
-                <div className="col-xs-6 col-lg-7">₴ {totalCoast}</div>
+                <h4 className="col-xs-6 col-lg-5">{this.props.costForm.totalCostLabel}</h4>  
+                <div className="col-xs-6 col-lg-7">
+                  {totalCoast} ₴
+                </div>
             </div>
         </div>
       </form>
