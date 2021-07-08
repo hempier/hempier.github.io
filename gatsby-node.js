@@ -460,10 +460,10 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               name
               title
-              characteristics {
-                techItemLabel
-                techItemValue
-              }
+              #characteristics {
+              #  techItemLabel
+              #  techItemValue
+              #}
               documentation {
                 file {
                   url

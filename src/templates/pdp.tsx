@@ -43,7 +43,7 @@ export default ({ pageContext: { page, allLocales } }) => {
   return (
     <Layout  allLocales={allLocales} currentLocale={page.node_locale}>
       <ProductDescription {...pdpProductDescrition} />
-      <ProductTechInfo {...pdpTechInfo} />
+      {/* <ProductTechInfo {...pdpTechInfo} /> */}
       <ProductUsagesTrusted items={pdpUsagesTrusted} />
       <Advertisement {...pdpInformationAdv} />
       <FeedbackForm {...pdpFeedbackForm} />
