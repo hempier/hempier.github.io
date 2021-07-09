@@ -3,7 +3,7 @@ import React, { Component } from "react"
 class Form extends Component {
   constructor(props) {
     super(props)
-    this.state = {  wallWidth: 0.15, wall: 0, floors: 0, roof: 0, innerSeparator: 0,  }
+    this.state = {  wallWidth: 0.2, wall: 0, floorsWidth: 0.2, floors: 0, roof: 0, innerSeparator: 0,  }
   }
 
   handleChange(event) {
@@ -24,21 +24,21 @@ class Form extends Component {
     if (this.props.selectedElem === "roof") {
       this.roofRef.focus()
     }
-    if (this.props.innerSeparatorRef === "inner-separator") {
+    if (this.props.selectedElem === "innerSeparator") {
       this.innerSeparatorRef.focus()
     }
 
     let totalCoast, totalMaterials = 0
     const MATERIAL_CUBIC_METER_COST = this.props.costForm.hempMixCubicMetetrPrice
-    const FLOORS_MATERIAL_WIDTH = 0.2
+    // const FLOORS_MATERIAL_WIDTH = 0.2
     const ROOF_MATERIAL_WIDTH = 0.3
     const INNER_SEPARATOR_MATERIAL_WIDTH = 0.2
 
     let totalWallsMaterial = this.state.wallWidth * this.state.wall
     let totalWallsCoast = totalWallsMaterial*MATERIAL_CUBIC_METER_COST
 
-    let totalFloorsMaterial = this.state.floors * FLOORS_MATERIAL_WIDTH
-    let totalFloorsCoast = totalWallsMaterial * MATERIAL_CUBIC_METER_COST
+    let totalFloorsMaterial = this.state.floorsWidth * this.state.floors
+    let totalFloorsCoast = totalFloorsMaterial * MATERIAL_CUBIC_METER_COST
 
     let totalRoofMaterial = this.state.roof * ROOF_MATERIAL_WIDTH
     let totalRoofCoast = totalRoofMaterial * MATERIAL_CUBIC_METER_COST
@@ -48,6 +48,8 @@ class Form extends Component {
 
     totalMaterials = totalWallsMaterial + totalFloorsMaterial + totalRoofMaterial + totalInnerSeparatorMaterial
     totalCoast = totalWallsCoast + totalFloorsCoast + totalRoofCoast + totalInnerSeparatorCoast
+    console.log('totalCoast', totalCoast)
+
 
     return (
       <form action="" className="cost-calculator__form form-body">
@@ -61,12 +63,12 @@ class Form extends Component {
                   type="radio"
                   name="wallWidth"
                   defaultChecked
-                  value="0.15"
+                  value="0.2"
                   onChange={event => this.handleChange(event)}
                 />
                 <span className="radio__control"></span>
               </span>
-              <span className="radio__label">15 см</span>
+              <span className="radio__label">20 см</span>
             </label>
             <label className="radio radio-gradient col-xs-6 col-lg-3">
               <span className="radio__input">
@@ -104,6 +106,34 @@ class Form extends Component {
         </div>
         <div className="cost-calculator__fieldset">
           <h5 className="cost-calculator__heading">{this.props.costForm.floorsHeading}</h5>
+          <div className="cost-calculator__fieldset-inner row">
+            <div className="col-xs-12 col-lg-6">{this.props.costForm.floorsWidthLabel}</div>
+            <label className="radio radio-gradient col-xs-6 col-lg-3">
+              <span className="radio__input">
+                <input
+                  type="radio"
+                  name="floorsWidth"
+                  defaultChecked
+                  value="0.2"
+                  onChange={event => this.handleChange(event)}
+                />
+                <span className="radio__control"></span>
+              </span>
+              <span className="radio__label">20 см</span>
+            </label>
+            <label className="radio radio-gradient col-xs-6 col-lg-3">
+              <span className="radio__input">
+                <input
+                  type="radio"
+                  name="floorsWidth"
+                  defaultValue="0.3"
+                  onChange={event => this.handleChange(event)}
+                />
+                <span className="radio__control"></span>
+              </span>
+              <span className="radio__label">30 см</span>
+            </label>
+          </div>
           <div className="cost-calculator__fieldset-inner row">
             <label htmlFor="floors" className="col-xs-12 col-lg-6">
               {this.props.costForm.floorsAreaLabel}
@@ -150,13 +180,13 @@ class Form extends Component {
           <h5 className="cost-calculator__heading">{this.props.costForm.innerSeparatorsHeading}</h5>
 
           <div className="cost-calculator__fieldset-inner row">
-            <label htmlFor="inner-separator" className="col-xs-12 col-lg-6">
+            <label htmlFor="innerSeparator" className="col-xs-12 col-lg-6">
               {this.props.costForm.innerSeparatorsAreaLabal}
             </label>
             <input
               ref={r => (this.innerSeparatorRef = r)}
               type="text"
-              id="inner-separator"
+              id="innerSeparator"
               name="innerSeparator"
               className="form-input col-xs-11 col-lg-5"
               onClick={e => {
@@ -172,17 +202,17 @@ class Form extends Component {
         <div className="cost-calculator__finals">
             <div className="cost-calculator__finals-material row">
                 <h4 className="col-xs-6 col-lg-5"> {this.props.costForm.totalMaterialLabel}</h4>
-                <div className="col-xs-6 col-lg-7">
+                <div className="cost-calculator__finals-material-inner-wrap col-xs-6 col-lg-7">
                   {totalMaterials}
                   <div className="cost-calculator__metric">
-                    м<sup className="cost-calculator__metric-power">3</sup>
+                    &nbsp;м<sup className="cost-calculator__metric-power">3</sup>
                   </div>
                 </div>
             </div>
             <div className="cost-calculator__finals-cost row">
                 <h4 className="col-xs-6 col-lg-5">{this.props.costForm.totalCostLabel}</h4>
                 <div className="col-xs-6 col-lg-7">
-                  {totalCoast} ₴
+                  {totalCoast}&nbsp;₴
                 </div>
             </div>
         </div>

@@ -40,13 +40,6 @@
     align-items: flex-end;
   }
 
-  &__radio {
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: center;
-    // align-content: center;
-  }
-
   &__metric {
     flex-direction: row;
     justify-content: flex-start;
@@ -55,6 +48,17 @@
 
   &__metric-power {
     font-size: .5em;
+  }
+
+  &__finals {}
+
+  &__finals-material-inner-wrap{
+    flex-direction: row;
+
+    .cost-calculator__metric {
+      display: flex;
+      line-height: 1.5;
+    }
   }
 }
 
@@ -90,7 +94,7 @@ path{
     stroke-width: 2;
   }
 }
-.inner-separator {
+.innerSeparator {
   #inner-separator {
     fill: #40BB88;
     fill-opacity: 0.5 !important;

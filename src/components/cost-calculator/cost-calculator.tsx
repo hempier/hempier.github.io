@@ -11,6 +11,7 @@ const CostCalculator = ({
   wallWidthLabel,
   wallsAreaLabel,
   floorsHeading,
+  floorsWidthLabel,
   floorsAreaLabel,
   roofHeading,
   roofAreaLabel,
@@ -26,6 +27,7 @@ const CostCalculator = ({
     wallWidthLabel,
     wallsAreaLabel,
     floorsHeading,
+    floorsWidthLabel,
     floorsAreaLabel,
     roofHeading,
     roofAreaLabel,
@@ -55,7 +57,7 @@ const CostCalculator = ({
               setSelectedElem("floors")
             }
             if (id.startsWith("inner-separator")) {
-              setSelectedElem("inner-separator")
+              setSelectedElem("innerSeparator")
             }
           }}
           className={

@@ -367,6 +367,7 @@ exports.createPages = async ({ graphql, actions }) => {
               wallWidthLabel
               wallsAreaLabel
               floorsHeading
+              floorsWidthLabel
               floorsAreaLabel
               roofHeading
               roofAreaLabel
