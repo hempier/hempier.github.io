@@ -262,24 +262,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 }
               }
             }
-            ... on ContentfulComponentProductDescription {
-              internalName
-              node_locale
-              image {
-                file {
-                  url
-                }
-              }
-              title
-              description {
-                childMarkdownRemark {
-                  htmlAst
-                }
-              }
-              price
-              quantity
-              ctaText
-            }
             ... on ContentfulComponentContactInfo {
               internalName
               node_locale
@@ -408,7 +390,11 @@ exports.createPages = async ({ graphql, actions }) => {
                   url
                 }
               }
-              title
+              heading {
+                childMarkdownRemark {
+                  htmlAst
+                } 
+              }
               description {
                 childMarkdownRemark {
                   htmlAst

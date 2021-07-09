@@ -5,7 +5,7 @@ import "./product-description.scss"
 
 const ProductDescription = ({
   image,
-  title,
+  heading,
   description,
   price,
   quantity,
@@ -18,7 +18,9 @@ const ProductDescription = ({
           <img src={image.file.url} alt="" className="product-description__image"/>
         </div>
         <div className="product-description__content col-xs-12 col-lg-5 off-lg-1">
-          <h2 className="product-description__title">{title}</h2>
+          <h2 className="product-description__title"> 
+            {renderAst(heading.childMarkdownRemark.htmlAst)}
+          </h2>
           <div className="product-description__description">
             {renderAst(description.childMarkdownRemark.htmlAst)}
           </div>
