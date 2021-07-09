@@ -21,7 +21,7 @@ const AdvantagesTrusted = ({ items }) => {
 }
 
 const AdvantagesTrustedItem = ({ image, heading, description }) => (
-  <div className="advantages__item col-xs-12 col-xm-6 col-sm-4 col-md-3">
+  <div className="advantages__item col-xs-6 col-xm-4 col-sm-4 col-md-3">
     <img src={image.file.url} alt="" className="advantages__image" />
     <h4 className="advantages__heading">{heading}</h4>
     <p className="advantages__description">

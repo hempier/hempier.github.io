@@ -12,7 +12,13 @@
         }
     }
 
-    &__image {}
+    &__image {
+        margin-bottom: 1rem;
+        
+        @include respond-to('lg') {
+            margin-bottom: 0;
+        }
+    }
 
     &__content {
         display: flex;

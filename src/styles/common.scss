@@ -306,7 +306,20 @@ p {
   }
   
   &.radio-gradient input:checked + .radio__control {
-    background: radial-gradient(currentcolor 50%, rgba(255, 0, 0, 0) 51%);
+    // background: radial-gradient(currentcolor 50%, rgba(255, 0, 0, 0) 51%);
+    position: relative;
+
+    &:before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0.7em;
+      height: 0.7em;
+      border-radius: 50%;
+      background-color:  $main-site;
+    }
   }
   
   .radio-before {

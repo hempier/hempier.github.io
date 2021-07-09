@@ -27,9 +27,14 @@
     }
 
     &__item {
-        justify-content: flex-start;
-        align-items: flex-start;
-        margin-bottom: 3rem;
+        justify-content: center;
+        align-items: center;
+        
+        @include respond-to('lg') {
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-bottom: 3rem;
+        }
     }
 
     &__image {

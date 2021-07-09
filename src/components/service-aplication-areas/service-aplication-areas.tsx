@@ -16,7 +16,7 @@ const AplicationAreas = ({ items }) => {
   )
 }
 
-const AplicationAreasItem = ({ image, heading, description }) => (
+const AplicationAreasItem = ({ image, heading, description, documentation, documentationLinkText }) => (
   <div className="service-aplication-areas__item">
     <div className="service-aplication-areas__image-wrap col-xs-12 col-sm-6">
       <img src={image.file.url} alt="" className="service-aplication-areas__image" />
@@ -26,6 +26,14 @@ const AplicationAreasItem = ({ image, heading, description }) => (
       <p className="service-aplication-areas__description">
         {description.childMarkdownRemark.rawMarkdownBody}
       </p>
+      {Boolean(documentation) && (
+        <a href={documentation.file.url}
+            target="_blank"
+            className="service-aplication-areas__tech-documentation link"
+        >
+          {documentationLinkText}
+        </a>
+      )}
     </div>
   </div>
 )

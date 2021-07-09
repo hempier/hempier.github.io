@@ -609,6 +609,12 @@ exports.createPages = async ({ graphql, actions }) => {
                     rawMarkdownBody
                   }
                 }
+                documentation {
+                  file {
+                    url
+                  }
+                }
+                documentationLinkText
               }
             }
             ... on ContentfulComponentFeedbackForm {
