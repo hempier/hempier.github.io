@@ -140,33 +140,6 @@ p, ul, ol {
   }
 }
 
-ul {
-  li {
-    position: relative;
-    padding-left: 1.5rem;
-
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 1rem;
-      height: .125rem;
-      margin-top: 8px;
-      background-color: $main-site;
-    }
-
-    @include respond-to('sm') {
-      padding-left: 2.5rem;
-
-      &:before {
-        width: 1.5rem;
-        margin-top: 10px;
-      }
-    }  
-  }
-}
-
 .link {
   color: $main-site;
 

@@ -4,7 +4,6 @@ import "./products-slider.scss"
 import SimpleSlider from "../slider/slider"
 
 const productsSliderSettings = {
-  dots: true,
   arrows: false,
   infinite: true,
   speed: 500,
