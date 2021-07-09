@@ -1,4 +1,5 @@
 import * as React from "react"
+import renderAst from "../util-html-to-react";
 
 import "./service-aplication-areas.scss"
 
@@ -24,7 +25,7 @@ const AplicationAreasItem = ({ image, heading, description, documentation, docum
     <div className="service-aplication-areas__content col-xs-12 col-sm-6">
       <h4 className="service-aplication-areas__heading">{heading}</h4>
       <p className="service-aplication-areas__description">
-        {description.childMarkdownRemark.rawMarkdownBody}
+        {renderAst(description.childMarkdownRemark.htmlAst)}
       </p>
       {Boolean(documentation) && (
         <a href={documentation.file.url}

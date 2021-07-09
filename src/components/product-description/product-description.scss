@@ -40,12 +40,20 @@
     &__title {
         margin-bottom: 1rem;
 
+        br {
+            display: none;
+        }
+
         @include respond-to('sm') {
             margin-bottom: 2em;
         }
 
         @include respond-to('lg') {
             margin-bottom: 3rem;
+
+            br {
+                display: block;
+            }
         }
     }
 

@@ -27,7 +27,7 @@
     }
 
     &__item {
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
         
         @include respond-to('lg') {

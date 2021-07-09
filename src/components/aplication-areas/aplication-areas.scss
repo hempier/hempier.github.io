@@ -60,16 +60,21 @@
     }
 
     &__image {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
 
         @include respond-to('sm') {
             flex-basis: 50%;
             max-width: 50%;
+            margin-bottom: 2rem;
         }
     }
     
     &__heading {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
+
+        @include respond-to('sm') {
+            margin-bottom: 2em;
+        }
     }
 
     &__description {}
