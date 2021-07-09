@@ -2,6 +2,9 @@
 *:before,
 *:after {
   box-sizing: border-box;
+}
+
+body *:not(.slick-track):not(.slick-list){
   transition: all .2s ease-in-out;
 }
 
