@@ -15,6 +15,8 @@ const CostCalculator = ({
   floorsAreaLabel,
   roofHeading,
   roofAreaLabel,
+  foundationHeading,
+  foundationAreaLabel,
   innerSeparatorsHeading,
   innerSeparatorsAreaLabal,
   totalMaterialLabel,
@@ -31,6 +33,8 @@ const CostCalculator = ({
     floorsAreaLabel,
     roofHeading,
     roofAreaLabel,
+    foundationHeading,
+    foundationAreaLabel,
     innerSeparatorsHeading,
     innerSeparatorsAreaLabal,
     totalMaterialLabel,
@@ -58,6 +62,9 @@ const CostCalculator = ({
             }
             if (id.startsWith("inner-separator")) {
               setSelectedElem("innerSeparator")
+            }
+            if (id.startsWith("foundation")) {
+              setSelectedElem("foundation")
             }
           }}
           className={

@@ -3,7 +3,7 @@ import React, { Component } from "react"
 class Form extends Component {
   constructor(props) {
     super(props)
-    this.state = {  wallWidth: 0.2, wall: 0, floorsWidth: 0.2, floors: 0, roof: 0, innerSeparator: 0,  }
+    this.state = {  wallWidth: 0.2, wall: 0, floorsWidth: 0.2, floors: 0, roof: 0, foundation: 0, innerSeparator: 0,  }
   }
 
   handleChange(event) {
@@ -27,10 +27,13 @@ class Form extends Component {
     if (this.props.selectedElem === "innerSeparator") {
       this.innerSeparatorRef.focus()
     }
+    if (this.props.selectedElem === "foundation") {
+      this.foundationRef.focus()
+    }
 
     let totalCoast, totalMaterials = 0
     const MATERIAL_CUBIC_METER_COST = this.props.costForm.hempMixCubicMetetrPrice
-    // const FLOORS_MATERIAL_WIDTH = 0.2
+    const FOUNDATION_MATERIAL_WIDTH = 0.3
     const ROOF_MATERIAL_WIDTH = 0.3
     const INNER_SEPARATOR_MATERIAL_WIDTH = 0.2
 
@@ -43,11 +46,14 @@ class Form extends Component {
     let totalRoofMaterial = this.state.roof * ROOF_MATERIAL_WIDTH
     let totalRoofCoast = totalRoofMaterial * MATERIAL_CUBIC_METER_COST
 
+    let totalFoundationMaterial = this.state.foundation * FOUNDATION_MATERIAL_WIDTH
+    let totalFoundationCoast = totalFoundationMaterial * MATERIAL_CUBIC_METER_COST
+
     let totalInnerSeparatorMaterial = this.state.innerSeparator * INNER_SEPARATOR_MATERIAL_WIDTH
     let totalInnerSeparatorCoast = totalInnerSeparatorMaterial * MATERIAL_CUBIC_METER_COST
 
-    totalMaterials = totalWallsMaterial + totalFloorsMaterial + totalRoofMaterial + totalInnerSeparatorMaterial
-    totalCoast = totalWallsCoast + totalFloorsCoast + totalRoofCoast + totalInnerSeparatorCoast
+    totalMaterials = totalWallsMaterial + totalFloorsMaterial + totalRoofMaterial + totalFoundationMaterial + totalInnerSeparatorMaterial
+    totalCoast = totalWallsCoast + totalFloorsCoast + totalRoofCoast + totalFoundationCoast + totalInnerSeparatorCoast
     console.log('totalCoast', totalCoast)
 
 
@@ -165,6 +171,28 @@ class Form extends Component {
               type="text"
               id="roof"
               name="roof"
+              className="form-input col-xs-11 col-lg-5"
+              onClick={e => {
+                this.props.onSelected(e.target.id)
+              }}
+              onChange={event => this.handleChange(event)}
+            />
+            <div className="cost-calculator__metric col-xs-1 col-lg-1">
+              м<sup className="cost-calculator__metric-power">2</sup>
+            </div>
+          </div>
+        </div>
+        <div className="cost-calculator__fieldset">
+          <h5 className="cost-calculator__heading">{this.props.costForm.foundationHeading}</h5>
+          <div className="cost-calculator__radio cost-calculator__fieldset-inner row">
+            <label htmlFor="roof" className="col-xs-12 col-lg-6">
+              {this.props.costForm.foundationAreaLabel}
+            </label>
+            <input
+              ref={r => (this.foundationRef = r)}
+              type="text"
+              id="foundation"
+              name="foundation"
               className="form-input col-xs-11 col-lg-5"
               onClick={e => {
                 this.props.onSelected(e.target.id)
