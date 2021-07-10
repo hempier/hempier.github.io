@@ -54,15 +54,13 @@ class Form extends Component {
 
     totalMaterials = totalWallsMaterial + totalFloorsMaterial + totalRoofMaterial + totalFoundationMaterial + totalInnerSeparatorMaterial
     totalCoast = totalWallsCoast + totalFloorsCoast + totalRoofCoast + totalFoundationCoast + totalInnerSeparatorCoast
-    console.log('totalCoast', totalCoast)
-
 
     return (
       <form action="" className="cost-calculator__form form-body">
         <div className="cost-calculator__fieldset">
           <h5 className="cost-calculator__heading">{this.props.costForm.wallsHeading}</h5>
           <div className="cost-calculator__fieldset-inner row">
-            <div className="col-xs-12 col-lg-6">{this.props.costForm.wallWidthLabel}</div>
+            <div className="cost-calculator__radio-label col-xs-12 col-lg-6">{this.props.costForm.wallWidthLabel}</div>
             <label className="radio radio-gradient col-xs-6 col-lg-3">
               <span className="radio__input">
                 <input
@@ -99,13 +97,13 @@ class Form extends Component {
               id="wall"
               name="wall"
               autoFocus={this.props.selectedElem === "wall"}
-              className="form-input col-xs-11 col-lg-5"
+              className="form-input col-xs-10 col-xm-11 col-lg-5"
               onClick={e => {
                 this.props.onSelected(e.target.id)
               }}
               onChange={event => this.handleChange(event)}
             />
-            <div className="cost-calculator__metric col-xs-1 col-lg-1">
+            <div className="cost-calculator__metric col-xs-2 col-xm-1 col-lg-1">
               м<sup className="cost-calculator__metric-power">2</sup>
             </div>
           </div>
@@ -113,7 +111,7 @@ class Form extends Component {
         <div className="cost-calculator__fieldset">
           <h5 className="cost-calculator__heading">{this.props.costForm.floorsHeading}</h5>
           <div className="cost-calculator__fieldset-inner row">
-            <div className="col-xs-12 col-lg-6">{this.props.costForm.floorsWidthLabel}</div>
+            <div className="cost-calculator__radio-label  col-xs-12 col-lg-6">{this.props.costForm.floorsWidthLabel}</div>
             <label className="radio radio-gradient col-xs-6 col-lg-3">
               <span className="radio__input">
                 <input
@@ -149,13 +147,13 @@ class Form extends Component {
               type="text"
               id="floors"
               name="floors"
-              className="form-input col-xs-11 col-lg-5"
+              className="form-input col-xs-10 col-xm-11 col-lg-5"
               onClick={e => {
                 this.props.onSelected(e.target.id)
               }}
               onChange={event => this.handleChange(event)}
             />
-            <div className="cost-calculator__metric col-xs-1 col-lg-1">
+            <div className="cost-calculator__metric col-xs-2 col-xm-1 col-lg-1">
               м<sup className="cost-calculator__metric-power">2</sup>
             </div>
           </div>
@@ -171,13 +169,13 @@ class Form extends Component {
               type="text"
               id="roof"
               name="roof"
-              className="form-input col-xs-11 col-lg-5"
+              className="form-input col-xs-10 col-xm-11 col-lg-5"
               onClick={e => {
                 this.props.onSelected(e.target.id)
               }}
               onChange={event => this.handleChange(event)}
             />
-            <div className="cost-calculator__metric col-xs-1 col-lg-1">
+            <div className="cost-calculator__metric col-xs-2 col-xm-1 col-lg-1">
               м<sup className="cost-calculator__metric-power">2</sup>
             </div>
           </div>
@@ -193,13 +191,13 @@ class Form extends Component {
               type="text"
               id="foundation"
               name="foundation"
-              className="form-input col-xs-11 col-lg-5"
+              className="form-input col-xs-10 col-xm-11 col-lg-5"
               onClick={e => {
                 this.props.onSelected(e.target.id)
               }}
               onChange={event => this.handleChange(event)}
             />
-            <div className="cost-calculator__metric col-xs-1 col-lg-1">
+            <div className="cost-calculator__metric col-xs-2 col-xm-1 col-lg-1">
               м<sup className="cost-calculator__metric-power">2</sup>
             </div>
           </div>
@@ -216,13 +214,13 @@ class Form extends Component {
               type="text"
               id="innerSeparator"
               name="innerSeparator"
-              className="form-input col-xs-11 col-lg-5"
+              className="form-input col-xs-10 col-xm-11 col-lg-5"
               onClick={e => {
                 this.props.onSelected(e.target.id)
               }}
               onChange={event => this.handleChange(event)}
             />
-            <div className="cost-calculator__metric col-xs-1 col-lg-1">
+            <div className="cost-calculator__metric col-xs-2 col-xm-1 col-lg-1">
               м<sup className="cost-calculator__metric-power">2</sup>
             </div>
           </div>
