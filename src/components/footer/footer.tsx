@@ -23,7 +23,7 @@ const  Footer = ({ currentLocale }) => {
                 rawMarkdownBody
               }
             }
-            vat
+            #vat
             phone
             socialHeading
             socialLinks {
