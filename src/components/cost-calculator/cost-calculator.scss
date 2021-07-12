@@ -79,6 +79,14 @@
     margin-bottom: 1rem;
   }
 
+  &__finals-material-heading {
+    justify-content: center;
+
+    @include respond-to('lg') {
+      justify-content: flex-start;
+    }
+  }
+
   &__finals-cost-heading {
     font-weight: 700;
     color: $main-site;

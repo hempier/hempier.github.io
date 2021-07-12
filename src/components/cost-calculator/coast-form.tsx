@@ -227,7 +227,7 @@ class Form extends Component {
         </div>
         <div className="cost-calculator__finals">
             <div className="cost-calculator__finals-material row">
-                <h4 className="col-xs-6 col-lg-5"> {this.props.costForm.totalMaterialLabel}</h4>
+                <h4 className="cost-calculator__finals-material-heading col-xs-6 col-lg-5"> {this.props.costForm.totalMaterialLabel}</h4>
                 <div className="cost-calculator__finals-material-inner-wrap col-xs-6 col-lg-7">
                   {totalMaterials}
                   <div className="cost-calculator__metric">
@@ -238,7 +238,7 @@ class Form extends Component {
             <div className="cost-calculator__finals-cost row">
                 <h4 className="cost-calculator__finals-cost-heading col-xs-6 col-lg-5">{this.props.costForm.totalCostLabel}</h4>
                 <h4 className="cost-calculator__finals-cost-heading col-xs-6 col-lg-7">
-                  {totalCoast}&nbsp;₴
+                  {totalCoast}&nbsp;грн.
                 </h4>
             </div>
         </div>
