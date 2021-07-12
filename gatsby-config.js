@@ -7,42 +7,8 @@ if (process.env.NODE_ENV !== 'production') {
 module.exports = {
   siteMetadata: {
     title: `Hempire`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Build your own hows using hemp!`,
     author: `@gatsbyjs`,
-    menuLinks: [
-      {
-          name:'about-us',
-          link:'/about-us'
-      },
-      {
-          name:'contact',
-          link:'/contact'
-      },
-      {
-          name:'services',
-          link:'/services'
-      },
-      {
-          name:'products',
-          link:'/products'
-      },
-      {
-          name:'licenses',
-          link:'/licenses'
-      },
-      {
-          name:'media',
-          link:'/media'
-      },
-      {
-          name:'our-projects',
-          link:'/our-projects'
-      },
-      {
-          name:'contact',
-          link:'/contact'
-      },
-    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
