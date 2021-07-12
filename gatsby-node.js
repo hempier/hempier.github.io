@@ -32,7 +32,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 ctaLink {
                   slug
                 }
-                externalCtaLink
+                #externalCtaLink
                 image {
                   file {
                     url
