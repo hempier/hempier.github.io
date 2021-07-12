@@ -9,8 +9,11 @@
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    padding: 0.8rem 0;
     background-color: $service-white;
     z-index: 4;
 
-    &__logo {}
+    &__logo {
+
+    }
 }

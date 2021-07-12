@@ -59,7 +59,7 @@ export default ({ currentLocale, allLocales }) => {
         return (
           <header className="header">
             <div className="header__inner-wrap container row" ref={node}>
-              <Link to={`/${currentLocale}/home`} className="header__logo col-lg-3">
+              <Link to={`/${currentLocale}/home`} className="header__logo col-xs-5 col-xm-4 col-sm-3 col-md-2 col-lg-3">
                 <img
                   src={logo.url}
                   alt={logo.alt}

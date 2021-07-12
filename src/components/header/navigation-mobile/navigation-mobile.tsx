@@ -15,7 +15,7 @@ const NavigationMobile = ({ open, navigationItems, allLocales, currentLocale, lo
 
   return (
     <StyledNavigation className="header-mobile__navigation" open={open} logo={logo}>
-      <img src={logo.url} alt={logo.alt} className="header-mobile__logotype"/>
+      <img src={logo.url} alt={logo.alt} className="header-mobile__logotype "/>
       <Localization allLocales={allLocales}/>
       {navigationItems.map((link, id) => (
           <>
