@@ -58,7 +58,7 @@ const HeroSliderItem = ({
               {ctaText}
             </Link>
           )}
-          {Boolean(externalCtaLink !== null) && (
+          {/* {Boolean(externalCtaLink !== null) && (
             <a 
               href={externalCtaLink}
               target="_blank"
@@ -66,7 +66,7 @@ const HeroSliderItem = ({
             >
               {ctaText}
             </a>
-          )}
+          )} */}
         </div>
         <div className="hero-slider__image" style={sliderItemImage} />
       </div>
