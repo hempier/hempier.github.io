@@ -236,10 +236,10 @@ class Form extends Component {
                 </div>
             </div>
             <div className="cost-calculator__finals-cost row">
-                <h4 className="col-xs-6 col-lg-5">{this.props.costForm.totalCostLabel}</h4>
-                <div className="col-xs-6 col-lg-7">
+                <h4 className="cost-calculator__finals-cost-heading col-xs-6 col-lg-5">{this.props.costForm.totalCostLabel}</h4>
+                <h4 className="cost-calculator__finals-cost-heading col-xs-6 col-lg-7">
                   {totalCoast}&nbsp;₴
-                </div>
+                </h4>
             </div>
         </div>
       </form>

@@ -74,6 +74,15 @@
       line-height: 1.5;
     }
   }
+
+  &__finals-material {
+    margin-bottom: 1rem;
+  }
+
+  &__finals-cost-heading {
+    font-weight: 700;
+    color: $main-site;
+  }
 }
 
 svg {

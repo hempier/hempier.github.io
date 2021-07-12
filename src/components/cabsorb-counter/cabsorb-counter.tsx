@@ -6,9 +6,9 @@ import IconCarEmission from "../../images/cabsorb-counter/car-carbon-emission.sv
 import IconPeoplesEmission from "../../images/cabsorb-counter/peoples-carbon-emission.svg"
 
 // function component
-const StaticCard = ({ value, measure }) => {
+const StaticCard = ({ value, measure, identifier }) => {
   return (
-    <div className="cabsorb-counter__item col-xs-12 col-sm-6 col-lg-3">
+    <div className="cabsorb-counter__item col-xs-4 col-sm-6 col-lg-3">
       <div className="cabsorb-counter__value">
         <span className="cabsorb-counter__value-inner-wrap">{value}</span>
       </div>
