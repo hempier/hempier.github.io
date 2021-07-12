@@ -56,7 +56,7 @@ const  Footer = ({ currentLocale }) => {
                 <div className="footer__address">
                   <IconLocation className="footer__address-icon" />
                   {data.contentfulComponentFooter.address.childMarkdownRemark.rawMarkdownBody}
-                  <div className="footer__vat">{data.contentfulComponentFooter.vat}</div>
+                  {/* <div className="footer__vat">{data.contentfulComponentFooter.vat}</div> */}
                 </div>
                 <div className="footer__phone">
                   <IconTelephone className="footer__phone-icon" />
