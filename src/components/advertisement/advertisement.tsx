@@ -6,8 +6,7 @@ const Advertisement = ({
   title,
   description,
   ctaText,
-  ctaLink,
-  currentLocale,
+  currentLocale
 }) => {
   return (
     <section className="promo container">
@@ -18,7 +17,7 @@ const Advertisement = ({
         </p>
         {ctaText ? (
           <Link
-            to={ctaLink ? `/${currentLocale}/${ctaLink.slug}` : null}
+            to={`/${currentLocale}/hempcrete`}
             className="promo__cta cta-link cta-link_promo"
           >
             {ctaText}
