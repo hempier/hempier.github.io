@@ -45,7 +45,7 @@ export default ({ pageContext: { page, allLocales } }) => {
       <ProductDescription {...pdpProductDescrition} />
       <ProductTechInfo {...pdpTechInfo} />
       <ProductUsagesTrusted items={pdpUsagesTrusted} />
-      <Advertisement {...pdpInformationAdv} />
+      <Advertisement {...pdpInformationAdv} currentLocale={page.node_locale} />
       <FeedbackForm {...pdpFeedbackForm} />
     </Layout>
   )
