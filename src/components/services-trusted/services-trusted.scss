@@ -72,6 +72,8 @@
 
         @include respond-to('sm') {
             width: calc(100% / 2);
+            // TODO(@riabko): check this hack
+            max-height: 300px;
         }
     }
 
